@@ -24,7 +24,7 @@ export function Contact() {
             <div className="v contact-persons">
               <div>Ravi Patel — <a href="tel:+918866831889">88668 31889</a></div>
               <div>Bharat Patel — <a href="tel:+919427340658">94273 40658</a></div>
-              <div>Dhrunil Patel — <a href="tel:+919427169961">94271 69961</a></div>
+              <div>Dhruvil Patel — <a href="tel:+919427169961">94271 69961</a></div>
             </div>
           </div>
           <div className="contact-block reveal">

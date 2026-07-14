@@ -20,3 +20,10 @@ const result = await Bun.build({
 for (const output of result.outputs) {
   console.log(` ${path.relative(process.cwd(), output.path)}  ${(output.size / 1024).toFixed(1)} KB`);
 }
+
+// Copy static assets
+import { cp } from "node:fs/promises";
+await cp("src/images", path.join(outdir, "images"), { recursive: true, force: true }).catch(() => {});
+await cp("src/logo.svg", path.join(outdir, "logo.svg"), { force: true }).catch(() => {});
+await cp("src/logo-white.svg", path.join(outdir, "logo-white.svg"), { force: true }).catch(() => {});
+

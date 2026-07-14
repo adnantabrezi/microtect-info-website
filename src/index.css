@@ -1,4 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap');
 
 :root {
   --bg: #ffffff;
@@ -21,7 +20,7 @@
 body {
   background: var(--bg);
   color: var(--text);
-  font-family: 'Inter', sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
   font-weight: 400;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
@@ -70,7 +69,6 @@ nav {
   display: flex;
   gap: 2rem;
   align-items: center;
-  font-family: 'IBM Plex Mono', monospace;
   font-size: .72rem;
   letter-spacing: .18em;
   text-transform: uppercase;
@@ -86,7 +84,6 @@ nav {
 }
 
 .nav-cta {
-  font-family: 'IBM Plex Mono', monospace;
   font-size: .72rem;
   letter-spacing: .18em;
   text-transform: uppercase;
@@ -110,7 +107,6 @@ nav {
 }
 
 .hero-eyebrow {
-  font-family: 'IBM Plex Mono', monospace;
   font-size: .75rem;
   letter-spacing: .3em;
   text-transform: uppercase;
@@ -129,7 +125,6 @@ nav {
 }
 
 .hero h1 {
-  font-family: 'Montserrat', sans-serif;
   font-weight: 900;
   font-size: clamp(2.4rem, 6vw, 5rem);
   line-height: 1.02;
@@ -163,7 +158,6 @@ nav {
   background: var(--text);
   color: #fff;
   padding: 1rem 1.8rem;
-  font-family: 'IBM Plex Mono', monospace;
   font-size: .75rem;
   letter-spacing: .2em;
   text-transform: uppercase;
@@ -189,7 +183,6 @@ nav {
   border: 1.5px solid var(--line-dark);
   color: var(--text);
   padding: 1rem 1.8rem;
-  font-family: 'IBM Plex Mono', monospace;
   font-size: .75rem;
   letter-spacing: .2em;
   text-transform: uppercase;
@@ -211,7 +204,6 @@ nav {
 }
 
 .hero-stat .n {
-  font-family: 'Montserrat', sans-serif;
   font-weight: 900;
   font-size: 2rem;
   letter-spacing: -0.02em;
@@ -223,7 +215,6 @@ nav {
 }
 
 .hero-stat .l {
-  font-family: 'IBM Plex Mono', monospace;
   font-size: .65rem;
   letter-spacing: .2em;
   text-transform: uppercase;
@@ -243,7 +234,6 @@ section.block {
 }
 
 .section-label {
-  font-family: 'IBM Plex Mono', monospace;
   font-size: .72rem;
   letter-spacing: .3em;
   text-transform: uppercase;
@@ -262,7 +252,6 @@ section.block {
 }
 
 .section-h2 {
-  font-family: 'Montserrat', sans-serif;
   font-weight: 900;
   font-size: clamp(1.8rem, 4vw, 3rem);
   line-height: 1.05;
@@ -298,7 +287,7 @@ section.block {
 .ps-table {
   width: 100%;
   border-collapse: collapse;
-  font-family: 'IBM Plex Mono', monospace;
+  font-family: 'Courier New', Courier, monospace;
   font-size: .85rem;
 }
 
@@ -310,7 +299,7 @@ section.block {
   letter-spacing: .15em;
   text-transform: uppercase;
   font-size: .7rem;
-  color: var(--text);
+  color: #0056b3;
 }
 
 .ps-table tbody td {
@@ -342,11 +331,41 @@ section.block {
   -webkit-overflow-scrolling: touch;
 }
 
-.ps-info p {
+.ps-info p,
+.ps-info-col p {
   margin-bottom: 1.2rem;
   color: var(--text-soft);
   line-height: 1.7;
 }
+
+/* ===== INLINE TABLE PARTICLE DOTS ===== */
+.th-visual,
+.td-visual {
+  text-align: center;
+  width: 50px;
+}
+
+.td-visual {
+  vertical-align: middle;
+}
+
+.ps-dot {
+  display: inline-block;
+  border-radius: 50%;
+  background: var(--text);
+  vertical-align: middle;
+  transition: background .25s ease, box-shadow .25s ease;
+}
+
+.ps-table tbody tr:hover .ps-dot {
+  background: var(--red);
+  box-shadow: 0 0 10px rgba(200, 16, 46, .3);
+}
+
+.ps-table .highlight .ps-dot {
+  background: var(--red);
+}
+
 
 /* ===== POWDER SHOWCASE ===== */
 .powder-section {
@@ -399,7 +418,6 @@ section.block {
 }
 
 .marquee-label {
-  font-family: 'IBM Plex Mono', monospace;
   font-size: .65rem;
   letter-spacing: .15em;
   text-transform: uppercase;
@@ -422,18 +440,16 @@ section.block {
 
 .tech-card {
   background: var(--bg);
-  border: 1px solid var(--line);
+  border: none;
   padding: 2.5rem;
   transition: border-color .3s ease, transform .3s ease;
 }
 
 .tech-card:hover {
-  border-color: var(--red);
   transform: translateY(-3px);
 }
 
 .tech-card .num {
-  font-family: 'IBM Plex Mono', monospace;
   font-size: .7rem;
   letter-spacing: .2em;
   color: var(--red);
@@ -441,7 +457,6 @@ section.block {
 }
 
 .tech-card h3 {
-  font-family: 'Montserrat', sans-serif;
   font-weight: 800;
   font-size: 1.4rem;
   letter-spacing: -0.01em;
@@ -481,14 +496,12 @@ section.block {
 }
 
 .benefit-card .b-num {
-  font-family: 'IBM Plex Mono', monospace;
   font-size: .7rem;
   letter-spacing: .2em;
   color: var(--text-mute);
 }
 
 .benefit-card h4 {
-  font-family: 'Montserrat', sans-serif;
   font-weight: 800;
   font-size: 1.2rem;
   letter-spacing: -0.01em;
@@ -502,7 +515,6 @@ section.block {
 }
 
 .benefit-card .tag {
-  font-family: 'IBM Plex Mono', monospace;
   font-size: .62rem;
   letter-spacing: .2em;
   text-transform: uppercase;
@@ -516,25 +528,15 @@ section.block {
   grid-template-columns: repeat(3, 1fr);
   gap: 0;
   margin-top: 3rem;
-  border-top: 2px solid var(--text);
 }
 
 .process-step {
   padding: 2.5rem 1.5rem 2rem 0;
-  border-right: 1px solid var(--line);
-  border-bottom: 1px solid var(--line);
 }
 
-.process-step:nth-child(3n) {
-  border-right: none;
-}
 
-.process-step:nth-last-child(-n+3) {
-  border-bottom: none;
-}
 
 .process-step .pn {
-  font-family: 'Montserrat', sans-serif;
   font-weight: 900;
   font-size: 2.5rem;
   letter-spacing: -0.03em;
@@ -548,7 +550,6 @@ section.block {
 }
 
 .process-step h5 {
-  font-family: 'Montserrat', sans-serif;
   font-weight: 800;
   font-size: 1.1rem;
   letter-spacing: -0.01em;
@@ -606,7 +607,6 @@ section.block {
 }
 
 .contact-block .k {
-  font-family: 'IBM Plex Mono', monospace;
   font-size: .65rem;
   letter-spacing: .25em;
   text-transform: uppercase;
@@ -615,7 +615,6 @@ section.block {
 }
 
 .contact-block .v {
-  font-family: 'Montserrat', sans-serif;
   font-weight: 700;
   font-size: 1.05rem;
   line-height: 1.4;
@@ -631,7 +630,7 @@ section.block {
 }
 
 .contact-block .v.addr {
-  font-family: 'Inter', sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
   font-weight: 400;
   font-size: .92rem;
   color: rgba(255, 255, 255, 0.6);
@@ -639,7 +638,7 @@ section.block {
 }
 
 .contact-block .v.contact-persons {
-  font-family: 'Inter', sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
   font-weight: 400;
   font-size: .92rem;
   line-height: 2;
@@ -678,7 +677,6 @@ footer .f-logo {
 }
 
 footer .f-text {
-  font-family: 'IBM Plex Mono', monospace;
   font-size: .65rem;
   letter-spacing: .2em;
   text-transform: uppercase;
