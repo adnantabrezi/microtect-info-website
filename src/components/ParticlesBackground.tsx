@@ -41,31 +41,40 @@ export function ParticlesBackground() {
       }
     }
 
+    let targetMouseX = 0;
+    let targetMouseY = 0;
+    let currentMouseX = 0;
+    let currentMouseY = 0;
+    
     let time = 0;
     const init = () => {
-      const parent = canvas.parentElement;
-      if (!parent) return;
-      
       // Handle high-DPI displays for crisp rendering
       const dpr = window.devicePixelRatio || 1;
-      const rect = parent.getBoundingClientRect();
+      const w = window.innerWidth;
+      const h = window.innerHeight;
       
-      canvas.width = rect.width * dpr;
-      canvas.height = rect.height * dpr;
+      canvas.width = w * dpr;
+      canvas.height = h * dpr;
       ctx.scale(dpr, dpr);
       
       particles = [];
       for (let i = 0; i < particleCount; i++) {
-        particles.push(new Particle(rect.width, rect.height));
+        particles.push(new Particle(w, h));
       }
     };
 
     const animate = () => {
-      if (!canvas.parentElement) return;
-      const rect = canvas.parentElement.getBoundingClientRect();
-      ctx.clearRect(0, 0, rect.width, rect.height);
+      const w = window.innerWidth;
+      const h = window.innerHeight;
+      ctx.clearRect(0, 0, w, h);
       
       time += 0.02; // Time accumulator for sine waves
+      
+      // Smoothly interpolate mouse target
+      currentMouseX += (targetMouseX - currentMouseX) * 0.05;
+      currentMouseY += (targetMouseY - currentMouseY) * 0.05;
+      const mouseParallaxX = currentMouseX * -40; // Max 40px shift opposite to mouse
+      const mouseParallaxY = currentMouseY * -40;
       
       for (let i = 0; i < particles.length; i++) {
         const p = particles[i];
@@ -75,8 +84,18 @@ export function ParticlesBackground() {
         const offsetX = Math.cos(time * 0.22 + p.offset * 0.7) * (20 * depth);
         const offsetY = Math.sin(time * 0.30 + p.offset) * (20 * depth);
         
+        // Mouse and Scroll Parallax
+        // We scale by 'depth' so larger particles move faster than small ones (true 3D feel!)
+        const scrollOffset = window.scrollY * 0.35 * depth;
+        let finalX = p.baseX + offsetX + (mouseParallaxX * depth);
+        let finalY = p.baseY + offsetY - scrollOffset + (mouseParallaxY * depth);
+        
+        // Wrap vertically and horizontally to create an infinite continuous field
+        finalX = ((finalX % w) + w) % w;
+        finalY = ((finalY % h) + h) % h;
+        
         ctx.beginPath();
-        ctx.arc(p.baseX + offsetX, p.baseY + offsetY, p.size, 0, Math.PI * 2);
+        ctx.arc(finalX, finalY, p.size, 0, Math.PI * 2);
         ctx.fillStyle = p.color;
         ctx.fill();
       }
@@ -97,10 +116,26 @@ export function ParticlesBackground() {
       }, 200); // Debounce to prevent layout thrashing
     };
 
+    const handleMouseMove = (e: MouseEvent) => {
+      targetMouseX = (e.clientX / window.innerWidth) * 2 - 1;
+      targetMouseY = (e.clientY / window.innerHeight) * 2 - 1;
+    };
+
+    const handleTouchMove = (e: TouchEvent) => {
+      if (e.touches.length > 0) {
+        targetMouseX = (e.touches[0].clientX / window.innerWidth) * 2 - 1;
+        targetMouseY = (e.touches[0].clientY / window.innerHeight) * 2 - 1;
+      }
+    };
+
     window.addEventListener("resize", handleResize);
+    window.addEventListener("mousemove", handleMouseMove);
+    window.addEventListener("touchmove", handleTouchMove, { passive: true });
 
     return () => {
       window.removeEventListener("resize", handleResize);
+      window.removeEventListener("mousemove", handleMouseMove);
+      window.removeEventListener("touchmove", handleTouchMove);
       clearTimeout(resizeTimeout);
       cancelAnimationFrame(animationFrameId);
     };
@@ -110,12 +145,12 @@ export function ParticlesBackground() {
     <canvas
       ref={canvasRef}
       style={{
-        position: "absolute",
+        position: "fixed",
         top: 0,
         left: 0,
-        width: "100%",
-        height: "100%",
-        zIndex: 0,
+        width: "100vw",
+        height: "100vh",
+        zIndex: -1,
         pointerEvents: "none",
       }}
     />

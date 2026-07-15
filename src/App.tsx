@@ -9,6 +9,7 @@ import { AboutPage } from "./pages/AboutPage";
 import { ServicesPage } from "./pages/ServicesPage";
 import { ContactPage } from "./pages/ContactPage";
 import { FacilitiesPage } from "./pages/FacilitiesPage";
+import { ParticlesBackground } from "./components/ParticlesBackground";
 
 function PageContent({ route }: { route: string }) {
   switch (route) {
@@ -53,6 +54,7 @@ export function App() {
 
   return (
     <>
+      <ParticlesBackground />
       <Header />
       <PageContent route={route} />
       <Footer />

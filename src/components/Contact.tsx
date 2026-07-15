@@ -53,8 +53,7 @@ export function Contact() {
               Microtech India<br />
               Plot No. 5046, G.I.D.C.,<br />
               Ankleshwar — 393 002,<br />
-              Gujarat, India<br />
-              Ph.: +91 2646 227453
+              Gujarat, India
             </div>
           </div>
         </div>

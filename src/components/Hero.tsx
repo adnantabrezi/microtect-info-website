@@ -1,14 +1,11 @@
 import { useTranslation } from "react-i18next";
-import { ParticlesBackground } from "./ParticlesBackground";
 
 export function Hero() {
   const { t } = useTranslation();
 
   return (
-    <div className="hero-wrapper" style={{ position: "relative", overflow: "hidden", width: "100%" }}>
-      <ParticlesBackground />
-      <section className="hero" style={{ position: "relative", zIndex: 1 }}>
-        <div className="hero-eyebrow reveal">{t("hero.eyebrow")}</div>
+    <section className="hero">
+      <div className="hero-eyebrow reveal">{t("hero.eyebrow")}</div>
       <h1 className="reveal" dangerouslySetInnerHTML={{ __html: t("hero.title") }} />
       <p className="lead reveal">
         {t("hero.lead")}
@@ -47,8 +44,7 @@ export function Hero() {
           <div className="l">{t("hero.iso")}</div>
         </div>
       </div>
-      </section>
-    </div>
+    </section>
   );
 }
 
