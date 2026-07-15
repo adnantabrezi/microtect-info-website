@@ -34,7 +34,7 @@ const meshData = [
 
 const MAX_DOT = 36; // px – largest dot diameter (for mesh 10 / 2000μm)
 const MIN_DOT = 3;  // px – smallest dot diameter
-const MAX_MICRONS = meshData[0].microns;
+const MAX_MICRONS = meshData[0]!.microns;
 
 function dotSize(microns: number) {
   const ratio = microns / MAX_MICRONS;
@@ -42,44 +42,74 @@ function dotSize(microns: number) {
   return Math.max(MIN_DOT, d);
 }
 
+import { useTranslation } from "react-i18next";
+
 export function ParticleSize() {
+  const { t, i18n } = useTranslation();
+  const lang = i18n.language || "en";
+
+  const getParagraphs = () => {
+    switch (lang) {
+      case "gu":
+        return [
+          "માઇક્રોનાઇઝેશન એ ઘન પદાર્થના કણોના સરેરાશ વ્યાસને ઘટાડવાની પ્રક્રિયા છે. ફાર્માસ્યુટિકલ્સમાં, નબળી દ્રાવ્ય દવાઓ ઓગળવાનો દર અને તેની જૈવઉપલબ્ધતા વધારવા માટે આ પ્રક્રિયા આવશ્યક છે.",
+          "માઇક્રોટેક ઇન્ડિયા ખાતે, અમારા સ્પાયરલ જેટ મિલ્સ કડક ફાર્માસ્યુટિકલ ધોરણોને પૂર્ણ કરીને, થોડા મિલીમીટરથી લઈને ૧-૨ માઇક્રોન સુધીની ચોક્કસ કણોના કદના વિતરણ (PSD) પ્રાપ્ત કરવામાં સક્ષમ છે.",
+          "અમે તમારી ચોક્કસ લક્ષ્ય મેશ સાઇઝ સાથે મેળ ખાવા માટે મિલિંગ પરિમાણો જેવા કે ફીડ રેટ, ગ્રાઇન્ડીંગ પ્રેશર અને નોઝલ ભૂમિતિને કસ્ટમાઇઝ કરીએ છીએ."
+        ];
+      case "it":
+        return [
+          "La micronizzazione è il processo di riduzione del diametro medio delle particelle di un materiale solido. Nei prodotti farmaceutici, questo processo è essenziale per migliorare la velocità di dissoluzione e la biodisponibilità di farmaci scarsamente solubili.",
+          "Presso Microtech India, i nostri mulini a getto a spirale sono in grado di ottenere distribuzioni precise delle dimensioni delle particelle (PSD) che vanno da pochi millimetri fino a 1-2 micron, soddisfacendo i severi standard farmaceutici.",
+          "Personalizziamo i parametri di macinazione, come la velocità di avanzamento, la pressione di macinazione e la geometria dell'ugello, per adattarli alle vostre precise dimensioni della mesh target."
+        ];
+      case "fr":
+        return [
+          "La micronisation est le processus consistant à réduire le diamètre moyen des particules d'un matériau solide. En pharmacie, ce processus est essentiel pour améliorer la vitesse de dissolution et la biodisponibilité des médicaments peu solubles.",
+          "Chez Microtech India, nos broyeurs à jet d'air en spirale sont capables d'obtenir des distributions granulométriques (PSD) précises allant de quelques millimètres à 1 à 2 microns, répondant ainsi aux normes pharmaceutiques les plus strictes.",
+          "Nous adaptons les paramètres de broyage, tels que le débit d'alimentation, la pression de broyage et la géométrie de la buse, pour correspondre exactement à la taille de mesh cible."
+        ];
+      case "zh":
+        return [
+          "超细微化是指减小固体物料颗粒平均直径的过程。在制药领域，这一工艺对于提高难溶性药物的溶解速率和生物利用度至关重要。",
+          "在 Microtech India，我们的螺旋气流粉碎机能够实现从几毫米到 1-2 微米的精密颗粒粒径分布 (PSD)，满足严格的制药标准。",
+          "我们为客户量身定制研磨参数——如进料速度、粉碎压力和喷嘴几何形状——以完美契合您的目标网目尺寸要求。"
+        ];
+      case "en":
+      default:
+        return [
+          "Micronization is the process of reducing the average diameter of a solid material's particles. In pharmaceuticals, this process is essential for improving the dissolution rate and bioavailability of poorly soluble drugs.",
+          "At Microtech India, our spiral jet mills are capable of achieving precise particle size distributions (PSD) ranging from a few millimeters down to 1-2 microns, meeting stringent pharmaceutical standards.",
+          "We tailor the milling parameters—such as feed rate, grinding pressure, and nozzle geometry—to match your exact target mesh size."
+        ];
+    }
+  };
+
+  const paragraphs = getParagraphs();
+
   return (
     <section className="block" id="particle-size">
       <div className="container">
         <div className="ps-layout">
           <div className="ps-info reveal">
-            <div className="section-label">Comparative Particle Size</div>
-            <h2 className="section-h2">
-              Standard US Mesh <span className="red">Conversion</span> Chart
-            </h2>
+            <div className="section-label">{t("particleSize.label")}</div>
+            <h2 className="section-h2" dangerouslySetInnerHTML={{ __html: t("particleSize.title") }} />
             <p className="section-lead">
-              Below is a reference table for standard particle size conversions used in our
-              micronization processes.
+              {t("particleSize.lead")}
             </p>
             <br />
-            <p>
-              Micronization is the process of reducing the average diameter of a solid material's particles. In
-              pharmaceuticals, this process is essential for improving the dissolution rate and bioavailability of poorly
-              soluble drugs.
-            </p>
-            <p>
-              At Microtech India, our spiral jet mills are capable of achieving precise particle size distributions (PSD)
-              ranging from a few millimeters down to 1-2 microns, meeting stringent pharmaceutical standards.
-            </p>
-            <p>
-              We tailor the milling parameters—such as feed rate, grinding pressure, and nozzle geometry—to match your
-              exact target mesh size.
-            </p>
+            {paragraphs.map((p, index) => (
+              <p key={index}>{p}</p>
+            ))}
           </div>
           <div className="reveal">
             <div className="ps-table-wrap">
               <table className="ps-table">
                 <thead>
                   <tr>
-                    <th>U.S. Mesh</th>
-                    <th>Microns (μm)</th>
-                    <th>Inches</th>
-                    <th className="th-visual">Visual</th>
+                    <th>{t("particleSize.table.mesh")}</th>
+                    <th>{t("particleSize.table.microns")}</th>
+                    <th>{t("particleSize.table.inches")}</th>
+                    <th className="th-visual">{t("particleSize.table.visual")}</th>
                   </tr>
                 </thead>
                 <tbody>

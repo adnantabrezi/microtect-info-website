@@ -1,23 +1,24 @@
-const powders = [
-  { src: "/images/powder-white.png", label: "Ultra-fine API" },
-  { src: "/images/powder-tan.png", label: "Coarse Granules" },
-  { src: "/images/powder-yellow.png", label: "Medium-fine" },
-  { src: "/images/powder-brown.png", label: "Herbal Extract" },
-  { src: "/images/powder-cream.png", label: "Micronized API" },
-  { src: "/images/powder-grey.png", label: "Mineral Powder" },
-];
+import { useTranslation } from "react-i18next";
 
 export function PowderShowcase() {
+  const { t } = useTranslation();
+
+  const powders = [
+    { src: "/images/powder-white.png", label: t("showcase.materials.white") },
+    { src: "/images/powder-tan.png", label: t("showcase.materials.tan") },
+    { src: "/images/powder-yellow.png", label: t("showcase.materials.yellow") },
+    { src: "/images/powder-brown.png", label: t("showcase.materials.brown") },
+    { src: "/images/powder-cream.png", label: t("showcase.materials.cream") },
+    { src: "/images/powder-grey.png", label: t("showcase.materials.grey") },
+  ];
+
   return (
     <section className="block powder-section" id="powders">
       <div className="container">
-        <div className="section-label reveal">Materials We Process</div>
-        <h2 className="section-h2 reveal">
-          Micronized <span className="red">powders</span> across particle sizes
-        </h2>
+        <div className="section-label reveal">{t("showcase.label")}</div>
+        <h2 className="section-h2 reveal" dangerouslySetInnerHTML={{ __html: t("showcase.title") }} />
         <p className="section-lead reveal">
-          From ultra-fine API micronization to coarse grinding, we handle a wide range of pharmaceutical
-          and chemical powders to meet your exact specifications.
+          {t("showcase.lead")}
         </p>
       </div>
 

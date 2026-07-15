@@ -1,17 +1,34 @@
 import { useEffect } from "react";
 import "./index.css";
 
+import { useRoute } from "./components/Router";
 import { Header } from "./components/Header";
-import { Hero } from "./components/Hero";
-import { PowderShowcase } from "./components/PowderShowcase";
-import { ParticleSize } from "./components/ParticleSize";
-import { Features } from "./components/Features";
-import { Benefits } from "./components/Benefits";
-import { Process } from "./components/Process";
-import { Contact } from "./components/Contact";
 import { Footer } from "./components/Footer";
+import { HomePage } from "./pages/HomePage";
+import { AboutPage } from "./pages/AboutPage";
+import { ServicesPage } from "./pages/ServicesPage";
+import { ContactPage } from "./pages/ContactPage";
+import { FacilitiesPage } from "./pages/FacilitiesPage";
+
+function PageContent({ route }: { route: string }) {
+  switch (route) {
+    case "about":
+      return <AboutPage />;
+    case "facilities":
+      return <FacilitiesPage />;
+    case "services":
+      return <ServicesPage />;
+    case "contact":
+      return <ContactPage />;
+    case "home":
+    default:
+      return <HomePage />;
+  }
+}
 
 export function App() {
+  const route = useRoute();
+
   useEffect(() => {
     // Simple reveal on scroll — matching sample.html behavior
     const io = new IntersectionObserver(
@@ -32,18 +49,12 @@ export function App() {
     return () => {
       io.disconnect();
     };
-  }, []);
+  }, [route]); // Re-run when route changes so new page elements get observed
 
   return (
     <>
       <Header />
-      <Hero />
-      <PowderShowcase />
-      <ParticleSize />
-      <Features />
-      <Benefits />
-      <Process />
-      <Contact />
+      <PageContent route={route} />
       <Footer />
     </>
   );

@@ -2,1102 +2,1658 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Microtech India — Contract Micronization Services</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet"
-    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap">
-  <style>
-    :root {
-      --bg: #ffffff;
-      --bg-alt: #fafafa;
-      --text: #0a0a0a;
-      --text-soft: #555555;
-      --text-mute: #999999;
-      --line: #e5e5e5;
-      --line-dark: #d0d0d0;
-      --red: #e02020;
-      --red-dark: #b81818;
-    }
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box
-    }
-
-    body {
-      background: var(--bg);
-      color: var(--text);
-      font-family: 'Inter', sans-serif;
-      font-weight: 400;
-      line-height: 1.6;
-      -webkit-font-smoothing: antialiased;
-    }
-
-    ::selection {
-      background: var(--red);
-      color: #fff
-    }
-
-    a {
-      color: inherit;
-      text-decoration: none
-    }
-
-    /* ===== NAV ===== */
-    nav {
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      background: rgba(255, 255, 255, 0.96);
-      backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
-      border-bottom: 1px solid var(--line);
-      padding: 1rem 2rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 2rem;
-    }
-
-    .nav-logo {
-      display: flex;
-      align-items: center;
-      color: var(--text)
-    }
-
-    .logo-svg {
-      height: 90px;
-      width: auto;
-      display: block;
-      margin: -15px 0; /* Offsets the height increase so the nav bar doesn't grow */
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 2rem;
-      align-items: center;
-      font-family: 'IBM Plex Mono', monospace;
-      font-size: .72rem;
-      letter-spacing: .18em;
-      text-transform: uppercase;
-    }
-
-    .nav-links a {
-      color: var(--text-soft);
-      transition: color .25s ease
-    }
-
-    .nav-links a:hover {
-      color: var(--red)
-    }
-
-    .nav-cta {
-      font-family: 'IBM Plex Mono', monospace;
-      font-size: .72rem;
-      letter-spacing: .18em;
-      text-transform: uppercase;
-      padding: .65rem 1.2rem;
-      border: 1.5px solid var(--text);
-      color: var(--text);
-      transition: all .25s ease;
-    }
-
-    .nav-cta:hover {
-      background: var(--red);
-      border-color: var(--red);
-      color: #fff
-    }
-
-    /* ===== HERO ===== */
-    .hero {
-      padding: 7rem 2rem 5rem;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-
-    .hero-eyebrow {
-      font-family: 'IBM Plex Mono', monospace;
-      font-size: .75rem;
-      letter-spacing: .3em;
-      text-transform: uppercase;
-      color: var(--red);
-      margin-bottom: 1.5rem;
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-    }
-
-    .hero-eyebrow::before {
-      content: "";
-      width: 40px;
-      height: 2px;
-      background: var(--red)
-    }
-
-    .hero h1 {
-      font-family: 'Montserrat', sans-serif;
-      font-weight: 900;
-      font-size: clamp(2.4rem, 6vw, 5rem);
-      line-height: 1.02;
-      letter-spacing: -0.03em;
-      max-width: 16ch;
-      margin-bottom: 2rem;
-    }
-
-    .hero h1 .red {
-      color: var(--red)
-    }
-
-    .hero p.lead {
-      font-size: 1.2rem;
-      line-height: 1.6;
-      color: var(--text-soft);
-      max-width: 60ch;
-      margin-bottom: 2.5rem;
-    }
-
-    .hero-actions {
-      display: flex;
-      gap: 1rem;
-      flex-wrap: wrap
-    }
-
-    .btn-primary {
-      display: inline-flex;
-      align-items: center;
-      gap: .6rem;
-      background: var(--text);
-      color: #fff;
-      padding: 1rem 1.8rem;
-      font-family: 'IBM Plex Mono', monospace;
-      font-size: .75rem;
-      letter-spacing: .2em;
-      text-transform: uppercase;
-      transition: background .25s ease;
-    }
-
-    .btn-primary:hover {
-      background: var(--red)
-    }
-
-    .btn-primary .arrow {
-      transition: transform .25s ease
-    }
-
-    .btn-primary:hover .arrow {
-      transform: translateX(5px)
-    }
-
-    .btn-secondary {
-      display: inline-flex;
-      align-items: center;
-      gap: .6rem;
-      border: 1.5px solid var(--line-dark);
-      color: var(--text);
-      padding: 1rem 1.8rem;
-      font-family: 'IBM Plex Mono', monospace;
-      font-size: .75rem;
-      letter-spacing: .2em;
-      text-transform: uppercase;
-      transition: all .25s ease;
-    }
-
-    .btn-secondary:hover {
-      border-color: var(--red);
-      color: var(--red)
-    }
-
-    .hero-stats {
-      margin-top: 4rem;
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 2rem;
-      border-top: 1px solid var(--line);
-      padding-top: 2rem;
-    }
-
-    .hero-stat .n {
-      font-family: 'Montserrat', sans-serif;
-      font-weight: 900;
-      font-size: 2rem;
-      letter-spacing: -0.02em;
-      line-height: 1;
-    }
-
-    .hero-stat .n .red {
-      color: var(--red)
-    }
-
-    .hero-stat .l {
-      font-family: 'IBM Plex Mono', monospace;
-      font-size: .65rem;
-      letter-spacing: .2em;
-      text-transform: uppercase;
-      color: var(--text-mute);
-      margin-top: .6rem;
-    }
-
-    /* ===== SECTION GENERIC ===== */
-    section.block {
-      padding: 5rem 2rem;
-      border-top: 1px solid var(--line)
-    }
-
-    .container {
-      max-width: 1200px;
-      margin: 0 auto
-    }
-
-    .section-label {
-      font-family: 'IBM Plex Mono', monospace;
-      font-size: .72rem;
-      letter-spacing: .3em;
-      text-transform: uppercase;
-      color: var(--red);
-      margin-bottom: 1.5rem;
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-    }
-
-    .section-label::before {
-      content: "";
-      width: 40px;
-      height: 2px;
-      background: var(--red)
-    }
-
-    .section-h2 {
-      font-family: 'Montserrat', sans-serif;
-      font-weight: 900;
-      font-size: clamp(1.8rem, 4vw, 3rem);
-      line-height: 1.05;
-      letter-spacing: -0.025em;
-      max-width: 20ch;
-      margin-bottom: 1.5rem;
-    }
-
-    .section-h2 .red {
-      color: var(--red)
-    }
-
-    .section-lead {
-      font-size: 1.05rem;
-      line-height: 1.65;
-      color: var(--text-soft);
-      max-width: 60ch
-    }
-
-    /* ===== COMPARATIVE PARTICLE SIZE TABLE ===== */
-    #particle-size {
-      background: var(--bg-alt)
-    }
-
-    .ps-layout {
-      display: grid;
-      grid-template-columns: 1fr 1.5fr;
-      gap: 4rem;
-      align-items: start;
-      margin-top: 3rem
-    }
-
-    .ps-table {
-      width: 100%;
-      border-collapse: collapse;
-      font-family: 'IBM Plex Mono', monospace;
-      font-size: .85rem
-    }
-
-    .ps-table thead th {
-      text-align: left;
-      padding: 1rem;
-      border-bottom: 2px solid var(--text);
-      font-weight: 500;
-      letter-spacing: .15em;
-      text-transform: uppercase;
-      font-size: .7rem;
-      color: var(--text);
-    }
-
-    .ps-table tbody td {
-      padding: .9rem 1rem;
-      border-bottom: 1px solid var(--line);
-      color: var(--text-soft)
-    }
-
-    .ps-table tbody tr:hover {
-      background: #fff
-    }
-
-    .ps-table tbody tr:hover td {
-      color: var(--text)
-    }
-
-    .ps-table .highlight td {
-      color: var(--red);
-      font-weight: 500
-    }
-
-    .ps-info {
-      position: sticky;
-      top: 100px; /* Account for the fixed nav bar height */
-    }
-
-    .ps-info p {
-      margin-bottom: 1.2rem;
-      color: var(--text-soft);
-      line-height: 1.7
-    }
-
-    /* ===== TECHNOLOGY ===== */
-    .tech-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 2rem;
-      margin-top: 3rem
-    }
-
-    .tech-card {
-      background: var(--bg);
-      border: 1px solid var(--line);
-      padding: 2.5rem;
-      transition: border-color .3s ease, transform .3s ease;
-    }
-
-    .tech-card:hover {
-      border-color: var(--red);
-      transform: translateY(-3px)
-    }
-
-    .tech-card .num {
-      font-family: 'IBM Plex Mono', monospace;
-      font-size: .7rem;
-      letter-spacing: .2em;
-      color: var(--red);
-      margin-bottom: 1.2rem;
-    }
-
-    .tech-card h3 {
-      font-family: 'Montserrat', sans-serif;
-      font-weight: 800;
-      font-size: 1.4rem;
-      letter-spacing: -0.01em;
-      margin-bottom: 1rem;
-    }
-
-    .tech-card p {
-      color: var(--text-soft);
-      line-height: 1.65;
-      font-size: .95rem
-    }
-
-    /* ===== SERVICE BENEFITS ===== */
-    #benefits {
-      background: var(--bg-alt)
-    }
-
-    .benefits-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1.5rem;
-      margin-top: 3rem
-    }
-
-    .benefit-card {
-      border: 1px solid var(--line);
-      background: var(--bg);
-      padding: 2rem;
-      display: flex;
-      flex-direction: column;
-      transition: border-color .3s ease, background .3s ease;
-    }
-
-    .benefit-card:hover {
-      border-color: var(--red);
-      background: var(--bg-alt)
-    }
-
-    .benefit-card .b-num {
-      font-family: 'IBM Plex Mono', monospace;
-      font-size: .7rem;
-      letter-spacing: .2em;
-      color: var(--text-mute)
-    }
-
-    .benefit-card h4 {
-      font-family: 'Montserrat', sans-serif;
-      font-weight: 800;
-      font-size: 1.2rem;
-      letter-spacing: -0.01em;
-      margin: 1.5rem 0 .8rem;
-    }
-
-    .benefit-card p {
-      color: var(--text-soft);
-      font-size: .9rem;
-      line-height: 1.6
-    }
-
-    .benefit-card .tag {
-      font-family: 'IBM Plex Mono', monospace;
-      font-size: .62rem;
-      letter-spacing: .2em;
-      text-transform: uppercase;
-      color: var(--red);
-      margin-top: 1.5rem;
-    }
-
-    /* ===== PROCESS FLOW ===== */
-    .process-row {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 0;
-      margin-top: 3rem;
-      border-top: 2px solid var(--text);
-    }
-
-    .process-step {
-      padding: 2.5rem 1.5rem 2rem 0;
-      border-right: 1px solid var(--line);
-      border-bottom: 1px solid var(--line)
-    }
-
-    .process-step:nth-child(3n) {
-      border-right: none
-    }
-
-    .process-step:nth-last-child(-n+3) {
-      border-bottom: none
-    }
-
-    .process-step .pn {
-      font-family: 'Montserrat', sans-serif;
-      font-weight: 900;
-      font-size: 2.5rem;
-      letter-spacing: -0.03em;
-      line-height: 1;
-      color: var(--text-mute);
-      margin-bottom: 1.2rem;
-    }
-
-    .process-step .pn .red {
-      color: var(--red)
-    }
-
-    .process-step h5 {
-      font-family: 'Montserrat', sans-serif;
-      font-weight: 800;
-      font-size: 1.1rem;
-      letter-spacing: -0.01em;
-      margin-bottom: .8rem;
-    }
-
-    .process-step p {
-      color: var(--text-soft);
-      font-size: .88rem;
-      line-height: 1.6
-    }
-
-    /* ===== CONTACT ===== */
-    #contact {
-      background: #0a0a0a;
-      color: #fff;
-      border-top: none
-    }
-
-    #contact .section-label {
-      color: var(--red)
-    }
-
-    #contact .section-label::before {
-      background: var(--red)
-    }
-
-    #contact .section-h2 {
-      color: #fff
-    }
-
-    #contact .section-h2 .red {
-      color: var(--red)
-    }
-
-    #contact .container {
-      display: grid;
-      grid-template-columns: 1.2fr 1fr;
-      gap: 4rem;
-      align-items: start
-    }
-
-    .contact-sub {
-      color: rgba(255, 255, 255, 0.65);
-      font-size: 1.05rem;
-      line-height: 1.65;
-      max-width: 50ch;
-      margin-top: 1.5rem
-    }
-
-    .contact-blocks {
-      display: flex;
-      flex-direction: column;
-      gap: 2rem
-    }
-
-    .contact-block .k {
-      font-family: 'IBM Plex Mono', monospace;
-      font-size: .65rem;
-      letter-spacing: .25em;
-      text-transform: uppercase;
-      color: rgba(255, 255, 255, 0.45);
-      margin-bottom: .5rem
-    }
-
-    .contact-block .v {
-      font-family: 'Montserrat', sans-serif;
-      font-weight: 700;
-      font-size: 1.05rem;
-      line-height: 1.4
-    }
-
-    .contact-block .v a {
-      border-bottom: 1px solid rgba(255, 255, 255, 0.25);
-      transition: border-color .25s
-    }
-
-    .contact-block .v a:hover {
-      border-color: var(--red)
-    }
-
-    .contact-block .v.addr {
-      font-family: 'Inter', sans-serif;
-      font-weight: 400;
-      font-size: .92rem;
-      color: rgba(255, 255, 255, 0.6);
-      line-height: 1.65
-    }
-
-    /* ===== FOOTER ===== */
-    footer {
-      background: #0a0a0a;
-      color: rgba(255, 255, 255, 0.8);
-      padding: 2rem;
-      border-top: 1px solid rgba(255, 255, 255, 0.1)
-    }
-
-    footer .fcontainer {
-      max-width: 1200px;
-      margin: 0 auto;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 1.5rem
-    }
-
-    footer .f-logo {
-      display: flex;
-      align-items: center
-    }
-
-    footer .f-text {
-      font-family: 'IBM Plex Mono', monospace;
-      font-size: .65rem;
-      letter-spacing: .2em;
-      text-transform: uppercase;
-      color: rgba(255, 255, 255, 0.4)
-    }
-
-    footer .f-text .red {
-      color: var(--red)
-    }
-
-    /* ===== reveal ===== */
-    .reveal {
-      opacity: 0;
-      transform: translateY(24px);
-      transition: opacity .8s ease, transform .8s ease
-    }
-
-    .reveal.in {
-      opacity: 1;
-      transform: none
-    }
-
-    /* ===== responsive ===== */
-    @media (max-width:900px) {
-      nav {
-        padding: .9rem 1.2rem;
-        gap: 1rem
-      }
-
-      .nav-links {
-        display: none
-      }
-
-      .hero {
-        padding: 4rem 1.2rem 3rem
-      }
-
-      section.block {
-        padding: 3.5rem 1.2rem
-      }
-
-      .ps-layout,
-      #contact .container {
-        grid-template-columns: 1fr;
-        gap: 2.5rem
-      }
-
-      .tech-grid,
-      .benefits-grid {
-        grid-template-columns: 1fr
-      }
-
-      .process-row {
-        grid-template-columns: 1fr;
-        border-top: 1px solid var(--line)
-      }
-
-      .process-step {
-        border-right: none;
-        border-bottom: 1px solid var(--line);
-        padding: 2rem 0
-      }
-
-      .hero-stats {
-        grid-template-columns: 1fr 1fr;
-        gap: 1.5rem
-      }
-    }
-
-    @media (prefers-reduced-motion:reduce) {
-      .reveal {
-        opacity: 1;
-        transform: none;
-        transition: none
-      }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Microtech — Fine Particle Engineering for Pharmaceuticals</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@800;900&family=Inter:wght@400;500&family=IBM+Plex+Mono:wght@500&display=swap">
+    <style>
+        :root {
+            --bg: #0a0a0a;
+            --deep-black: #050505;
+            --card: #111111;
+            --text: #ffffff;
+            --text-soft: rgba(255, 255, 255, 0.6);
+            --text-mute: rgba(255, 255, 255, 0.35);
+            --line: rgba(255, 255, 255, 0.12);
+            --highlight: #ea0000;
+            --ease-quiet: cubic-bezier(.22, 1, .36, 1);
+            --ease-precise: cubic-bezier(.4, 0, .2, 1);
+            --ease-emphasis: cubic-bezier(.16, 1, .3, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box
+        }
+
+        html {
+            scroll-behavior: auto
+        }
+
+        body {
+            background: var(--bg);
+            color: var(--text);
+            font-family: 'Inter', sans-serif;
+            font-weight: 400;
+            line-height: 1.5;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        ::selection {
+            background: var(--highlight);
+            color: #fff
+        }
+
+        /* nav */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            padding: 1.5rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: linear-gradient(180deg, rgba(10, 10, 10, 0.85), rgba(10, 10, 10, 0));
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+        }
+
+        .logo {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 900;
+            letter-spacing: -0.02em;
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+            gap: .6rem;
+        }
+
+        .logo::before {
+            content: "";
+            width: 10px;
+            height: 10px;
+            background: var(--highlight);
+            display: inline-block
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: .72rem;
+            letter-spacing: .18em;
+            text-transform: uppercase
+        }
+
+        .nav-links a {
+            color: var(--text-soft);
+            text-decoration: none;
+            transition: color .3s var(--ease-precise)
+        }
+
+        .nav-links a:hover {
+            color: var(--highlight)
+        }
+
+        .nav-cta {
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: .7rem;
+            letter-spacing: .18em;
+            text-transform: uppercase;
+            color: var(--text);
+            text-decoration: none;
+            padding: .7rem 1.2rem;
+            border: 1px solid var(--line);
+            transition: border-color .3s var(--ease-precise), background .3s var(--ease-precise);
+        }
+
+        .nav-cta:hover {
+            border-color: var(--highlight);
+            background: var(--highlight)
+        }
+
+        /* hero */
+        #hero {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 8rem 2rem 5rem;
+            overflow: hidden;
+        }
+
+        #particle-canvas {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+        }
+
+        .hero-grid {
+            position: relative;
+            z-index: 2;
+            max-width: 1400px;
+            margin: 0 auto;
+            width: 100%;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+        }
+
+        .hero-eyebrow {
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: .75rem;
+            letter-spacing: .3em;
+            text-transform: uppercase;
+            color: var(--text-mute);
+            opacity: 0;
+            transform: translateY(-20px);
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .hero-eyebrow::after {
+            content: "";
+            flex: 1;
+            max-width: 200px;
+            height: 1px;
+            background: var(--line)
+        }
+
+        .hero-title {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 900;
+            font-size: clamp(2.8rem, 8vw, 7.5rem);
+            line-height: 0.88;
+            letter-spacing: -0.03em;
+            opacity: 0;
+            transform: translateY(60px);
+            max-width: 14ch;
+        }
+
+        .hero-title em {
+            font-style: normal;
+            color: var(--highlight)
+        }
+
+        .hero-sub {
+            max-width: 46ch;
+            font-size: 1.15rem;
+            line-height: 1.55;
+            color: var(--text-soft);
+            opacity: 0;
+            transform: translateY(30px);
+            margin-top: .5rem;
+        }
+
+        .hero-meta {
+            display: flex;
+            gap: 3rem;
+            flex-wrap: wrap;
+            margin-top: 3rem;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        .hero-meta div {
+            display: flex;
+            flex-direction: column;
+            gap: .4rem
+        }
+
+        .hero-meta .k {
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: .65rem;
+            letter-spacing: .25em;
+            text-transform: uppercase;
+            color: var(--text-mute)
+        }
+
+        .hero-meta .v {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800;
+            font-size: 1.3rem;
+            letter-spacing: -0.01em
+        }
+
+        .hero-meta .v small {
+            font-size: .7rem;
+            color: var(--text-mute);
+            font-weight: 500;
+            margin-left: .3rem;
+            font-family: 'Inter', sans-serif
+        }
+
+        .hero-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: .8rem;
+            margin-top: 3rem;
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: .78rem;
+            letter-spacing: .2em;
+            text-transform: uppercase;
+            color: var(--text);
+            text-decoration: none;
+            padding: 1.1rem 1.8rem;
+            border: 1px solid var(--text);
+            opacity: 0;
+            transform: translateY(16px);
+            transition: background .3s var(--ease-precise), color .3s var(--ease-precise), border-color .3s var(--ease-precise);
+        }
+
+        .hero-cta:hover {
+            background: var(--highlight);
+            border-color: var(--highlight);
+            color: #fff
+        }
+
+        .hero-cta .arrow {
+            transition: transform .3s var(--ease-precise)
+        }
+
+        .hero-cta:hover .arrow {
+            transform: translateX(6px)
+        }
+
+        .hero-corner {
+            position: absolute;
+            bottom: 2rem;
+            right: 2rem;
+            z-index: 2;
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: .65rem;
+            letter-spacing: .25em;
+            text-transform: uppercase;
+            color: var(--text-mute);
+            text-align: right;
+            line-height: 1.8;
+        }
+
+        .hero-corner span {
+            color: var(--highlight)
+        }
+
+        /* generic section */
+        section {
+            padding: 8rem 2rem;
+            position: relative
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto
+        }
+
+        .container-narrow {
+            max-width: 860px;
+            margin: 0 auto
+        }
+
+        .section-label {
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: .72rem;
+            letter-spacing: .3em;
+            text-transform: uppercase;
+            color: var(--highlight);
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .section-label::before {
+            content: "";
+            width: 48px;
+            height: 2px;
+            background: var(--highlight)
+        }
+
+        .section-h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 900;
+            font-size: clamp(2rem, 5vw, 4.2rem);
+            line-height: 0.92;
+            letter-spacing: -0.025em;
+            max-width: 18ch;
+        }
+
+        .section-h2 em {
+            font-style: normal;
+            color: var(--highlight)
+        }
+
+        .section-lead {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            color: var(--text-soft);
+            max-width: 52ch;
+            margin-top: 2rem;
+        }
+
+        .fade-up {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 1s var(--ease-quiet), transform 1s var(--ease-quiet)
+        }
+
+        .fade-up.is-in {
+            opacity: 1;
+            transform: none
+        }
+
+        /* intro / about */
+        #intro {
+            background: var(--bg)
+        }
+
+        #intro .container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 6rem;
+            align-items: start
+        }
+
+        #intro .right {
+            padding-top: 1rem
+        }
+
+        .intro-stats {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-top: 3rem;
+            border-top: 1px solid var(--line);
+            padding-top: 2.5rem;
+        }
+
+        .intro-stat .n {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 900;
+            font-size: 2.8rem;
+            letter-spacing: -0.02em;
+            line-height: 1
+        }
+
+        .intro-stat .n em {
+            font-style: normal;
+            color: var(--highlight)
+        }
+
+        .intro-stat .l {
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: .7rem;
+            letter-spacing: .2em;
+            text-transform: uppercase;
+            color: var(--text-mute);
+            margin-top: .7rem
+        }
+
+        /* sticky two-column tech */
+        #tech {
+            background: var(--deep-black);
+            border-top: 1px solid var(--line);
+            border-bottom: 1px solid var(--line)
+        }
+
+        #tech .sticky-pair {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 6rem;
+            align-items: start
+        }
+
+        #tech .left {
+            position: sticky;
+            top: 0;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center
+        }
+
+        #tech .right {
+            display: flex;
+            flex-direction: column;
+            gap: 5rem;
+            padding: 6rem 0
+        }
+
+        .tech-block {
+            border-top: 1px solid var(--line);
+            padding-top: 2.5rem
+        }
+
+        .tech-block .num {
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: .7rem;
+            letter-spacing: .2em;
+            color: var(--highlight);
+            margin-bottom: 1.5rem
+        }
+
+        .tech-block h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800;
+            font-size: 1.8rem;
+            letter-spacing: -0.015em;
+            line-height: 1.1;
+            margin-bottom: 1.2rem
+        }
+
+        .tech-block p {
+            color: var(--text-soft);
+            line-height: 1.65
+        }
+
+        .tech-block .spec {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin-top: 2rem;
+            border-top: 1px solid var(--line);
+            padding-top: 1.5rem
+        }
+
+        .tech-block .spec div span {
+            display: block;
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: .65rem;
+            letter-spacing: .2em;
+            text-transform: uppercase;
+            color: var(--text-mute);
+            margin-bottom: .4rem
+        }
+
+        .tech-block .spec div strong {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800;
+            font-size: 1.1rem;
+            color: var(--text)
+        }
+
+        /* capabilities row list */
+        #cap {
+            background: var(--bg)
+        }
+
+        .cap-head {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            flex-wrap: wrap;
+            gap: 2rem;
+            margin-bottom: 5rem
+        }
+
+        .cap-list {
+            border-top: 1px solid var(--line)
+        }
+
+        .cap-row {
+            display: grid;
+            grid-template-columns: 80px 1fr 1.2fr 100px;
+            gap: 2rem;
+            align-items: center;
+            padding: 2.5rem 0;
+            border-bottom: 1px solid var(--line);
+            position: relative;
+            transition: padding-left .5s var(--ease-quiet);
+        }
+
+        .cap-row::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 2px;
+            height: 0;
+            background: var(--highlight);
+            transition: height .6s var(--ease-quiet);
+        }
+
+        .cap-row:hover::before {
+            height: 100%
+        }
+
+        .cap-row:hover {
+            padding-left: 1.5rem
+        }
+
+        .cap-row .idx {
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: .72rem;
+            letter-spacing: .2em;
+            color: var(--text-mute)
+        }
+
+        .cap-row h4 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800;
+            font-size: 1.45rem;
+            letter-spacing: -0.01em;
+            line-height: 1.1;
+            transition: color .5s var(--ease-quiet)
+        }
+
+        .cap-row:hover h4 {
+            color: var(--highlight)
+        }
+
+        .cap-row p {
+            font-size: .95rem;
+            color: var(--text-soft);
+            line-height: 1.55;
+            opacity: .6;
+            transition: opacity .5s var(--ease-quiet)
+        }
+
+        .cap-row:hover p {
+            opacity: 1
+        }
+
+        .cap-row .size {
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: .85rem;
+            color: var(--text);
+            text-align: right
+        }
+
+        /* process */
+        #process {
+            background: var(--deep-black);
+            border-top: 1px solid var(--line);
+            border-bottom: 1px solid var(--line)
+        }
+
+        .process-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 0;
+            margin-top: 5rem;
+            border-top: 1px solid var(--line)
+        }
+
+        .process-step {
+            padding: 3rem 2rem 3rem 0;
+            border-right: 1px solid var(--line);
+            position: relative
+        }
+
+        .process-step:last-child {
+            border-right: none
+        }
+
+        .process-step .step-n {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 900;
+            font-size: 3.5rem;
+            letter-spacing: -0.04em;
+            color: var(--text-mute);
+            line-height: 1;
+            margin-bottom: 2rem
+        }
+
+        .process-step .step-n em {
+            font-style: normal;
+            color: var(--highlight)
+        }
+
+        .process-step h5 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800;
+            font-size: 1.2rem;
+            letter-spacing: -0.01em;
+            margin-bottom: 1rem
+        }
+
+        .process-step p {
+            font-size: .9rem;
+            color: var(--text-soft);
+            line-height: 1.6
+        }
+
+        .process-step .tag {
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: .65rem;
+            letter-spacing: .2em;
+            text-transform: uppercase;
+            color: var(--text-mute);
+            margin-top: 2rem;
+            display: block
+        }
+
+        /* applications */
+        #apps {
+            background: var(--bg)
+        }
+
+        .apps-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2px;
+            background: var(--line);
+            margin-top: 5rem;
+            border: 1px solid var(--line)
+        }
+
+        .app-card {
+            background: var(--bg);
+            padding: 3rem 2.5rem;
+            min-height: 320px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: background .4s var(--ease-precise);
+            position: relative;
+        }
+
+        .app-card:hover {
+            background: var(--card)
+        }
+
+        .app-card .a-num {
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: .7rem;
+            letter-spacing: .2em;
+            color: var(--text-mute)
+        }
+
+        .app-card h6 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800;
+            font-size: 1.5rem;
+            letter-spacing: -0.015em;
+            line-height: 1.1;
+            margin: 2rem 0 1rem
+        }
+
+        .app-card p {
+            font-size: .92rem;
+            color: var(--text-soft);
+            line-height: 1.6
+        }
+
+        .app-card .a-foot {
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: .65rem;
+            letter-spacing: .2em;
+            text-transform: uppercase;
+            color: var(--highlight);
+            margin-top: 2rem
+        }
+
+        /* quality */
+        #quality {
+            background: var(--deep-black);
+            border-top: 1px solid var(--line)
+        }
+
+        .quality-layout {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 6rem;
+            margin-top: 5rem
+        }
+
+        .quality-list {
+            list-style: none
+        }
+
+        .quality-list li {
+            padding: 1.5rem 0;
+            border-bottom: 1px solid var(--line);
+            display: grid;
+            grid-template-columns: auto 1fr auto;
+            gap: 1.5rem;
+            align-items: baseline;
+        }
+
+        .quality-list li .q-code {
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: .7rem;
+            letter-spacing: .15em;
+            color: var(--highlight)
+        }
+
+        .quality-list li .q-name {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800;
+            font-size: 1.05rem
+        }
+
+        .quality-list li .q-meta {
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: .65rem;
+            letter-spacing: .15em;
+            color: var(--text-mute);
+            text-transform: uppercase
+        }
+
+        .quality-note {
+            border-left: 2px solid var(--highlight);
+            padding: 1rem 0 1rem 2rem;
+        }
+
+        .quality-note h6 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800;
+            font-size: 1.4rem;
+            letter-spacing: -0.01em;
+            margin-bottom: 1rem
+        }
+
+        .quality-note p {
+            color: var(--text-soft);
+            line-height: 1.65
+        }
+
+        .quality-stats {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-top: 3rem
+        }
+
+        .quality-stat .n {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 900;
+            font-size: 2.5rem;
+            letter-spacing: -0.02em;
+            line-height: 1
+        }
+
+        .quality-stat .n em {
+            font-style: normal;
+            color: var(--highlight)
+        }
+
+        .quality-stat .l {
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: .65rem;
+            letter-spacing: .2em;
+            text-transform: uppercase;
+            color: var(--text-mute);
+            margin-top: .6rem
+        }
+
+        /* stats band */
+        #stats {
+            background: var(--bg);
+            padding: 6rem 2rem;
+            border-top: 1px solid var(--line)
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            max-width: 1400px;
+            margin: 0 auto
+        }
+
+        .stat-cell {
+            border-top: 1px solid var(--line);
+            padding-top: 2rem
+        }
+
+        .stat-cell .n {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 900;
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            letter-spacing: -0.03em;
+            line-height: 1
+        }
+
+        .stat-cell .n em {
+            font-style: normal;
+            color: var(--highlight)
+        }
+
+        .stat-cell .l {
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: .7rem;
+            letter-spacing: .2em;
+            text-transform: uppercase;
+            color: var(--text-mute);
+            margin-top: 1rem;
+            line-height: 1.5
+        }
+
+        /* contact */
+        #contact {
+            background: var(--deep-black);
+            border-top: 1px solid var(--line);
+            padding: 10rem 2rem
+        }
+
+        #contact .container {
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 6rem;
+            align-items: start
+        }
+
+        .contact-h {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 900;
+            font-size: clamp(2.5rem, 6vw, 5rem);
+            line-height: 0.9;
+            letter-spacing: -0.03em
+        }
+
+        .contact-h em {
+            font-style: normal;
+            color: var(--highlight)
+        }
+
+        .contact-sub {
+            color: var(--text-soft);
+            margin-top: 2rem;
+            font-size: 1.05rem;
+            line-height: 1.6;
+            max-width: 46ch
+        }
+
+        .contact-blocks {
+            display: flex;
+            flex-direction: column;
+            gap: 2.5rem
+        }
+
+        .contact-block .k {
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: .65rem;
+            letter-spacing: .25em;
+            text-transform: uppercase;
+            color: var(--text-mute);
+            margin-bottom: .7rem
+        }
+
+        .contact-block .v {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800;
+            font-size: 1.1rem;
+            letter-spacing: -0.01em;
+            line-height: 1.4
+        }
+
+        .contact-block .v a {
+            color: var(--text);
+            text-decoration: none;
+            border-bottom: 1px solid var(--line);
+            transition: border-color .3s
+        }
+
+        .contact-block .v a:hover {
+            border-color: var(--highlight)
+        }
+
+        .contact-block .v.addr {
+            font-weight: 400;
+            font-family: 'Inter', sans-serif;
+            font-size: .95rem;
+            color: var(--text-soft);
+            line-height: 1.6
+        }
+
+        /* footer */
+        footer {
+            background: var(--bg);
+            padding: 3rem 2rem;
+            border-top: 1px solid var(--line)
+        }
+
+        footer .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 2rem
+        }
+
+        footer .f-left {
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: .7rem;
+            letter-spacing: .2em;
+            text-transform: uppercase;
+            color: var(--text-mute)
+        }
+
+        footer .f-right {
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: .7rem;
+            letter-spacing: .2em;
+            text-transform: uppercase;
+            color: var(--text-mute)
+        }
+
+        footer .f-right span {
+            color: var(--highlight)
+        }
+
+        /* responsive */
+        @media (max-width:900px) {
+            nav {
+                padding: 1rem 1.2rem
+            }
+
+            .nav-links {
+                display: none
+            }
+
+            section {
+                padding: 5rem 1.5rem
+            }
+
+            #intro .container,
+            #tech .sticky-pair,
+            .quality-layout,
+            #contact .container {
+                grid-template-columns: 1fr;
+                gap: 3rem
+            }
+
+            #tech .left {
+                position: static;
+                height: auto;
+                padding: 0
+            }
+
+            #tech .right {
+                padding: 2rem 0
+            }
+
+            .cap-row {
+                grid-template-columns: 50px 1fr;
+                gap: 1rem
+            }
+
+            .cap-row p,
+            .cap-row .size {
+                grid-column: 1 / -1;
+                padding-left: 50px
+            }
+
+            .cap-row .size {
+                text-align: left
+            }
+
+            .process-grid {
+                grid-template-columns: 1fr;
+                border-top: none
+            }
+
+            .process-step {
+                border-right: none;
+                border-bottom: 1px solid var(--line);
+                padding: 2.5rem 0
+            }
+
+            .apps-grid {
+                grid-template-columns: 1fr
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 1.5rem
+            }
+
+            .intro-stats {
+                grid-template-columns: 1fr
+            }
+
+            .hero-meta {
+                gap: 1.5rem
+            }
+
+            .hero-corner {
+                display: none
+            }
+        }
+
+        @media (prefers-reduced-motion:reduce) {
+            * {
+                animation-duration: 0.01ms !important;
+                transition-duration: 0.01ms !important
+            }
+
+            .fade-up {
+                opacity: 1;
+                transform: none
+            }
+        }
+    </style>
 </head>
 
 <body>
 
-  <!-- NAV -->
-  <nav>
-    <a href="#" class="nav-logo">
-      <img src="./logo.svg" class="logo-svg" alt="Microtech India logo">
-    </a>
-    <div class="nav-links">
-      <a href="#particle-size">Particle Sizes</a>
-      <a href="#technology">Features</a>
-      <a href="#benefits">Benefits</a>
-      <a href="#process">Facility</a>
-    </div>
-    <a href="#contact" class="nav-cta">Contact Us</a>
-  </nav>
+    <nav>
+        <a href="#" class="logo">MICROTECH</a>
+        <div class="nav-links">
+            <a href="#intro">Company</a>
+            <a href="#tech">Technology</a>
+            <a href="#cap">Capabilities</a>
+            <a href="#process">Process</a>
+            <a href="#quality">Quality</a>
+        </div>
+        <a href="#contact" class="nav-cta">Request Datasheet</a>
+    </nav>
 
-  <!-- HERO -->
-  <section class="hero">
-    <div class="hero-eyebrow reveal">Microtech India · Contract Micronization</div>
-    <h1 class="reveal">Precision <span class="red">micronization</span> for pharmaceutical excellence.</h1>
-    <p class="lead reveal">Microtech India is a Gujarat (India) based Contract Micronizing Service Provider Company that
-      offers very effective <strong>CONTRACT MICRONIZATION SERVICES</strong>, Micronizing Job Work in India dedicated to
-      comply the needs of the pharmaceutical industry. Microtech India Provide FDA approved facility at Ankleshwar and
-      Vapi Unit, operates according to high standards.<br><br>
-      We offer consistent, reliable and cost-effective contract micronization services for your small quantity
-      <strong>(10 Grms)</strong> to <strong>large volume routine productions</strong>. In addition by our co-operation
-      we will help you to reduce "time-to-market" for your R&D projects.
-    </p>
-    <div class="hero-actions reveal">
-      <a href="#contact" class="btn-primary">Request a Quote <span class="arrow">→</span></a>
-      <a href="#particle-size" class="btn-secondary">View Mesh Sizes</a>
-    </div>
+    <!-- HERO -->
+    <section id="hero">
+        <canvas id="particle-canvas"></canvas>
+        <div class="hero-grid">
+            <div class="hero-eyebrow" id="hero-eyebrow">Est. 2007 · Basel · Boston · Singapore</div>
+            <h1 class="hero-title" id="hero-title">Fine particles, <em>precisely</em> engineered for medicine.</h1>
+            <p class="hero-sub" id="hero-sub">Microtech is a pharmaceutical particle-engineering partner. We micronise,
+                classify, and functionalise active ingredients to controlled size distributions — from 0.5 to 200
+                microns — for inhalation, injectable, and oral solid dose products.</p>
+            <a href="#contact" class="hero-cta" id="hero-cta">Request a technical brief <span class="arrow">→</span></a>
+            <div class="hero-meta" id="hero-meta">
+                <div><span class="k">Particle range</span><span class="v">0.5–200<small>μm</small></span></div>
+                <div><span class="k">GMP status</span><span class="v">Grade A / ISO 5</span></div>
+                <div><span class="k">Production</span><span class="v">12<small>countries served</small></span></div>
+            </div>
+        </div>
+        <div class="hero-corner">
+            Scroll to begin<br><span>↓ 01 / 08</span>
+        </div>
+    </section>
 
-    <div class="hero-stats reveal">
-      <div class="hero-stat">
-        <div class="n"><span class="red">FDA</span></div>
-        <div class="l">Approved Facility</div>
-      </div>
-      <div class="hero-stat">
-        <div class="n"><span class="red">10g</span></div>
-        <div class="l">To Large Volume</div>
-      </div>
-      <div class="hero-stat">
-        <div class="n"><span class="red">cGMP</span></div>
-        <div class="l">Standard Practices</div>
-      </div>
-      <div class="hero-stat">
-        <div class="n"><span class="red">100%</span></div>
-        <div class="l">Batch Traceability</div>
-      </div>
-    </div>
-  </section>
+    <!-- INTRO -->
+    <section id="intro">
+        <div class="container">
+            <div class="left">
+                <div class="section-label fade-up">Who we are</div>
+                <h2 class="section-h2 fade-up">A particle <em>engineering</em> partner built for the molecule, not the
+                    batch.</h2>
+            </div>
+            <div class="right">
+                <p class="section-lead fade-up">Founded in 2007 by a team of formulation scientists and process
+                    engineers, Microtech exists to solve the single most stubborn problem in modern therapeutics:
+                    getting the right amount of the right molecule to the right place in the body.</p>
+                <p class="section-lead fade-up" style="margin-top:1.5rem">We operate three GMP-certified facilities —
+                    Basel, Boston, and Singapore — running 24/7 jet-milling, bead-milling, spray-drying, and
+                    supercritical fluid lines. Every gram of material is traceable from feedstock to packaged API.</p>
+                <div class="intro-stats fade-up">
+                    <div class="intro-stat">
+                        <div class="n"><em>17</em></div>
+                        <div class="l">Years operating</div>
+                    </div>
+                    <div class="intro-stat">
+                        <div class="n"><em>3</em></div>
+                        <div class="l">GMP facilities</div>
+                    </div>
+                    <div class="intro-stat">
+                        <div class="n"><em>240+</em></div>
+                        <div class="l">APIs processed</div>
+                    </div>
+                    <div class="intro-stat">
+                        <div class="n"><em>0</em></div>
+                        <div class="l">Recalls since 2014</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <!-- COMPARATIVE PARTICLE SIZE TABLE -->
-  <section class="block" id="particle-size">
-    <div class="container">
-      <div class="ps-layout">
-        <div class="ps-info reveal">
-          <div class="section-label">Comparative Particle Size</div>
-          <h2 class="section-h2">Standard US Mesh <span class="red">Conversion</span> Chart</h2>
-          <p class="section-lead">Below is a reference table for standard particle size conversions used in our
-            micronization processes.</p>
-          <br>
-          <p>Micronization is the process of reducing the average diameter of a solid material's particles. In
-            pharmaceuticals, this process is essential for improving the dissolution rate and bioavailability of poorly
-            soluble drugs.</p>
-          <p>At Microtech India, our spiral jet mills are capable of achieving precise particle size distributions (PSD)
-            ranging from a few millimeters down to 1-2 microns, meeting stringent pharmaceutical standards.</p>
-          <p>We tailor the milling parameters—such as feed rate, grinding pressure, and nozzle geometry—to match your
-            exact target mesh size.</p>
-        </div>
-        <div class="reveal">
-          <table class="ps-table">
-            <thead>
-              <tr>
-                <th>U.S. Mesh</th>
-                <th>Microns (μm)</th>
-                <th>Inches</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>10</td>
-                <td>2000</td>
-                <td>0.0787</td>
-              </tr>
-              <tr>
-                <td>12</td>
-                <td>1680</td>
-                <td>0.0661</td>
-              </tr>
-              <tr>
-                <td>14</td>
-                <td>1410</td>
-                <td>0.0555</td>
-              </tr>
-              <tr>
-                <td>16</td>
-                <td>1190</td>
-                <td>0.0469</td>
-              </tr>
-              <tr>
-                <td>18</td>
-                <td>1000</td>
-                <td>0.0394</td>
-              </tr>
-              <tr>
-                <td>20</td>
-                <td>841</td>
-                <td>0.0331</td>
-              </tr>
-              <tr>
-                <td>25</td>
-                <td>707</td>
-                <td>0.0280</td>
-              </tr>
-              <tr>
-                <td>30</td>
-                <td>595</td>
-                <td>.0232</td>
-              </tr>
-              <tr>
-                <td>35</td>
-                <td>500</td>
-                <td>.0197</td>
-              </tr>
-              <tr class="highlight">
-                <td>40</td>
-                <td>420</td>
-                <td>.165</td>
-              </tr>
-              <tr>
-                <td>45</td>
-                <td>354</td>
-                <td>0.138</td>
-              </tr>
-              <tr>
-                <td>50</td>
-                <td>297</td>
-                <td>0.117</td>
-              </tr>
-              <tr>
-                <td>60</td>
-                <td>250</td>
-                <td>.0098</td>
-              </tr>
-              <tr>
-                <td>70</td>
-                <td>210</td>
-                <td>.0083</td>
-              </tr>
-              <tr>
-                <td>80</td>
-                <td>177</td>
-                <td>.0070</td>
-              </tr>
-              <tr>
-                <td>100</td>
-                <td>149</td>
-                <td>.0059</td>
-              </tr>
-              <tr>
-                <td>120</td>
-                <td>125</td>
-                <td>.0049</td>
-              </tr>
-              <tr>
-                <td>140</td>
-                <td>105</td>
-                <td>.0041</td>
-              </tr>
-              <tr>
-                <td>170</td>
-                <td>88</td>
-                <td>.0035</td>
-              </tr>
-              <tr>
-                <td>200</td>
-                <td>74</td>
-                <td>.0029</td>
-              </tr>
-              <tr>
-                <td>230</td>
-                <td>63</td>
-                <td>.0024</td>
-              </tr>
-              <tr>
-                <td>270</td>
-                <td>53</td>
-                <td>.0021</td>
-              </tr>
-              <tr>
-                <td>325</td>
-                <td>44</td>
-                <td>.0017</td>
-              </tr>
-              <tr>
-                <td>400</td>
-                <td>37</td>
-                <td>.0015</td>
-              </tr>
-              <tr>
-                <td>550</td>
-                <td>25</td>
-                <td>.00099</td>
-              </tr>
-              <tr>
-                <td>625</td>
-                <td>20</td>
-                <td>.00079</td>
-              </tr>
-              <tr class="highlight">
-                <td>1250</td>
-                <td>10</td>
-                <td>.000394</td>
-              </tr>
-              <tr>
-                <td>1750</td>
-                <td>8</td>
-                <td>.000315</td>
-              </tr>
-              <tr class="highlight">
-                <td>2500</td>
-                <td>5</td>
-                <td>.000197</td>
-              </tr>
-              <tr>
-                <td>5000</td>
-                <td>2.5</td>
-                <td>.000099</td>
-              </tr>
-              <tr>
-                <td>12000</td>
-                <td>1</td>
-                <td>.0000394</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-    </div>
-  </section>
+    <!-- TECHNOLOGY -->
+    <section id="tech">
+        <div class="container">
+            <div class="sticky-pair">
+                <div class="left">
+                    <div class="section-label fade-up">Technology stack</div>
+                    <h2 class="section-h2 fade-up">Four engineered <em>pathways</em> from API crystal to clinical dose.
+                    </h2>
+                    <p class="section-lead fade-up" style="margin-top:1.5rem">Particle size is not a finishing step. It
+                        is a formulation decision that dictates dissolution rate, bioavailability, deposition profile,
+                        and shelf stability. We choose the pathway from the target, not the equipment.</p>
+                </div>
+                <div class="right">
 
-  <!-- FEATURES -->
-  <section class="block" id="technology">
-    <div class="container">
-      <div class="section-label reveal">Features</div>
-      <h2 class="section-h2 reveal">Features of <span class="red">Micronization</span></h2>
+                    <div class="tech-block fade-up">
+                        <div class="num">01 / JET MILLING</div>
+                        <h3>Spiral jet micronisation</h3>
+                        <p>Compressed nitrogen at 7 bar accelerates particles through a venturi into a counter-rotating
+                            chamber. Inter-particle collisions reduce size to 1–10 μm without heat input — critical for
+                            thermolabile APIs and high-potency compounds. Output is captured in a cyclone and graded by
+                            cascade impactor.</p>
+                        <div class="spec">
+                            <div><span>Target range</span><strong>1–10 μm D50</strong></div>
+                            <div><span>Throughput</span><strong>5–80 kg/h</strong></div>
+                        </div>
+                    </div>
 
-      <div class="tech-grid">
-        <div class="tech-card reveal">
-          <div class="num">01 / PARTICLE SIZE</div>
-          <h3>Any Ranges</h3>
-          <p>Average particle size any ranges microns oil and moisture free high pressure filtered air.</p>
-        </div>
+                    <div class="tech-block fade-up">
+                        <div class="num">02 / BEAD MILLING</div>
+                        <h3>Wet nanomilling</h3>
+                        <p>A rotor-stator agitates yttria-stabilised zirconia beads against a drug suspension, shearing
+                            crystals to 100–500 nm. The result is a stable nanocrystal dispersion — bioavailability
+                            gains of 4× to 12× over micronised material for BCS Class II compounds.</p>
+                        <div class="spec">
+                            <div><span>Target range</span><strong>100–500 nm</strong></div>
+                            <div><span>Batch size</span><strong>2–400 L</strong></div>
+                        </div>
+                    </div>
 
-        <div class="tech-card reveal">
-          <div class="num">02 / NITROGEN AIR</div>
-          <h3>Sensitive Products</h3>
-          <p>Nitrogen air is also available for air sensitive products.</p>
-        </div>
+                    <div class="tech-block fade-up">
+                        <div class="num">03 / SPRAY DRYING</div>
+                        <h3>Engineered amorphous dispersions</h3>
+                        <p>API and polymer excipient are co-dissolved and atomised into a heated chamber. Solvent
+                            evaporation is faster than crystal nucleation, locking the API into an amorphous solid
+                            dispersion. Used for poorly soluble molecules and inhaled powder platforms.</p>
+                        <div class="spec">
+                            <div><span>Target range</span><strong>1–5 μm MMAD</strong></div>
+                            <div><span>Solvents</span><strong>11 approved</strong></div>
+                        </div>
+                    </div>
 
-        <div class="tech-card reveal">
-          <div class="num">03 / TECHNOLOGY</div>
-          <h3>Ambient Process</h3>
-          <p>Ambient process with latest technologies.</p>
-        </div>
+                    <div class="tech-block fade-up">
+                        <div class="num">04 / SUPERCRITICAL</div>
+                        <h3>RESS & SAS crystallisation</h3>
+                        <p>Supercritical CO₂ at 31 °C and 74 bar acts as both solvent and antisolvent. Particles
+                            nucleate and grow under tight thermodynamic control, producing uniform polymorphs with no
+                            residual solvent — the cleanest route available for respiratory and parenteral APIs.</p>
+                        <div class="spec">
+                            <div><span>Target range</span><strong>0.5–3 μm</strong></div>
+                            <div><span>Pressure</span><strong>up to 300 bar</strong></div>
+                        </div>
+                    </div>
 
-        <div class="tech-card reveal">
-          <div class="num">04 / GRINDING</div>
-          <h3>No Moving Parts</h3>
-          <p>Stationary grinding chamber with no moving parts.</p>
+                </div>
+            </div>
         </div>
+    </section>
 
-        <div class="tech-card reveal">
-          <div class="num">05 / THROUGHPUT</div>
-          <h3>Reproducible</h3>
-          <p>Reproducible & High throughput process.</p>
-        </div>
-      </div>
-    </div>
-  </section>
+    <!-- CAPABILITIES -->
+    <section id="cap">
+        <div class="container">
+            <div class="cap-head">
+                <div>
+                    <div class="section-label fade-up">Capabilities</div>
+                    <h2 class="section-h2 fade-up">Beyond size reduction.</h2>
+                </div>
+                <p class="section-lead fade-up" style="max-width:38ch;margin:0">Particle engineering is the combination
+                    of size, morphology, surface energy, and polymorph — controlled simultaneously.</p>
+            </div>
 
-  <!-- BENEFITS -->
-  <section class="block" id="benefits">
-    <div class="container">
-      <div class="section-label reveal">Benefits</div>
-      <h2 class="section-h2 reveal">Benefits of <span class="red">Micronization</span></h2>
+            <div class="cap-list">
+                <div class="cap-row fade-up">
+                    <div class="idx">01</div>
+                    <h4>Particle size classification</h4>
+                    <p>Air classification to D90 within ±5% across 1–200 μm, validated by laser diffraction and cascade
+                        impactor.</p>
+                    <div class="size">1–200 μm</div>
+                </div>
+                <div class="cap-row fade-up">
+                    <div class="idx">02</div>
+                    <h4>Polymorph control</h4>
+                    <p>Targeted crystallisation to a single polymorphic form, verified by XRPD, DSC, and Raman mapping
+                        on every batch.</p>
+                    <div class="size">XRPD / DSC</div>
+                </div>
+                <div class="cap-row fade-up">
+                    <div class="idx">03</div>
+                    <h4>Surface functionalisation</h4>
+                    <p>Coating and encapsulation with PEG, PLGA, or lipid shells to control release kinetics and
+                        targeted deposition.</p>
+                    <div class="size">5–200 nm shell</div>
+                </div>
+                <div class="cap-row fade-up">
+                    <div class="idx">04</div>
+                    <h4>Residual solvent removal</h4>
+                    <p>Vacuum drying and fluidised-bed desorption to ICH Q3C limits — typically &lt; 100 ppm for Class 2
+                        solvents.</p>
+                    <div class="size">&lt; 100 ppm</div>
+                </div>
+                <div class="cap-row fade-up">
+                    <div class="idx">05</div>
+                    <h4>Potency containment</h4>
+                    <p>OEB-5 isolated glovebox lines for highly potent APIs, with validated &lt; 0.1 μg/m³ operator
+                        exposure.</p>
+                    <div class="size">OEB 5</div>
+                </div>
+                <div class="cap-row fade-up">
+                    <div class="idx">06</div>
+                    <h4>Analytical release</h4>
+                    <p>In-house QC release — PSD, BET, SEM, XRPD, DSC, TGA, HPLC — under 21 CFR Part 11 compliant
+                        systems.</p>
+                    <div class="size">7 methods</div>
+                </div>
+                <div class="cap-row fade-up">
+                    <div class="idx">07</div>
+                    <h4>Scale-up & tech transfer</h4>
+                    <p>From 10 g feasibility through 500 kg commercial, with documented tech transfer packages ready for
+                        filing.</p>
+                    <div class="size">10 g → 500 kg</div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-      <div class="benefits-grid">
-        <div class="benefit-card reveal">
-          <div class="b-num">01</div>
-          <h4>Improved Bioavailability</h4>
-          <p>Improved bioavailability and dissolution of poorly soluble API's.</p>
-          <div class="tag">Solubility</div>
+    <!-- PROCESS -->
+    <section id="process">
+        <div class="container">
+            <div class="section-label fade-up">How we work</div>
+            <h2 class="section-h2 fade-up">A four-stage path from <em>feasibility</em> to commercial supply.</h2>
+            <div class="process-grid">
+                <div class="process-step fade-up">
+                    <div class="step-n"><em>01</em></div>
+                    <h5>Feasibility</h5>
+                    <p>10–100 g samples are processed across candidate pathways. PSD, polymorph, and yield are measured.
+                        A target specification is drafted jointly with the client's formulation team.</p>
+                    <span class="tag">2–4 weeks</span>
+                </div>
+                <div class="process-step fade-up">
+                    <div class="step-n"><em>02</em></div>
+                    <h5>Optimisation</h5>
+                    <p>Design-of-experiments over pressure, feed rate, nozzle geometry, and solvent composition. The
+                        optimal setpoint is locked and a process parameter envelope is defined.</p>
+                    <span class="tag">6–10 weeks</span>
+                </div>
+                <div class="process-step fade-up">
+                    <div class="step-n"><em>03</em></div>
+                    <h5>Validation</h5>
+                    <p>Three consecutive GMP batches at pilot scale. Full analytical release, stability initiation (ICH
+                        Q1A), and CMC documentation package prepared for regulatory filing.</p>
+                    <span class="tag">3–4 months</span>
+                </div>
+                <div class="process-step fade-up">
+                    <div class="step-n"><em>04</em></div>
+                    <h5>Commercial</h5>
+                    <p>Scale to commercial line. Annual capacity reservation, dual-site redundancy, and continuing
+                        stability monitoring under a quality agreement.</p>
+                    <span class="tag">ongoing</span>
+                </div>
+            </div>
         </div>
-        <div class="benefit-card reveal">
-          <div class="b-num">02</div>
-          <h4>No Heat Degradation</h4>
-          <p>No heat degradation for powder being milled.</p>
-          <div class="tag">Thermolabile</div>
-        </div>
-        <div class="benefit-card reveal">
-          <div class="b-num">03</div>
-          <h4>Less Contamination Risk</h4>
-          <p>Less risk of metal contamination associated.</p>
-          <div class="tag">Purity</div>
-        </div>
-        <div class="benefit-card reveal">
-          <div class="b-num">04</div>
-          <h4>Cost Effective</h4>
-          <p>High quality, cost effective milling approach.</p>
-          <div class="tag">Efficiency</div>
-        </div>
-        <div class="benefit-card reveal">
-          <div class="b-num">05</div>
-          <h4>High Pressure Air</h4>
-          <p>Oil and Moisture free high pressure air and Nitrogen air also for sensitive products.</p>
-          <div class="tag">Clean Air</div>
-        </div>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- FACILITY -->
-  <section class="block" id="process">
-    <div class="container">
-      <div class="section-label reveal">Facility</div>
-      <h2 class="section-h2 reveal">Our modern <span class="red">facility</span> includes:</h2>
+    <!-- APPLICATIONS -->
+    <section id="apps">
+        <div class="container">
+            <div class="section-label fade-up">Applications</div>
+            <h2 class="section-h2 fade-up">Where our particles <em>end up</em>.</h2>
+            <div class="apps-grid">
+                <div class="app-card fade-up">
+                    <div class="a-num">01</div>
+                    <div>
+                        <h6>Inhaled therapeutics</h6>
+                        <p>DPI and MDI formulations for asthma, COPD, and inhaled antibiotics. Particles engineered to
+                            1–5 μm MMAD for deposition in the deep lung.</p>
+                    </div>
+                    <div class="a-foot">DPI · MDI · Nebuliser</div>
+                </div>
+                <div class="app-card fade-up">
+                    <div class="a-num">02</div>
+                    <div>
+                        <h6>Injectable suspensions</h6>
+                        <p>Sterile nanoparticle suspensions for subcutaneous and intramuscular depot injections.
+                            Controlled particle size ensures syringeability and prolonged release.</p>
+                    </div>
+                    <div class="a-foot">SC · IM depot</div>
+                </div>
+                <div class="app-card fade-up">
+                    <div class="a-num">03</div>
+                    <div>
+                        <h6>Oral solid dose</h6>
+                        <p>Bioavailability enhancement for BCS Class II/IV compounds via amorphous solid dispersions and
+                            nanocrystal platforms.</p>
+                    </div>
+                    <div class="a-foot">Tablet · Capsule</div>
+                </div>
+                <div class="app-card fade-up">
+                    <div class="a-num">04</div>
+                    <div>
+                        <h6>Oncology — HPAPI</h6>
+                        <p>Highly potent APIs handled in OEB-5 isolators. Daily occupational exposure limit &lt; 0.1
+                            μg/m³, validated by IH monitoring.</p>
+                    </div>
+                    <div class="a-foot">OEB 5 · &lt; 0.1 μg/m³</div>
+                </div>
+                <div class="app-card fade-up">
+                    <div class="a-num">05</div>
+                    <div>
+                        <h6>Pediatric formulations</h6>
+                        <p>Mini-tablets, sprinkles, and oral dispersible powders. Palatability and uniformity engineered
+                            via surface coating and tight PSD.</p>
+                    </div>
+                    <div class="a-foot">Mini-tab · ODF</div>
+                </div>
+                <div class="app-card fade-up">
+                    <div class="a-num">06</div>
+                    <div>
+                        <h6>Veterinary pharma</h6>
+                        <p>Particle engineering for companion animal and production animal products, including
+                            long-acting injectables and feed additives.</p>
+                    </div>
+                    <div class="a-foot">LA injectable</div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-      <div class="process-row">
-        <div class="process-step reveal">
-          <div class="pn"><span class="red">01</span></div>
-          <h5>Clean Room Technology</h5>
-          <p>State-of-the-Art Clean Room Technology including material and personal sluices.</p>
+    <!-- QUALITY -->
+    <section id="quality">
+        <div class="container">
+            <div class="section-label fade-up">Quality & compliance</div>
+            <h2 class="section-h2 fade-up">Inspected, audited, <em>and never guessing</em>.</h2>
+            <div class="quality-layout">
+                <div>
+                    <ul class="quality-list fade-up">
+                        <li><span class="q-code">FDA</span><span class="q-name">21 CFR 210 / 211</span><span
+                                class="q-meta">GMP</span></li>
+                        <li><span class="q-code">EU</span><span class="q-name">EudraLex Volume 4</span><span
+                                class="q-meta">GMP</span></li>
+                        <li><span class="q-code">ICH</span><span class="q-name">Q7 / Q8 / Q9 / Q10</span><span
+                                class="q-meta">Quality</span></li>
+                        <li><span class="q-code">ISO</span><span class="q-name">ISO 9001:2015</span><span
+                                class="q-meta">Quality system</span></li>
+                        <li><span class="q-code">ISO</span><span class="q-name">ISO 14644-1</span><span
+                                class="q-meta">Cleanroom</span></li>
+                        <li><span class="q-code">FDA</span><span class="q-name">21 CFR Part 11</span><span
+                                class="q-meta">Data integrity</span></li>
+                        <li><span class="q-code">OECD</span><span class="q-name">GLP principles</span><span
+                                class="q-meta">Lab practice</span></li>
+                    </ul>
+                </div>
+                <div>
+                    <div class="quality-note fade-up">
+                        <h6>Last FDA inspection — September 2024</h6>
+                        <p>No 483 observations issued across the Boston and Basel facilities. Three regulatory
+                            inspections in 2024, two customer audits per month on average, and a documented CAPA closure
+                            cycle of 14 days median.</p>
+                    </div>
+                    <div class="quality-stats fade-up">
+                        <div class="quality-stat">
+                            <div class="n"><em>0</em></div>
+                            <div class="l">FDA 483s in 2024</div>
+                        </div>
+                        <div class="quality-stat">
+                            <div class="n"><em>14</em><small
+                                    style="font-family:'Inter';font-weight:400;color:var(--text-mute);font-size:.6em">
+                                    days</small></div>
+                            <div class="l">Median CAPA closure</div>
+                        </div>
+                        <div class="quality-stat">
+                            <div class="n"><em>26</em></div>
+                            <div class="l">Customer audits / yr</div>
+                        </div>
+                        <div class="quality-stat">
+                            <div class="n"><em>99.4%</em></div>
+                            <div class="l">Batch release rate</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="process-step reveal">
-          <div class="pn"><span class="red">02</span></div>
-          <h5>Environmental Control</h5>
-          <p>Dedicated HVAC Systems Provide Environmental Control for Storage & Processing areas.</p>
-        </div>
-        <div class="process-step reveal">
-          <div class="pn"><span class="red">03</span></div>
-          <h5>Cleaning Verification</h5>
-          <p>Cleaning verification program.</p>
-        </div>
-        <div class="process-step reveal">
-          <div class="pn"><span class="red">04</span></div>
-          <h5>Laboratory Services</h5>
-          <p>Laboratory services including Particle size testing on MALVERN Instrument.</p>
-        </div>
-        <div class="process-step reveal">
-          <div class="pn"><span class="red">05</span></div>
-          <h5>Quality Management</h5>
-          <p>Effective Quality Management System in compliance with cGMP Documentation system.</p>
-        </div>
-        <div class="process-step reveal">
-          <div class="pn"><span class="red">06</span></div>
-          <h5>Dedicated Micronizers</h5>
-          <p>We have numbers dedicated micronizers to serve you better.</p>
-        </div>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- CONTACT -->
-  <section class="block" id="contact">
-    <div class="container">
-      <div>
-        <div class="section-label reveal">Get in touch</div>
-        <h2 class="section-h2 reveal">Let's discuss your <span class="red">micronization</span> needs.</h2>
-        <p class="contact-sub reveal">Reach out to our technical team to discuss your specific API requirements, request
-          a feasibility trial, or schedule a facility tour. We respond to all technical inquiries within 24 hours.</p>
-      </div>
-      <div class="contact-blocks">
-        <div class="contact-block reveal">
-          <div class="k">Technical & Sales Enquiries</div>
-          <div class="v"><a href="mailto:info@microtechindia.com">info@microtechindia.com</a></div>
+    <!-- STATS BAND -->
+    <section id="stats">
+        <div class="stats-grid">
+            <div class="stat-cell fade-up">
+                <div class="n"><em>17</em></div>
+                <div class="l">Years of particle engineering</div>
+            </div>
+            <div class="stat-cell fade-up">
+                <div class="n"><em>240+</em></div>
+                <div class="l">API molecules processed</div>
+            </div>
+            <div class="stat-cell fade-up">
+                <div class="n"><em>38</em></div>
+                <div class="l">Drugs on market using our particles</div>
+            </div>
+            <div class="stat-cell fade-up">
+                <div class="n"><em>12</em></div>
+                <div class="l">Countries served commercially</div>
+            </div>
         </div>
-        <div class="contact-block reveal">
-          <div class="k">Phone</div>
-          <div class="v"><a href="tel:+912266554321">+91 22 6655 4321</a></div>
-        </div>
-        <div class="contact-block reveal">
-          <div class="k">Manufacturing Facility</div>
-          <div class="v addr">Microtech India Pvt. Ltd.<br>Plot No. 45, Pharmaceutical SEZ,<br> Ahmedabad, Gujarat
-            382350<br>India</div>
-        </div>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- FOOTER -->
-  <footer>
-    <div class="fcontainer">
-      <div class="f-logo">
-        <img src="./logo.svg?v=2" class="logo-svg" alt="Microtech India logo">
-      </div>
-      <div class="f-text">© 2025 Microtech India · <span class="red">FDA Compliant · cGMP Standards</span></div>
-    </div>
-  </footer>
+    <!-- CONTACT -->
+    <section id="contact">
+        <div class="container">
+            <div>
+                <div class="section-label fade-up">Work with us</div>
+                <h2 class="contact-h fade-up">Send us your molecule. We will send back a <em>specification</em>.</h2>
+                <p class="contact-sub fade-up">Technical briefs are typically turned around in 5 business days.
+                    Feasibility samples within 4 weeks. Every conversation begins with an NDA — and a phone call with
+                    one of our senior process engineers, not a sales representative.</p>
+            </div>
+            <div class="contact-blocks">
+                <div class="contact-block fade-up">
+                    <div class="k">Technical enquiries</div>
+                    <div class="v"><a href="mailto:technical@microtech-pharma.com">technical@microtech-pharma.com</a>
+                    </div>
+                </div>
+                <div class="contact-block fade-up">
+                    <div class="k">Business development</div>
+                    <div class="v"><a href="mailto:bd@microtech-pharma.com">bd@microtech-pharma.com</a></div>
+                </div>
+                <div class="contact-block fade-up">
+                    <div class="k">Headquarters</div>
+                    <div class="v addr">Microtech Particle Sciences AG<br>Gewerbestrasse 14, 4123 Allschwil<br>Basel,
+                        Switzerland</div>
+                </div>
+                <div class="contact-block fade-up">
+                    <div class="k">Boston facility</div>
+                    <div class="v addr">120 Memorial Drive, Cambridge MA 02142<br>United States</div>
+                </div>
+                <div class="contact-block fade-up">
+                    <div class="k">Singapore facility</div>
+                    <div class="v addr">11 Biopolis Way, #05-08 Helios<br>Singapore 138667</div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <script>
-    // simple reveal on scroll
-    const reveals = document.querySelectorAll('.reveal');
-    const io = new IntersectionObserver((entries) => {
-      entries.forEach(e => {
-        if (e.isIntersecting) {
-          e.target.classList.add('in');
-          io.unobserve(e.target);
+    <footer>
+        <div class="container">
+            <div class="f-left">© 2025 Microtech Particle Sciences AG</div>
+            <div class="f-right">GMP · FDA · EMA · <span>Engineered in Switzerland</span></div>
+        </div>
+    </footer>
+
+    <!-- Three.js particle field -->
+    <script type="importmap">
+{ "imports": { "three": "https://unpkg.com/three@0.183/build/three.module.js" } }
+</script>
+
+    <script type="module">
+        import * as THREE from 'three';
+
+        const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        const isTouch = window.matchMedia('(pointer: coarse)').matches;
+
+        const canvas = document.getElementById('particle-canvas');
+        let renderer, scene, camera, points1, points2;
+        let running = true;
+        let mouseX = 0, mouseY = 0, targetX = 0, targetY = 0;
+
+        function init() {
+            const w = canvas.clientWidth || window.innerWidth;
+            const h = canvas.clientHeight || window.innerHeight;
+
+            renderer = new THREE.WebGLRenderer({ canvas, alpha: true, antialias: true });
+            renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+            renderer.setSize(w, h, false);
+
+            scene = new THREE.Scene();
+            camera = new THREE.PerspectiveCamera(60, w / h, 0.1, 100);
+            camera.position.z = 6;
+
+            // Main white particles
+            const COUNT = isTouch ? 600 : 1300;
+            const positions = new Float32Array(COUNT * 3);
+            const sizes = new Float32Array(COUNT);
+            const offsets = new Float32Array(COUNT);
+            for (let i = 0; i < COUNT; i++) {
+                positions[i * 3] = (Math.random() - 0.5) * 20;
+                positions[i * 3 + 1] = (Math.random() - 0.5) * 14;
+                positions[i * 3 + 2] = (Math.random() - 0.5) * 12;
+                sizes[i] = Math.random() * 1.4 + 0.3;
+                offsets[i] = Math.random() * Math.PI * 2;
+            }
+            const geo1 = new THREE.BufferGeometry();
+            geo1.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+            geo1.setAttribute('aSize', new THREE.BufferAttribute(sizes, 1));
+            geo1.setAttribute('aOffset', new THREE.BufferAttribute(offsets, 1));
+
+            const mat1 = new THREE.ShaderMaterial({
+                uniforms: { uTime: { value: 0 }, uColor: { value: new THREE.Color(0xffffff) } },
+                vertexShader: `
+      attribute float aSize; attribute float aOffset;
+      uniform float uTime; varying float vAlpha;
+      void main(){
+        vec3 p = position;
+        p.y += sin(uTime*0.3 + aOffset) * 0.4;
+        p.x += cos(uTime*0.22 + aOffset*0.7) * 0.25;
+        p.z += sin(uTime*0.18 + aOffset*1.3) * 0.2;
+        vec4 mv = modelViewMatrix * vec4(p,1.0);
+        gl_PointSize = aSize * (170.0 / -mv.z);
+        gl_Position = projectionMatrix * mv;
+        vAlpha = 0.5 + 0.5 * sin(uTime*0.6 + aOffset);
+      }`,
+                fragmentShader: `
+      varying float vAlpha; uniform vec3 uColor;
+      void main(){
+        vec2 uv = gl_PointCoord - vec2(0.5);
+        float d = length(uv);
+        if(d>0.5) discard;
+        float a = smoothstep(0.5,0.0,d) * vAlpha * 0.55;
+        gl_FragColor = vec4(uColor, a);
+      }`,
+                transparent: true, depthWrite: false, blending: THREE.AdditiveBlending
+            });
+            points1 = new THREE.Points(geo1, mat1);
+            scene.add(points1);
+
+            // Secondary red accent particles (smaller count)
+            const COUNT2 = isTouch ? 80 : 180;
+            const positions2 = new Float32Array(COUNT2 * 3);
+            const sizes2 = new Float32Array(COUNT2);
+            const offsets2 = new Float32Array(COUNT2);
+            for (let i = 0; i < COUNT2; i++) {
+                positions2[i * 3] = (Math.random() - 0.5) * 18;
+                positions2[i * 3 + 1] = (Math.random() - 0.5) * 12;
+                positions2[i * 3 + 2] = (Math.random() - 0.5) * 10;
+                sizes2[i] = Math.random() * 2 + 0.8;
+                offsets2[i] = Math.random() * Math.PI * 2;
+            }
+            const geo2 = new THREE.BufferGeometry();
+            geo2.setAttribute('position', new THREE.BufferAttribute(positions2, 3));
+            geo2.setAttribute('aSize', new THREE.BufferAttribute(sizes2, 1));
+            geo2.setAttribute('aOffset', new THREE.BufferAttribute(offsets2, 1));
+
+            const mat2 = new THREE.ShaderMaterial({
+                uniforms: { uTime: { value: 0 }, uColor: { value: new THREE.Color(0xea0000) } },
+                vertexShader: mat1.vertexShader,
+                fragmentShader: `
+      varying float vAlpha; uniform vec3 uColor;
+      void main(){
+        vec2 uv = gl_PointCoord - vec2(0.5);
+        float d = length(uv);
+        if(d>0.5) discard;
+        float a = smoothstep(0.5,0.0,d) * vAlpha * 0.85;
+        gl_FragColor = vec4(uColor, a);
+      }`,
+                transparent: true, depthWrite: false, blending: THREE.AdditiveBlending
+            });
+            points2 = new THREE.Points(geo2, mat2);
+            scene.add(points2);
         }
-      });
-    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
-    reveals.forEach(el => io.observe(el));
-  </script>
+
+        function onResize() {
+            if (!renderer) return;
+            const w = canvas.clientWidth || window.innerWidth;
+            const h = canvas.clientHeight || window.innerHeight;
+            renderer.setSize(w, h, false);
+            camera.aspect = w / h;
+            camera.updateProjectionMatrix();
+        }
+
+        const clock = new THREE.Clock();
+        function animate() {
+            if (!running) return;
+            requestAnimationFrame(animate);
+            const t = clock.getElapsedTime();
+            points1.material.uniforms.uTime.value = t;
+            points2.material.uniforms.uTime.value = t;
+
+            // mouse-driven rotation
+            targetX += (mouseX - targetX) * 0.04;
+            targetY += (mouseY - targetY) * 0.04;
+            scene.rotation.y = targetX * 0.25;
+            scene.rotation.x = targetY * 0.15;
+
+            renderer.render(scene, camera);
+        }
+
+        if (!prefersReduced) {
+            init();
+            animate();
+            window.addEventListener('resize', onResize);
+            if (!isTouch) {
+                window.addEventListener('mousemove', e => {
+                    mouseX = (e.clientX / window.innerWidth - 0.5) * 2;
+                    mouseY = (e.clientY / window.innerHeight - 0.5) * 2;
+                });
+            }
+        }
+
+        // pause when hero scrolled away
+        const heroEl = document.getElementById('hero');
+        const io = new IntersectionObserver(entries => {
+            entries.forEach(e => {
+                running = e.isIntersecting;
+                if (running && !prefersReduced) requestAnimationFrame(animate);
+            });
+        }, { threshold: 0 });
+        io.observe(heroEl);
+
+        // ===== Hero 4-beat cadence =====
+        function heroTimeline() {
+            const els = [
+                { el: document.getElementById('hero-eyebrow'), delay: 200 },
+                { el: document.getElementById('hero-title'), delay: 400 },
+                { el: document.getElementById('hero-sub'), delay: 700 },
+                { el: document.getElementById('hero-cta'), delay: 950 },
+                { el: document.getElementById('hero-meta'), delay: 1150 }
+            ];
+            els.forEach(({ el, delay }) => {
+                if (!el) return;
+                setTimeout(() => {
+                    el.style.transition = 'opacity 1s cubic-bezier(.22,1,.36,1), transform 1s cubic-bezier(.22,1,.36,1)';
+                    el.style.opacity = '1';
+                    el.style.transform = 'none';
+                }, delay);
+            });
+        }
+        window.addEventListener('load', heroTimeline);
+
+        // ===== fade-up on scroll =====
+        const fadeObserver = new IntersectionObserver(entries => {
+            entries.forEach(e => {
+                if (e.isIntersecting) {
+                    e.target.classList.add('is-in');
+                    fadeObserver.unobserve(e.target);
+                }
+            });
+        }, { threshold: 0.15, rootMargin: '0px 0px -80px 0px' });
+
+        document.querySelectorAll('.fade-up').forEach(el => fadeObserver.observe(el));
+    </script>
 
 </body>
 

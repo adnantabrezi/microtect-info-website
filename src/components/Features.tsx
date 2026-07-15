@@ -1,48 +1,56 @@
-const features = [
-  {
-    num: "01 / PARTICLE SIZE",
-    title: "Any Ranges",
-    desc: "Average particle size any ranges microns oil and moisture free high pressure filtered air.",
-  },
-  {
-    num: "02 / NITROGEN AIR",
-    title: "Sensitive Products",
-    desc: "Nitrogen air is also available for air sensitive products.",
-  },
-  {
-    num: "03 / TECHNOLOGY",
-    title: "Ambient Process",
-    desc: "Ambient process with latest technologies.",
-  },
-  {
-    num: "04 / GRINDING",
-    title: "No Moving Parts",
-    desc: "Stationary grinding chamber with no moving parts.",
-  },
-  {
-    num: "05 / THROUGHPUT",
-    title: "Reproducible",
-    desc: "Reproducible & High throughput process.",
-  },
-];
+import { useTranslation } from "react-i18next";
+import { IconParticleSize, IconNitrogen, IconTechnology, IconGrinding, IconThroughput } from "./Icons";
 
 export function Features() {
+  const { t } = useTranslation();
+
+  const features = [
+    {
+      icon: IconParticleSize,
+      title: t("aboutPage.caps.particle.title"),
+      desc: t("aboutPage.caps.particle.desc"),
+    },
+    {
+      icon: IconNitrogen,
+      title: t("aboutPage.caps.nitrogen.title"),
+      desc: t("aboutPage.caps.nitrogen.desc"),
+    },
+    {
+      icon: IconTechnology,
+      title: t("aboutPage.caps.ambient.title"),
+      desc: t("aboutPage.caps.ambient.desc"),
+    },
+    {
+      icon: IconGrinding,
+      title: t("aboutPage.caps.parts.title"),
+      desc: t("aboutPage.caps.parts.desc"),
+    },
+    {
+      icon: IconThroughput,
+      title: t("aboutPage.caps.throughput.title"),
+      desc: t("aboutPage.caps.throughput.desc"),
+    },
+  ];
+
   return (
     <section className="block" id="technology">
       <div className="container">
-        <div className="section-label reveal">Features</div>
-        <h2 className="section-h2 reveal">
-          Features of <span className="red">Micronization</span>
-        </h2>
+        <div className="section-label reveal">{t("aboutPage.capLabel")}</div>
+        <h2 className="section-h2 reveal" dangerouslySetInnerHTML={{ __html: t("aboutPage.capTitle") }} />
 
         <div className="tech-grid">
-          {features.map((f) => (
-            <div className="tech-card reveal" key={f.num}>
-              <div className="num">{f.num}</div>
-              <h3>{f.title}</h3>
-              <p>{f.desc}</p>
-            </div>
-          ))}
+          {features.map((f, i) => {
+            const Icon = f.icon;
+            return (
+              <div className="tech-card reveal" key={i}>
+                <div className="icon-circle">
+                  <Icon />
+                </div>
+                <h3>{f.title}</h3>
+                <p>{f.desc}</p>
+              </div>
+            );
+          })}
         </div>
       </div>
     </section>

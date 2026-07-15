@@ -1,34 +1,54 @@
+import { useTranslation } from "react-i18next";
+import { IconWhatsApp } from "./Icons";
+
 export function Contact() {
+  const { t } = useTranslation();
+
   return (
     <section className="block" id="contact">
       <div className="container">
         <div>
-          <div className="section-label reveal">Get in touch</div>
-          <h2 className="section-h2 reveal">
-            Let's discuss your <span className="red">micronization</span> needs.
-          </h2>
+          <div className="section-label reveal">{t("contactSec.label")}</div>
+          <h2 className="section-h2 reveal" dangerouslySetInnerHTML={{ __html: t("contactSec.title") }} />
           <p className="contact-sub reveal">
-            Reach out to our technical team to discuss your specific API requirements, request
-            a feasibility trial, or schedule a facility tour. We respond to all technical inquiries within 24 hours.
+            {t("contactSec.lead")} {t("contactSec.response")}
           </p>
         </div>
         <div className="contact-blocks">
           <div className="contact-block reveal">
-            <div className="k">Email</div>
+            <div className="k">{t("contactPage.info.email")}</div>
             <div className="v">
-              <a href="mailto:micro5046@gmail.com">micro5046@gmail.com</a>
+              <a href="mailto:info@microtechindia.com">info@microtechindia.com</a>
             </div>
           </div>
           <div className="contact-block reveal">
-            <div className="k">Contact Persons</div>
+            <div className="k">{t("contactPage.info.persons")}</div>
             <div className="v contact-persons">
-              <div>Ravi Patel — <a href="tel:+918866831889">88668 31889</a></div>
-              <div>Bharat Patel — <a href="tel:+919427340658">94273 40658</a></div>
-              <div>Dhruvil Patel — <a href="tel:+919427169961">94271 69961</a></div>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.4rem' }}>
+                <span>Parv Patel — </span>
+                <a href="tel:+918866831889">88668 31889</a>
+                <a href="https://wa.me/918866831889" target="_blank" rel="noopener noreferrer" style={{ display: 'inline-flex', color: '#25D366', borderBottom: 'none' }} title="Chat on WhatsApp">
+                  <IconWhatsApp />
+                </a>
+              </div>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.4rem' }}>
+                <span>Bharat Patel — </span>
+                <a href="tel:+919427340658">94273 40658</a>
+                <a href="https://wa.me/919427340658" target="_blank" rel="noopener noreferrer" style={{ display: 'inline-flex', color: '#25D366', borderBottom: 'none' }} title="Chat on WhatsApp">
+                  <IconWhatsApp />
+                </a>
+              </div>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                <span>Dhruvil Patel — </span>
+                <a href="tel:+919427169961">94271 69961</a>
+                <a href="https://wa.me/919427169961" target="_blank" rel="noopener noreferrer" style={{ display: 'inline-flex', color: '#25D366', borderBottom: 'none' }} title="Chat on WhatsApp">
+                  <IconWhatsApp />
+                </a>
+              </div>
             </div>
           </div>
           <div className="contact-block reveal">
-            <div className="k">Office &amp; Works</div>
+            <div className="k">{t("contactPage.info.office")}</div>
             <div className="v addr">
               Microtech India<br />
               Plot No. 5046, G.I.D.C.,<br />

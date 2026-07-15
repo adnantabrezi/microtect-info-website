@@ -1,54 +1,77 @@
-const benefits = [
-  {
-    num: "01",
-    title: "Improved Bioavailability",
-    desc: "Improved bioavailability and dissolution of poorly soluble API's.",
-    tag: "Solubility",
-  },
-  {
-    num: "02",
-    title: "No Heat Degradation",
-    desc: "No heat degradation for powder being milled.",
-    tag: "Thermolabile",
-  },
-  {
-    num: "03",
-    title: "Less Contamination Risk",
-    desc: "Less risk of metal contamination associated.",
-    tag: "Purity",
-  },
-  {
-    num: "04",
-    title: "Cost Effective",
-    desc: "High quality, cost effective milling approach.",
-    tag: "Efficiency",
-  },
-  {
-    num: "05",
-    title: "High Pressure Air",
-    desc: "Oil and Moisture free high pressure air and Nitrogen air also for sensitive products.",
-    tag: "Clean Air",
-  },
-];
+import { useTranslation } from "react-i18next";
+import { IconBioavailability, IconNoHeat, IconPurity, IconEfficiency, IconCleanAir } from "./Icons";
 
 export function Benefits() {
+  const { t } = useTranslation();
+
+  const benefits = [
+    {
+      icon: IconBioavailability,
+      num: "01",
+      title: t("aboutPage.benefits.bio.title"),
+      desc: t("aboutPage.benefits.bio.desc"),
+      tag: t("aboutPage.benefits.bio.tag"),
+    },
+    {
+      icon: IconNoHeat,
+      num: "02",
+      title: t("aboutPage.benefits.heat.title"),
+      desc: t("aboutPage.benefits.heat.desc"),
+      tag: t("aboutPage.benefits.heat.tag"),
+    },
+    {
+      icon: IconPurity,
+      num: "03",
+      title: t("aboutPage.benefits.contam.title"),
+      desc: t("aboutPage.benefits.contam.desc"),
+      tag: t("aboutPage.benefits.contam.tag"),
+    },
+    {
+      icon: IconEfficiency,
+      num: "04",
+      title: t("aboutPage.benefits.cost.title"),
+      desc: t("aboutPage.benefits.cost.desc"),
+      tag: t("aboutPage.benefits.cost.tag"),
+    },
+    {
+      icon: IconCleanAir,
+      num: "05",
+      title: t("aboutPage.benefits.air.title"),
+      desc: t("aboutPage.benefits.air.desc"),
+      tag: t("aboutPage.benefits.air.tag"),
+    },
+  ];
+
   return (
     <section className="block" id="benefits">
       <div className="container">
-        <div className="section-label reveal">Benefits</div>
-        <h2 className="section-h2 reveal">
-          Benefits of <span className="red">Micronization</span>
-        </h2>
+        <div className="about-company-grid" style={{ marginBottom: '3rem' }}>
+          <div>
+            <div className="section-label reveal">{t("aboutPage.whyLabel")}</div>
+            <h2 className="section-h2 reveal" style={{ marginBottom: 0 }} dangerouslySetInnerHTML={{ __html: t("aboutPage.whyTitle") }} />
+          </div>
+          <div className="about-company-image reveal">
+            <img
+              src="/images/micronisation-cbd.jpg"
+              alt="Pharmaceutical powders micronization"
+            />
+          </div>
+        </div>
 
         <div className="benefits-grid">
-          {benefits.map((b) => (
-            <div className="benefit-card reveal" key={b.num}>
-              <div className="b-num">{b.num}</div>
-              <h4>{b.title}</h4>
-              <p>{b.desc}</p>
-              <div className="tag">{b.tag}</div>
-            </div>
-          ))}
+          {benefits.map((b, i) => {
+            const Icon = b.icon;
+            return (
+              <div className="benefit-card reveal" key={i}>
+                <div className="icon-circle">
+                  <Icon />
+                </div>
+                <h4>{b.title}</h4>
+                <p>{b.desc}</p>
+                <div className="tag">{b.tag}</div>
+              </div>
+            );
+          })}
         </div>
       </div>
     </section>
