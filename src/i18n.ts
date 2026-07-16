@@ -14,7 +14,7 @@ const resources = {
       },
       hero: {
         eyebrow: "MicroTech India · Your Trusted Independent CMO",
-        title: "Your M<span class=\"exclaim\">!</span>cro partner<br />for <span class=\"red\">micronization</span> work —<br />APIs, pharmaceuticals,<br />chemicals.",
+        title: "Your M<span class=\"exclaim\">!</span>cro partner<br />for <span class=\"red\">micronization</span> work<br />APIs, pharmaceuticals,<br />chemicals.",
         lead: "MicroTech (INDIA) is one of the most trusted leader of Micronisation Service Provider for the API and Bulk Drugs. Located at Ankleshwar and Panoli (Asia's largest industrial area) in Gujarat, INDIA, the facilities are of approved FDA standards with more than 7000 sqft. space. Our team has more than 2 decades of experience in providing these services to our clientele.",
         ctaContact: "Contact Us",
         ctaMesh: "View Mesh Sizes",
@@ -332,7 +332,7 @@ const resources = {
       },
       hero: {
         eyebrow: "માઇક્રોટેક ઇન્ડિયા · તમારી વિશ્વાસુ સ્વતંત્ર CMO",
-        title: "તમારો M<span class=\"exclaim\">!</span>cro પાર્ટનર<br /><span class=\"red\">માઇક્રોનાઇઝેશન</span> વર્ક માટે —<br />APIs, ફાર્માસ્યુટિકલ્સ,<br />કેમિકલ્સ.",
+        title: "તમારો M<span class=\"exclaim\">!</span>cro પાર્ટનર<br /><span class=\"red\">માઇક્રોનાઇઝેશન</span> વર્ક માટે<br />APIs, ફાર્માસ્યુટિકલ્સ,<br />કેમિકલ્સ.",
         lead: "માઇક્રોટેક (ઇન્ડિયા) એ API અને બલ્ક ડ્રગ્સ માટે માઇક્રોનાઇઝેશન સેવા પ્રદાતા તરીકે સૌથી વધુ વિશ્વસનીય કંપની છે. ગુજરાત, ભારતમાં અંકલેશ્વર અને પાનોલી (એશિયાનો સૌથી મોટો ઔદ્યોગિક વિસ્તાર) ખાતે આવેલી આ સુવિધાઓ 7000 ચોરસ ફૂટથી વધુ જગ્યા સાથે માન્ય FDA ધોરણો ધરાવે છે. અમારી ટીમ અમારી પ્રદાન કરેલી સેવાઓમાં ૨ દાયકાથી વધુનો અનુભવ ધરાવે છે.",
         ctaContact: "અમારો સંપર્ક કરો",
         ctaMesh: "મેશ કદ જુઓ",
@@ -649,7 +649,7 @@ const resources = {
       },
       hero: {
         eyebrow: "MicroTech India · La tua CMO indipendente di fiducia",
-        title: "Il tuo partner M<span class=\"exclaim\">!</span>cro<br />per lavori di <span class=\"red\">micronizzazione</span> —<br />API, prodotti farmaceutici,<br />prodotti chimici.",
+        title: "Il tuo partner M<span class=\"exclaim\">!</span>cro<br />per lavori di <span class=\"red\">micronizzazione</span><br />API, prodotti farmaceutici,<br />prodotti chimici.",
         lead: "MicroTech (INDIA) è uno dei leader più affidabili nei servizi di micronizzazione per API e farmaci sfusi. Situate ad Ankleshwar e Panoli (la più grande area industriale dell'Asia) nel Gujarat, INDIA, le strutture sono conformi agli standard FDA con oltre 7000 piedi quadrati di spazio. Il nostro team ha più di 2 decenni di esperienza.",
         ctaContact: "Contattaci",
         ctaMesh: "Vedi Dimensioni Mesh",
@@ -966,7 +966,7 @@ const resources = {
       },
       hero: {
         eyebrow: "MicroTech India · Votre CMO indépendant de confiance",
-        title: "Votre partenaire M<span class=\"exclaim\">!</span>cro<br />pour les travaux de <span class=\"red\">micronisation</span> —<br />API, produits pharmaceutiques,<br />produits chimiques.",
+        title: "Votre partenaire M<span class=\"exclaim\">!</span>cro<br />pour les travaux de <span class=\"red\">micronisation</span><br />API, produits pharmaceutiques,<br />produits chimiques.",
         lead: "MicroTech (INDIA) est l'un des leaders les plus fiables en matière de services de micronisation pour les API et les médicaments en vrac. Situées à Ankleshwar et Panoli (la grande zone industrielle d'Asie) dans le Gujarat, en INDE, les installations respectent les normes FDA avec plus de 7000 pieds carrés d'espace. Notre équipe possède plus de 2 decennies d'expérience.",
         ctaContact: "Contactez-nous",
         ctaMesh: "Voir les Tailles de Mesh",
@@ -1283,7 +1283,7 @@ const resources = {
       },
       hero: {
         eyebrow: "MicroTech India · 您值得信赖的独立 CMO 合作伙伴",
-        title: "您的 M<span class=\"exclaim\">!</span>cro 合作伙伴<br />专注于<span class=\"red\">超细微化</span>加工 —<br />API、制药、化学品。",
+        title: "您的 M<span class=\"exclaim\">!</span>cro 合作伙伴<br />专注于<span class=\"red\">超细微化</span>加工<br />API、制药、化学品。",
         lead: "MicroTech (INDIA) 是最受信任的 API 和散装药物超细微化服务提供商之一。设施位于印度古吉拉特邦的 Ankleshwar 和 Panoli（亚洲最大的工业区），符合 FDA 批准标准，空间超过 7000 平方英尺。我们的团队拥有超过 20 年的行业服务经验。",
         ctaContact: "联系我们",
         ctaMesh: "查看网目尺寸",

@@ -25,7 +25,7 @@ export function FacilitiesPage() {
       <section style={{ padding: "4rem 2rem", maxWidth: "1200px", margin: "0 auto" }}>
         
         {/* Ankleshwar Unit */}
-        <div className="reveal" style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", gap: "4rem", marginBottom: "8rem", alignItems: "center" }}>
+        <div id="ankleshwar-unit" className="reveal" style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", gap: "4rem", marginBottom: "8rem", alignItems: "center" }}>
           <div>
             <img src={ankleshwarImg} alt="Ankleshwar Unit" style={{ width: "100%", borderRadius: "8px", objectFit: "cover", aspectRatio: "4/3", boxShadow: "0 20px 40px rgba(0,0,0,0.08)" }} />
           </div>
@@ -47,7 +47,7 @@ export function FacilitiesPage() {
         </div>
 
         {/* Panoli Plant 1 */}
-        <div className="reveal" style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", gap: "4rem", marginBottom: "8rem", alignItems: "center" }}>
+        <div id="panoli-plant-1" className="reveal" style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", gap: "4rem", marginBottom: "8rem", alignItems: "center" }}>
           <div style={{ order: 2 }}>
             <img src={panoliPlant1Img} alt="Panoli Plant 1" style={{ width: "100%", borderRadius: "8px", objectFit: "cover", aspectRatio: "4/3", boxShadow: "0 20px 40px rgba(0,0,0,0.08)" }} />
           </div>
@@ -69,7 +69,7 @@ export function FacilitiesPage() {
         </div>
 
         {/* Panoli Plant 2 */}
-        <div className="reveal" style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", gap: "4rem", marginBottom: "4rem", alignItems: "center" }}>
+        <div id="panoli-plant-2" className="reveal" style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", gap: "4rem", marginBottom: "4rem", alignItems: "center" }}>
           <div>
             <img src={panoliPlant2Img} alt="Panoli Plant 2" style={{ width: "100%", borderRadius: "8px", objectFit: "cover", aspectRatio: "4/3", boxShadow: "0 20px 40px rgba(0,0,0,0.08)" }} />
           </div>

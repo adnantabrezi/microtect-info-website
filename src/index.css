@@ -1672,6 +1672,7 @@ footer .f-text .red {
     z-index: 105;
     box-shadow: -4px 0 20px rgba(0, 0, 0, 0.08);
     display: flex;
+    overflow-y: auto;
   }
 
   .nav-links--open {

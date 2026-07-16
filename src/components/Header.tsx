@@ -11,11 +11,29 @@ export function Header() {
     i18n.changeLanguage(e.target.value);
   };
 
-  const toggleMenu = (e: React.MouseEvent, menuId: string) => {
+  const toggleTopMenu = (e: React.MouseEvent, menuId: string) => {
+    if (window.innerWidth <= 900) {
+      e.preventDefault();
+      setExpandedMenus(prev => prev[menuId] ? {} : { [menuId]: true });
+    } else {
+      setMobileOpen(false);
+    }
+  };
+
+  const toggleSubMenu = (e: React.MouseEvent, menuId: string, siblingIds: string[]) => {
     if (window.innerWidth <= 900) {
       e.preventDefault();
       e.stopPropagation();
-      setExpandedMenus((prev) => ({ ...prev, [menuId]: !prev[menuId] }));
+      setExpandedMenus(prev => {
+        if (prev[menuId]) {
+          return { ...prev, [menuId]: false };
+        } else {
+          const next = { ...prev };
+          siblingIds.forEach(id => next[id] = false);
+          next[menuId] = true;
+          return next;
+        }
+      });
     }
   };
 
@@ -39,14 +57,7 @@ export function Header() {
       </a>
       <div className={`nav-links${mobileOpen ? " nav-links--open" : ""}`}>
         <div className={`nav-item has-dropdown${expandedMenus["home"] ? " mobile-dropdown-open" : ""}`}>
-          <a href="#/" onClick={(e) => {
-            if (window.innerWidth <= 900) {
-              e.preventDefault();
-              setExpandedMenus(prev => ({ ...prev, "home": !prev["home"] }));
-            } else {
-              setMobileOpen(false);
-            }
-          }}>{t("nav.home")}</a>
+          <a href="#/" onClick={(e) => toggleTopMenu(e, "home")}>{t("nav.home")}</a>
           <ul className="dropdown-menu">
             <li className="mobile-only-link" style={{ display: "none" }}><a href="#/" onClick={() => setMobileOpen(false)}>Home Overview</a></li>
             <li><a href="#powders" onClick={(e) => handleNavAndScroll(e, "", "powders")}>Powders</a></li>
@@ -58,14 +69,7 @@ export function Header() {
         </div>
         
         <div className={`nav-item has-dropdown${expandedMenus["about"] ? " mobile-dropdown-open" : ""}`}>
-          <a href="#/about" onClick={(e) => {
-            if (window.innerWidth <= 900) {
-              e.preventDefault();
-              setExpandedMenus(prev => ({ ...prev, "about": !prev["about"] }));
-            } else {
-              setMobileOpen(false);
-            }
-          }}>{t("nav.about")}</a>
+          <a href="#/about" onClick={(e) => toggleTopMenu(e, "about")}>{t("nav.about")}</a>
           <ul className="dropdown-menu">
             <li className="mobile-only-link" style={{ display: "none" }}><a href="#/about" onClick={() => setMobileOpen(false)}>About Overview</a></li>
             <li><a href="#at-a-glance" onClick={(e) => handleNavAndScroll(e, "about", "at-a-glance")}>At a Glance</a></li>
@@ -74,23 +78,22 @@ export function Header() {
             <li><a href="#our-company" onClick={(e) => handleNavAndScroll(e, "about", "our-company")}>Our Company</a></li>
           </ul>
         </div>
-        <div className="nav-item">
-          <a href="#/facilities" onClick={() => setMobileOpen(false)}>{t("nav.facilities")}</a>
+        <div className={`nav-item has-dropdown${expandedMenus["facilities"] ? " mobile-dropdown-open" : ""}`}>
+          <a href="#/facilities" onClick={(e) => toggleTopMenu(e, "facilities")}>{t("nav.facilities")}</a>
+          <ul className="dropdown-menu">
+            <li className="mobile-only-link" style={{ display: "none" }}><a href="#/facilities" onClick={() => setMobileOpen(false)}>Facilities Overview</a></li>
+            <li><a href="#ankleshwar-unit" onClick={(e) => handleNavAndScroll(e, "facilities", "ankleshwar-unit")}>Ankleshwar Unit</a></li>
+            <li><a href="#panoli-plant-1" onClick={(e) => handleNavAndScroll(e, "facilities", "panoli-plant-1")}>Panoli Plant 1</a></li>
+            <li><a href="#panoli-plant-2" onClick={(e) => handleNavAndScroll(e, "facilities", "panoli-plant-2")}>Panoli Plant 2</a></li>
+          </ul>
         </div>
         
         <div className={`nav-item has-dropdown${expandedMenus["services"] ? " mobile-dropdown-open" : ""}`}>
-          <a href="#/services" onClick={(e) => {
-            if (window.innerWidth <= 900) {
-              e.preventDefault();
-              setExpandedMenus(prev => ({ ...prev, "services": !prev["services"] }));
-            } else {
-              setMobileOpen(false);
-            }
-          }}>{t("nav.services")}</a>
+          <a href="#/services" onClick={(e) => toggleTopMenu(e, "services")}>{t("nav.services")}</a>
           <ul className="dropdown-menu">
             <li className="mobile-only-link" style={{ display: "none" }}><a href="#/services" onClick={() => setMobileOpen(false)}>Services Overview</a></li>
             <li className={`has-dropdown-right${expandedMenus["micronization"] ? " mobile-dropdown-open" : ""}`}>
-              <a href="#/services" onClick={(e) => toggleMenu(e, "micronization")}>Micronization</a>
+              <a href="#/services" onClick={(e) => toggleSubMenu(e, "micronization", ["milling", "sieving", "analysis"])}>Micronization</a>
               <ul className="dropdown-menu-right">
                 <li><a href="#/services" onClick={() => setMobileOpen(false)}>Co micronization</a></li>
                 <li><a href="#/services" onClick={() => setMobileOpen(false)}>Cryo micronization</a></li>
@@ -99,10 +102,10 @@ export function Header() {
             </li>
             
             <li className={`has-dropdown-right${expandedMenus["milling"] ? " mobile-dropdown-open" : ""}`}>
-              <a href="#/services" onClick={(e) => toggleMenu(e, "milling")}>Milling</a>
+              <a href="#/services" onClick={(e) => toggleSubMenu(e, "milling", ["micronization", "sieving", "analysis"])}>Milling</a>
               <ul className="dropdown-menu-right">
                 <li className={`has-dropdown-right${expandedMenus["multi-mill"] ? " mobile-dropdown-open" : ""}`}>
-                  <a href="#/services" onClick={(e) => toggleMenu(e, "multi-mill")}>Multi mill</a>
+                  <a href="#/services" onClick={(e) => toggleSubMenu(e, "multi-mill", ["hammer-mill"])}>Multi mill</a>
                   <ul className="dropdown-menu-right">
                     <li><a href="#/services" onClick={() => setMobileOpen(false)}>Cryogenic purging</a></li>
                     <li><a href="#/services" onClick={() => setMobileOpen(false)}>Standard milling</a></li>
@@ -110,7 +113,7 @@ export function Header() {
                   </ul>
                 </li>
                 <li className={`has-dropdown-right${expandedMenus["hammer-mill"] ? " mobile-dropdown-open" : ""}`}>
-                  <a href="#/services" onClick={(e) => toggleMenu(e, "hammer-mill")}>Hammer mill</a>
+                  <a href="#/services" onClick={(e) => toggleSubMenu(e, "hammer-mill", ["multi-mill"])}>Hammer mill</a>
                   <ul className="dropdown-menu-right">
                     <li><a href="#/services" onClick={() => setMobileOpen(false)}>Cryogenic purging</a></li>
                     <li><a href="#/services" onClick={() => setMobileOpen(false)}>Standard milling</a></li>
@@ -121,7 +124,7 @@ export function Header() {
             </li>
 
             <li className={`has-dropdown-right${expandedMenus["sieving"] ? " mobile-dropdown-open" : ""}`}>
-              <a href="#/services" onClick={(e) => toggleMenu(e, "sieving")}>Sieving / Classification</a>
+              <a href="#/services" onClick={(e) => toggleSubMenu(e, "sieving", ["micronization", "milling", "analysis"])}>Sieving / Classification</a>
               <ul className="dropdown-menu-right">
                 <li><a href="#/services" onClick={() => setMobileOpen(false)}>Ultra fine grinding mill</a></li>
                 <li><a href="#/services" onClick={() => setMobileOpen(false)}>Air classifier mill</a></li>
@@ -129,11 +132,11 @@ export function Header() {
             </li>
 
             <li className={`has-dropdown-right${expandedMenus["analysis"] ? " mobile-dropdown-open" : ""}`}>
-              <a href="#/services" onClick={(e) => toggleMenu(e, "analysis")}>Analysis</a>
+              <a href="#/services" onClick={(e) => toggleSubMenu(e, "analysis", ["micronization", "milling", "sieving"])}>Analysis</a>
               <ul className="dropdown-menu-right">
                 <li><a href="#/services" onClick={() => setMobileOpen(false)}>Dry and wet modes</a></li>
                 <li className={`has-dropdown-right${expandedMenus["sieve-analysis"] ? " mobile-dropdown-open" : ""}`}>
-                  <a href="#/services" onClick={(e) => toggleMenu(e, "sieve-analysis")}>Sieve analysis</a>
+                  <a href="#/services" onClick={(e) => toggleSubMenu(e, "sieve-analysis", [])}>Sieve analysis</a>
                   <ul className="dropdown-menu-right">
                     <li><a href="#/services" onClick={() => setMobileOpen(false)}>Bulk density and tap density</a></li>
                   </ul>
@@ -144,14 +147,7 @@ export function Header() {
         </div>
 
         <div className={`nav-item has-dropdown${expandedMenus["contact"] ? " mobile-dropdown-open" : ""}`}>
-          <a href="#/contact" onClick={(e) => {
-            if (window.innerWidth <= 900) {
-              e.preventDefault();
-              setExpandedMenus(prev => ({ ...prev, "contact": !prev["contact"] }));
-            } else {
-              setMobileOpen(false);
-            }
-          }}>{t("nav.contact")}</a>
+          <a href="#/contact" onClick={(e) => toggleTopMenu(e, "contact")}>{t("nav.contact")}</a>
           <ul className="dropdown-menu">
             <li className="mobile-only-link" style={{ display: "none" }}><a href="#/contact" onClick={() => setMobileOpen(false)}>Contact Overview</a></li>
             <li><a href="#contact-page-content" onClick={(e) => handleNavAndScroll(e, "contact", "contact-page-content")}>Contact Details</a></li>
