@@ -10,8 +10,17 @@ import { ServicesPage } from "./pages/ServicesPage";
 import { ContactPage } from "./pages/ContactPage";
 import { FacilitiesPage } from "./pages/FacilitiesPage";
 import { ParticlesBackground } from "./components/ParticlesBackground";
+import { ServiceMicronizationPage } from "./pages/ServiceMicronizationPage";
+import { ServiceMillingPage } from "./pages/ServiceMillingPage";
+import { ServiceSievingPage } from "./pages/ServiceSievingPage";
+import { ServiceAnalysisPage } from "./pages/ServiceAnalysisPage";
 
 function PageContent({ route }: { route: string }) {
+  if (route.startsWith("services/micronization")) return <ServiceMicronizationPage />;
+  if (route.startsWith("services/milling")) return <ServiceMillingPage />;
+  if (route.startsWith("services/sieving")) return <ServiceSievingPage />;
+  if (route.startsWith("services/analysis")) return <ServiceAnalysisPage />;
+
   switch (route) {
     case "about":
       return <AboutPage />;

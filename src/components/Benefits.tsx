@@ -45,17 +45,9 @@ export function Benefits() {
   return (
     <section className="block" id="benefits">
       <div className="container">
-        <div className="about-company-grid" style={{ marginBottom: '3rem' }}>
-          <div>
-            <div className="section-label reveal">{t("aboutPage.whyLabel")}</div>
-            <h2 className="section-h2 reveal" style={{ marginBottom: 0 }} dangerouslySetInnerHTML={{ __html: t("aboutPage.whyTitle") }} />
-          </div>
-          <div className="about-company-image reveal">
-            <img
-              src="/images/micronisation-cbd.jpg"
-              alt="Pharmaceutical powders micronization"
-            />
-          </div>
+        <div style={{ marginBottom: '3rem' }}>
+          <div className="section-label reveal">{t("aboutPage.whyLabel")}</div>
+          <h2 className="section-h2 reveal" dangerouslySetInnerHTML={{ __html: t("aboutPage.whyTitle") }} />
         </div>
 
         <div className="benefits-grid">

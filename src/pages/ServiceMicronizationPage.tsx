@@ -1,10 +1,56 @@
 import { useTranslation } from "react-i18next";
-import airJetMill from "../images/air jet mill.png";
+import { EquipmentTabs } from "../components/EquipmentTabs";
+import { SpecsTable } from "../components/SpecsTable";
+import airJetMill from "../images/air-jet-mill-new.png";
 import micronizerMachine from "../images/micronizer-machine.png";
 import cbdMicronization from "../images/micronisation-cbd.jpg";
 
 export function ServiceMicronizationPage() {
   const { t } = useTranslation();
+
+  const tabs = [
+    {
+      id: "air-jet",
+      label: t("serviceMicronization.airjet.title", "Air Jet Micronization"),
+      title: t("serviceMicronization.airjet.title", "Air Jet Micronization"),
+      desc: t("serviceMicronization.airjet.desc", "Utilizing high-velocity compressed air or nitrogen, particle-on-particle collisions reduce the active ingredient size without the use of grinding media. This guarantees zero metal contamination and extremely narrow particle size distributions."),
+      features: [
+        t("serviceMicronization.airjet.feature1", "No moving parts in milling zone"),
+        t("serviceMicronization.airjet.feature2", "Oil-free, filtered processing air")
+      ],
+      image: airJetMill
+    },
+    {
+      id: "cryo",
+      label: t("serviceMicronization.cryo.title", "Cryo Micronization"),
+      title: t("serviceMicronization.cryo.title", "Cryo Micronization"),
+      desc: t("serviceMicronization.cryo.desc", "For highly heat-sensitive or thermolabile compounds, our cryo-micronization process uses liquid nitrogen cooling. This prevents heat degradation, melting, or morphological changes during particle size reduction."),
+      features: [
+        "Maintains temperatures below -40°C",
+        "Prevents volatile loss in active compounds"
+      ],
+      image: micronizerMachine
+    },
+    {
+      id: "co-micronization",
+      label: t("serviceMicronization.co.title", "Co-Micronization"),
+      title: t("serviceMicronization.co.title", "Co-Micronization"),
+      desc: t("serviceMicronization.co.desc", "Co-micronization involves the simultaneous milling of multiple active ingredients or excipients. This ensures a perfectly homogeneous blend down to the micro-scale, eliminating segregation during subsequent manufacturing steps."),
+      features: [
+        "Perfect homogenous mixtures",
+        "Improved bioavailability profiles"
+      ],
+      image: cbdMicronization
+    }
+  ];
+
+  const specsRows = [
+    { parameter: "Input Feed Size", value: "< 1mm - 2mm" },
+    { parameter: "Target Final Particle Size (D90)", value: "< 5µm up to 10µm" },
+    { parameter: "Processing Capacity", value: "50g to 500kg / batch" },
+    { parameter: "Contamination Control", value: "Class 100,000 Cleanroom Environment" },
+    { parameter: "Contact Parts", value: "SS 316L (Mirror Polished)" }
+  ];
 
   return (
     <main>
@@ -12,10 +58,7 @@ export function ServiceMicronizationPage() {
         <div className="hero-eyebrow reveal">
           {t("serviceMicronization.label", "Micronization Services")}
         </div>
-        <h1
-          className="reveal"
-          style={{ transitionDelay: "0.1s" }}
-        >
+        <h1 className="reveal" style={{ transitionDelay: "0.1s" }}>
           {t("serviceMicronization.title", "Precision Micronization")}
         </h1>
         <p className="lead reveal" style={{ transitionDelay: "0.2s", maxWidth: "80ch" }}>
@@ -23,59 +66,22 @@ export function ServiceMicronizationPage() {
         </p>
       </section>
 
-      {/* Co-Micronization */}
-      <section className="block" id="co-micronization" style={{ backgroundColor: "var(--bg-alt)" }}>
-        <div className="container reveal" style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", gap: "4rem", alignItems: "center" }}>
-          <div>
-            <div className="section-label">{t("serviceMicronization.co.label", "Specialized Process")}</div>
-            <h2 className="section-h2" style={{ marginBottom: "1.2rem", lineHeight: "1.1" }}>{t("serviceMicronization.co.title", "Co-Micronization")}</h2>
-            <p className="section-lead" style={{ fontSize: "1.1rem", lineHeight: "1.6", marginBottom: "2rem", color: "var(--text-soft)" }}>
-              {t("serviceMicronization.co.desc", "Co-micronization involves the simultaneous milling of multiple active ingredients or excipients. This ensures a perfectly homogeneous blend down to the micro-scale, eliminating segregation during subsequent manufacturing steps.")}
-            </p>
-          </div>
-          <div>
-            <img src={cbdMicronization} alt="Co-Micronization Process" style={{ width: "100%", borderRadius: "8px", objectFit: "cover", boxShadow: "0 20px 40px rgba(0,0,0,0.08)" }} />
-          </div>
+      <section className="block" id="technologies" style={{ backgroundColor: "var(--bg-alt)" }}>
+        <div className="container">
+          <div className="section-label reveal">Our Technologies</div>
+          <h2 className="section-h2 reveal">Micronization Methods</h2>
+          <EquipmentTabs tabs={tabs} />
         </div>
       </section>
 
-      {/* Cryo Micronization */}
-      <section className="block" id="cryo-micronization">
-        <div className="container reveal" style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", gap: "4rem", alignItems: "center" }}>
-          <div style={{ order: 2 }}>
-            <img src={micronizerMachine} alt="Cryo Micronization Equipment" style={{ width: "100%", borderRadius: "8px", objectFit: "cover", boxShadow: "0 20px 40px rgba(0,0,0,0.08)" }} />
-          </div>
-          <div style={{ order: 1 }}>
-            <div className="section-label">{t("serviceMicronization.cryo.label", "Temperature Controlled")}</div>
-            <h2 className="section-h2" style={{ marginBottom: "1.2rem", lineHeight: "1.1" }}>{t("serviceMicronization.cryo.title", "Cryo Micronization")}</h2>
-            <p className="section-lead" style={{ fontSize: "1.1rem", lineHeight: "1.6", marginBottom: "2rem", color: "var(--text-soft)" }}>
-              {t("serviceMicronization.cryo.desc", "For highly heat-sensitive or thermolabile compounds, our cryo-micronization process uses liquid nitrogen cooling. This prevents heat degradation, melting, or morphological changes during particle size reduction.")}
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* Air Jet Micronization */}
-      <section className="block" id="air-jet-micronization" style={{ backgroundColor: "var(--bg-alt)" }}>
-        <div className="container reveal" style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", gap: "4rem", alignItems: "center" }}>
-          <div>
-            <div className="section-label">{t("serviceMicronization.airjet.label", "Ultra-Fine Reduction")}</div>
-            <h2 className="section-h2" style={{ marginBottom: "1.2rem", lineHeight: "1.1" }}>{t("serviceMicronization.airjet.title", "Air Jet Micronization")}</h2>
-            <p className="section-lead" style={{ fontSize: "1.1rem", lineHeight: "1.6", marginBottom: "2rem", color: "var(--text-soft)" }}>
-              {t("serviceMicronization.airjet.desc", "Utilizing high-velocity compressed air or nitrogen, particle-on-particle collisions reduce the active ingredient size without the use of grinding media. This guarantees zero metal contamination and extremely narrow particle size distributions.")}
-            </p>
-            <ul style={{ listStyle: "none", padding: 0 }}>
-              <li style={{ marginBottom: "1rem", display: "flex", gap: "1rem", alignItems: "center", fontSize: "1.05rem", fontWeight: 500 }}>
-                <span style={{ color: "var(--red)", fontSize: "1.2rem" }}>✓</span> {t("serviceMicronization.airjet.feature1", "No moving parts in milling zone")}
-              </li>
-              <li style={{ display: "flex", gap: "1rem", alignItems: "center", fontSize: "1.05rem", fontWeight: 500 }}>
-                <span style={{ color: "var(--red)", fontSize: "1.2rem" }}>✓</span> {t("serviceMicronization.airjet.feature2", "Oil-free, filtered processing air")}
-              </li>
-            </ul>
-          </div>
-          <div>
-            <img src={airJetMill} alt="Air Jet Mill" style={{ width: "100%", borderRadius: "8px", objectFit: "cover", boxShadow: "0 20px 40px rgba(0,0,0,0.08)" }} />
-          </div>
+      <section className="block" id="specifications">
+        <div className="container">
+          <div className="section-label reveal">Technical Data</div>
+          <h2 className="section-h2 reveal">Process Specifications</h2>
+          <p className="section-lead reveal" style={{ marginBottom: "2rem" }}>
+            We guarantee tightly controlled particle size distributions using state-of-the-art analytical equipment.
+          </p>
+          <SpecsTable title="Micronization Capabilities" rows={specsRows} />
         </div>
       </section>
     </main>

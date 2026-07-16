@@ -282,3 +282,56 @@ export function IconWhatsApp(props?: React.SVGProps<SVGSVGElement>) {
   );
 }
 
+// -- Industries & Certifications --
+
+export function IconPharma() {
+  return (
+    <svg {...svgProps}>
+      <path d="M10.5 20.5l-6-6a4.95 4.95 0 117-7l6 6a4.95 4.95 0 11-7 7z" />
+      <line x1="8.5" y1="8.5" x2="15.5" y2="15.5" />
+    </svg>
+  );
+}
+
+export function IconFood() {
+  return (
+    <svg {...svgProps}>
+      <path d="M2 21c0-3 1.85-5.36 4-6.5a10 10 0 014.5-1.5c4 0 7 2 9 6" />
+      <path d="M11 21v-4" />
+      <path d="M7 21v-3" />
+      <path d="M15 21v-3" />
+      <path d="M12 13V3a1 1 0 011-1 3 3 0 013 3v2" />
+    </svg>
+  );
+}
+
+export function IconCosmetics() {
+  return (
+    <svg {...svgProps}>
+      <path d="M12 2l2 4 4 2-4 2-2 4-2-4-4-2 4-2 2-4z" />
+      <path d="M19 12l1 2 2 1-2 1-1 2-1-2-2-1 2-1 1-2z" />
+      <path d="M5 14l1 2 2 1-2 1-1 2-1-2-2-1 2-1 1-2z" />
+    </svg>
+  );
+}
+
+export function IconChemical() {
+  return (
+    <svg {...svgProps}>
+      <path d="M10 2v7.31" />
+      <path d="M14 9.3V1.99" />
+      <path d="M8.5 2h7" />
+      <path d="M14 9.3a6.5 6.5 0 11-4 0" />
+      <path d="M5.52 16h12.96" />
+    </svg>
+  );
+}
+
+export function IconCertificate() {
+  return (
+    <svg {...svgProps}>
+      <circle cx="12" cy="8" r="6" />
+      <path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11" />
+    </svg>
+  );
+}

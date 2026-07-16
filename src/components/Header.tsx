@@ -93,52 +93,52 @@ export function Header() {
           <ul className="dropdown-menu">
             <li className="mobile-only-link" style={{ display: "none" }}><a href="#/services" onClick={() => setMobileOpen(false)}>Services Overview</a></li>
             <li className={`has-dropdown-right${expandedMenus["micronization"] ? " mobile-dropdown-open" : ""}`}>
-              <a href="#/services" onClick={(e) => toggleSubMenu(e, "micronization", ["milling", "sieving", "analysis"])}>Micronization</a>
+              <a href="#/services/micronization" onClick={(e) => toggleSubMenu(e, "micronization", ["milling", "sieving", "analysis"])}>Micronization</a>
               <ul className="dropdown-menu-right">
-                <li><a href="#/services" onClick={() => setMobileOpen(false)}>Co micronization</a></li>
-                <li><a href="#/services" onClick={() => setMobileOpen(false)}>Cryo micronization</a></li>
-                <li><a href="#/services" onClick={() => setMobileOpen(false)}>Air jet micronization</a></li>
+                <li><a href="#/services/micronization#co-micronization" onClick={() => setMobileOpen(false)}>Co micronization</a></li>
+                <li><a href="#/services/micronization#cryo-micronization" onClick={() => setMobileOpen(false)}>Cryo micronization</a></li>
+                <li><a href="#/services/micronization#air-jet-micronization" onClick={() => setMobileOpen(false)}>Air jet micronization</a></li>
               </ul>
             </li>
             
             <li className={`has-dropdown-right${expandedMenus["milling"] ? " mobile-dropdown-open" : ""}`}>
-              <a href="#/services" onClick={(e) => toggleSubMenu(e, "milling", ["micronization", "sieving", "analysis"])}>Milling</a>
+              <a href="#/services/milling" onClick={(e) => toggleSubMenu(e, "milling", ["micronization", "sieving", "analysis"])}>Milling</a>
               <ul className="dropdown-menu-right">
                 <li className={`has-dropdown-right${expandedMenus["multi-mill"] ? " mobile-dropdown-open" : ""}`}>
-                  <a href="#/services" onClick={(e) => toggleSubMenu(e, "multi-mill", ["hammer-mill"])}>Multi mill</a>
+                  <a href="#/services/milling#multi-mill" onClick={(e) => toggleSubMenu(e, "multi-mill", ["hammer-mill"])}>Multi mill</a>
                   <ul className="dropdown-menu-right">
-                    <li><a href="#/services" onClick={() => setMobileOpen(false)}>Cryogenic purging</a></li>
-                    <li><a href="#/services" onClick={() => setMobileOpen(false)}>Standard milling</a></li>
-                    <li><a href="#/services" onClick={() => setMobileOpen(false)}>Co-milling</a></li>
+                    <li><a href="#/services/milling#cryogenic-purging" onClick={() => setMobileOpen(false)}>Cryogenic purging</a></li>
+                    <li><a href="#/services/milling#standard-milling" onClick={() => setMobileOpen(false)}>Standard milling</a></li>
+                    <li><a href="#/services/milling#co-milling" onClick={() => setMobileOpen(false)}>Co-milling</a></li>
                   </ul>
                 </li>
                 <li className={`has-dropdown-right${expandedMenus["hammer-mill"] ? " mobile-dropdown-open" : ""}`}>
-                  <a href="#/services" onClick={(e) => toggleSubMenu(e, "hammer-mill", ["multi-mill"])}>Hammer mill</a>
+                  <a href="#/services/milling#hammer-mill" onClick={(e) => toggleSubMenu(e, "hammer-mill", ["multi-mill"])}>Hammer mill</a>
                   <ul className="dropdown-menu-right">
-                    <li><a href="#/services" onClick={() => setMobileOpen(false)}>Cryogenic purging</a></li>
-                    <li><a href="#/services" onClick={() => setMobileOpen(false)}>Standard milling</a></li>
-                    <li><a href="#/services" onClick={() => setMobileOpen(false)}>Co-milling</a></li>
+                    <li><a href="#/services/milling#cryogenic-purging" onClick={() => setMobileOpen(false)}>Cryogenic purging</a></li>
+                    <li><a href="#/services/milling#standard-milling" onClick={() => setMobileOpen(false)}>Standard milling</a></li>
+                    <li><a href="#/services/milling#co-milling" onClick={() => setMobileOpen(false)}>Co-milling</a></li>
                   </ul>
                 </li>
               </ul>
             </li>
 
             <li className={`has-dropdown-right${expandedMenus["sieving"] ? " mobile-dropdown-open" : ""}`}>
-              <a href="#/services" onClick={(e) => toggleSubMenu(e, "sieving", ["micronization", "milling", "analysis"])}>Sieving / Classification</a>
+              <a href="#/services/sieving" onClick={(e) => toggleSubMenu(e, "sieving", ["micronization", "milling", "analysis"])}>Sieving / Classification</a>
               <ul className="dropdown-menu-right">
-                <li><a href="#/services" onClick={() => setMobileOpen(false)}>Ultra fine grinding mill</a></li>
-                <li><a href="#/services" onClick={() => setMobileOpen(false)}>Air classifier mill</a></li>
+                <li><a href="#/services/sieving#ultra-fine" onClick={() => setMobileOpen(false)}>Ultra fine grinding mill</a></li>
+                <li><a href="#/services/sieving#air-classifier" onClick={() => setMobileOpen(false)}>Air classifier mill</a></li>
               </ul>
             </li>
 
             <li className={`has-dropdown-right${expandedMenus["analysis"] ? " mobile-dropdown-open" : ""}`}>
-              <a href="#/services" onClick={(e) => toggleSubMenu(e, "analysis", ["micronization", "milling", "sieving"])}>Analysis</a>
+              <a href="#/services/analysis" onClick={(e) => toggleSubMenu(e, "analysis", ["micronization", "milling", "sieving"])}>Analysis</a>
               <ul className="dropdown-menu-right">
-                <li><a href="#/services" onClick={() => setMobileOpen(false)}>Dry and wet modes</a></li>
+                <li><a href="#/services/analysis#dry-wet-modes" onClick={() => setMobileOpen(false)}>Dry and wet modes</a></li>
                 <li className={`has-dropdown-right${expandedMenus["sieve-analysis"] ? " mobile-dropdown-open" : ""}`}>
-                  <a href="#/services" onClick={(e) => toggleSubMenu(e, "sieve-analysis", [])}>Sieve analysis</a>
+                  <a href="#/services/analysis#sieve-analysis" onClick={(e) => toggleSubMenu(e, "sieve-analysis", [])}>Sieve analysis</a>
                   <ul className="dropdown-menu-right">
-                    <li><a href="#/services" onClick={() => setMobileOpen(false)}>Bulk density and tap density</a></li>
+                    <li><a href="#/services/analysis#bulk-tap-density" onClick={() => setMobileOpen(false)}>Bulk density and tap density</a></li>
                   </ul>
                 </li>
               </ul>
@@ -154,22 +154,18 @@ export function Header() {
           </ul>
         </div>
         
-        {/* Language selector moved to nav-links for mobile menu visibility */}
-        <div className="nav-item">
-          <div className="lang-select-wrapper">
-            <select
-              className="lang-select"
-              value={i18n.language}
-              onChange={handleLanguageChange}
-              aria-label="Select Language"
-            >
-              <option value="en">EN</option>
-              <option value="gu">ગુજ (GU)</option>
-              <option value="it">IT</option>
-              <option value="fr">FR</option>
-              <option value="zh">中文 (ZH)</option>
-            </select>
-          </div>
+        {/* Language selector standard dropdown */}
+        <div className={`nav-item has-dropdown${expandedMenus["lang"] ? " mobile-dropdown-open" : ""}`}>
+          <a href="#" onClick={(e) => { e.preventDefault(); toggleTopMenu(e, "lang"); }}>
+            {i18n.language ? i18n.language.toUpperCase().substring(0, 2) : "EN"}
+          </a>
+          <ul className="dropdown-menu" style={{ minWidth: "120px" }}>
+            <li><a href="#" onClick={(e) => { e.preventDefault(); i18n.changeLanguage("en"); setMobileOpen(false); }}>EN</a></li>
+            <li><a href="#" onClick={(e) => { e.preventDefault(); i18n.changeLanguage("gu"); setMobileOpen(false); }}>ગુજ (GU)</a></li>
+            <li><a href="#" onClick={(e) => { e.preventDefault(); i18n.changeLanguage("it"); setMobileOpen(false); }}>IT</a></li>
+            <li><a href="#" onClick={(e) => { e.preventDefault(); i18n.changeLanguage("fr"); setMobileOpen(false); }}>FR</a></li>
+            <li><a href="#" onClick={(e) => { e.preventDefault(); i18n.changeLanguage("zh"); setMobileOpen(false); }}>中文 (ZH)</a></li>
+          </ul>
         </div>
       </div>
 

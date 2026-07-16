@@ -1,4 +1,7 @@
 import { Hero } from "../components/Hero";
+import { ServicesGrid } from "../components/ServicesGrid";
+import { Industries } from "../components/Industries";
+import { ScaleTimeline } from "../components/ScaleTimeline";
 import { PowderShowcase } from "../components/PowderShowcase";
 import { ParticleSize } from "../components/ParticleSize";
 import { Features } from "../components/Features";
@@ -10,6 +13,9 @@ export function HomePage() {
   return (
     <>
       <Hero />
+      <ServicesGrid />
+      <Industries />
+      <ScaleTimeline />
       <PowderShowcase />
       <ParticleSize />
       <Features />

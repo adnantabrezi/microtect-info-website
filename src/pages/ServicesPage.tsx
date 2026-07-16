@@ -1,5 +1,6 @@
 import { useTranslation } from "react-i18next";
 import { IconMicronization, IconAPI, IconAnalysis, IconRnD, IconNitrogenMilling, IconQA } from "../components/Icons";
+import { ProcessFlow } from "../components/ProcessFlow";
 
 export function ServicesPage() {
   const { t } = useTranslation();
@@ -43,11 +44,11 @@ export function ServicesPage() {
     },
   ];
 
-  const processSteps = [
-    { step: "01", title: t("servicesPage.steps.step1.title"), desc: t("servicesPage.steps.step1.desc") },
-    { step: "02", title: t("servicesPage.steps.step2.title"), desc: t("servicesPage.steps.step2.desc") },
-    { step: "03", title: t("servicesPage.steps.step3.title"), desc: t("servicesPage.steps.step3.desc") },
-    { step: "04", title: t("servicesPage.steps.step4.title"), desc: t("servicesPage.steps.step4.desc") },
+  const processNodes = [
+    { title: t("servicesPage.steps.step1.title"), desc: t("servicesPage.steps.step1.desc") },
+    { title: t("servicesPage.steps.step2.title"), desc: t("servicesPage.steps.step2.desc") },
+    { title: t("servicesPage.steps.step3.title"), desc: t("servicesPage.steps.step3.desc") },
+    { title: t("servicesPage.steps.step4.title"), desc: t("servicesPage.steps.step4.desc") },
   ];
 
   return (
@@ -97,20 +98,11 @@ export function ServicesPage() {
       </section>
 
       {/* ── Process Steps ── */}
-      <section className="block services-process-section" id="our-process">
+      <section className="block services-process-section" id="our-process" style={{ backgroundColor: "var(--bg-alt)" }}>
         <div className="container">
           <div className="section-label reveal">{t("servicesPage.processLabel")}</div>
           <h2 className="section-h2 reveal" dangerouslySetInnerHTML={{ __html: t("servicesPage.processTitle") }} />
-          <div className="services-process-timeline">
-            {processSteps.map((s, i) => (
-              <div className="services-process-step reveal" key={i}>
-                <div className="services-step-num"><span className="red">{s.step}</span></div>
-                <div className="services-step-connector" />
-                <h4>{s.title}</h4>
-                <p>{s.desc}</p>
-              </div>
-            ))}
-          </div>
+          <ProcessFlow nodes={processNodes} />
         </div>
       </section>
 

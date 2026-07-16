@@ -1,5 +1,6 @@
 import { useTranslation } from "react-i18next";
 import { IconParticleSize, IconNitrogen, IconTechnology, IconGrinding, IconThroughput } from "../components/Icons";
+import airJetMillImg from "../images/air-jet-mill-new.png";
 
 export function AboutPage() {
   const { t } = useTranslation();
@@ -177,7 +178,7 @@ export function AboutPage() {
             </div>
             <div className="about-company-image reveal">
               <img
-                src="/images/air-jet-mill.webp"
+                src={airJetMillImg}
                 alt="Air Jet Mill Machine"
               />
             </div>

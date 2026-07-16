@@ -14,7 +14,7 @@ const server = serve({
     "/images/powder-cream.png": Bun.file(import.meta.dir + "/images/powder-cream.png"),
     "/images/powder-grey.png": Bun.file(import.meta.dir + "/images/powder-grey.png"),
     "/images/micronizer-machine.png": Bun.file(import.meta.dir + "/images/micronizer-machine.png"),
-    "/images/air-jet-mill.webp": Bun.file(import.meta.dir + "/images/air-jet-mill.webp"),
+    "/images/air-jet-mill-new.png": Bun.file(import.meta.dir + "/images/air-jet-mill-new.png"),
     "/images/research.jpeg": Bun.file(import.meta.dir + "/images/research.jpeg"),
     "/images/micronisation-cbd.jpg": Bun.file(import.meta.dir + "/images/micronisation-cbd.jpg"),
     // Serve index.html for all unmatched routes.

@@ -5,11 +5,11 @@ export function PowderShowcase() {
 
   const powders = [
     { src: "/images/powder-white.png", label: t("showcase.materials.white") },
+    { src: "/images/powder-cream.png", label: t("showcase.materials.cream") },
+    { src: "/images/powder-grey.png", label: t("showcase.materials.grey") },
     { src: "/images/powder-tan.png", label: t("showcase.materials.tan") },
     { src: "/images/powder-yellow.png", label: t("showcase.materials.yellow") },
     { src: "/images/powder-brown.png", label: t("showcase.materials.brown") },
-    { src: "/images/powder-cream.png", label: t("showcase.materials.cream") },
-    { src: "/images/powder-grey.png", label: t("showcase.materials.grey") },
   ];
 
   return (

@@ -23,6 +23,7 @@ export function ParticlesBackground() {
       size: number;
       offset: number;
       color: string;
+      alpha = 1.0;
 
       constructor(w: number, h: number) {
         this.baseX = Math.random() * w;
@@ -47,6 +48,25 @@ export function ParticlesBackground() {
     let currentMouseY = 0;
     
     let time = 0;
+    
+    let textRects: { left: number, right: number, top: number, bottom: number, width: number, height: number }[] = [];
+
+    const updateRects = () => {
+      // Only repel from floating headers, not grid cards where they can get trapped!
+      const elements = document.querySelectorAll('.hero h1, .hero p, .hero-eyebrow, .page-hero h1, .page-hero p, .page-hero-label, .section-h2, .section-lead, .section-label');
+      textRects = Array.from(elements).map(el => {
+        const r = el.getBoundingClientRect();
+        return {
+          left: r.left,
+          right: r.right,
+          top: r.top + window.scrollY,
+          bottom: r.bottom + window.scrollY,
+          width: r.width,
+          height: r.height
+        };
+      });
+    };
+
     const init = () => {
       // Handle high-DPI displays for crisp rendering
       const dpr = window.devicePixelRatio || 1;
@@ -94,10 +114,33 @@ export function ParticlesBackground() {
         finalX = ((finalX % w) + w) % w;
         finalY = ((finalY % h) + h) % h;
         
+        // --- TEXT DESPAWN (FADE) LOGIC ---
+        const currentScrollY = window.scrollY;
+        let targetAlpha = 1.0;
+        
+        for (let r = 0; r < textRects.length; r++) {
+          const rect = textRects[r];
+          const vTop = rect.top - currentScrollY;
+          const vBottom = rect.bottom - currentScrollY;
+          
+          const margin = 20; // Margin around text where particles begin to fade
+          if (finalX > rect.left - margin && finalX < rect.right + margin &&
+              finalY > vTop - margin && finalY < vBottom + margin) {
+              targetAlpha = 0.0; // Fade out when behind text
+              break;
+          }
+        }
+        
+        // Smoothly fade alpha in and out
+        p.alpha += (targetAlpha - p.alpha) * 0.15;
+        // -----------------------------
+        
+        ctx.globalAlpha = p.alpha;
         ctx.beginPath();
         ctx.arc(finalX, finalY, p.size, 0, Math.PI * 2);
         ctx.fillStyle = p.color;
         ctx.fill();
+        ctx.globalAlpha = 1.0;
       }
       
       animationFrameId = requestAnimationFrame(animate);
@@ -113,8 +156,11 @@ export function ParticlesBackground() {
       clearTimeout(resizeTimeout);
       resizeTimeout = setTimeout(() => {
         init();
+        updateRects();
       }, 200); // Debounce to prevent layout thrashing
     };
+
+    let rectsInterval = setInterval(updateRects, 1500); // Re-calculate rects periodically in case dynamic elements load
 
     const handleMouseMove = (e: MouseEvent) => {
       targetMouseX = (e.clientX / window.innerWidth) * 2 - 1;
@@ -137,6 +183,7 @@ export function ParticlesBackground() {
       window.removeEventListener("mousemove", handleMouseMove);
       window.removeEventListener("touchmove", handleTouchMove);
       clearTimeout(resizeTimeout);
+      clearInterval(rectsInterval);
       cancelAnimationFrame(animationFrameId);
     };
   }, []);
