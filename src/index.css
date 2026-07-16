@@ -368,7 +368,6 @@ nav {
 /* ===== SECTION GENERIC ===== */
 section.block {
   padding: 5rem 2rem;
-  border-top: 1px solid var(--line);
 }
 
 .container {
@@ -2018,7 +2017,7 @@ body::before {
 /* -- Services Grid -- */
 .services-grid-section {
   padding: 6rem 0;
-  background: var(--bg);
+  background: transparent;
 }
 
 .services-grid {
@@ -2096,7 +2095,7 @@ body::before {
 /* -- Scale Timeline -- */
 .scale-section {
   padding: 6rem 0;
-  background: var(--bg-alt);
+  background: transparent;
 }
 
 .timeline {
@@ -2179,7 +2178,7 @@ body::before {
 /* -- Industries Served -- */
 .industries-section {
   padding: 6rem 0;
-  background: var(--bg);
+  background: transparent;
 }
 
 .industries-grid {
