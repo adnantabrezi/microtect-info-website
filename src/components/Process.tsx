@@ -51,7 +51,7 @@ export function Process() {
           { icon: IconCleaning, title: "Cleaning Verification", desc: "Cleaning verification program." },
           { icon: IconLab, title: "Laboratory Services", desc: "Laboratory services including Particle size testing on MALVERN Instrument." },
           { icon: IconQuality, title: "Quality Management", desc: "Effective Quality Management System in compliance with cGMP Documentation system." },
-          { icon: IconMicronizer, title: "Dedicated Micronizers", desc: "We have numbers dedicated micronizers to serve you better." }
+          { icon: IconMicronizer, title: "Dedicated Micronizers", desc: "We have numbers of dedicated micronizers to serve you better." }
         ];
     }
   };
