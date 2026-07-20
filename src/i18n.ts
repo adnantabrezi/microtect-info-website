@@ -564,32 +564,6 @@ const resources = {
         }
       },
 
-      showcase: {
-        label: "દ્રશ્ય પ્રદર્શન",
-        title: "માઇક્રોનાઇઝેશન <span class=\"red\">અસર</span>",
-        lead: "જુઓ કે કેવી રીતે અમારી ચોક્કસ કદ ઘટાડવાની પ્રક્રિયા બરછટ સક્રિય ફાર્માસ્યુટિકલ ઘટકોને અત્યંત ઝીણા પાવડરમાં બદલે છે.",
-        coarse: "બરછટ કણો",
-        fine: "માઇક્રોનાઇઝ્ડ પાવડર",
-        materials: {
-          white: "સફેદ ક્રિસ્ટલાઇન API",
-          tan: "ટેન પ્લાન્ટ અર્ક",
-          yellow: "પીળો એક્સિપિયન્ટ",
-          brown: "બ્રાઉન હર્બલ પાવડર",
-          cream: "ક્રીમ API પાવડર",
-          grey: "ગ્રે મિનરલ સંયોજન"
-        }
-      },
-      particleSize: {
-        label: "તુલનાત્મક કણોનું કદ",
-        title: "સ્ટાન્ડર્ડ US મેશ <span class=\"red\">રૂપાંતર</span> ચાર્ટ",
-        lead: "નીચે અમારી માઇક્રોનાઇઝેશન પ્રક્રિયાઓમાં ઉપયોગમાં લેવાતા માનક કણોના કદના રૂપાંતર માટે સંદર્ભ કોષ્ટક છે.",
-        table: {
-          mesh: "US મેશ",
-          microns: "માઇક્રોન (µm)",
-          inches: "ઇંચ",
-          visual: "સાપેક્ષ કદ"
-        }
-      },
       serviceMicronization: {
         label: "માઇક્રોનાઇઝેશન સેવાઓ",
         title: "ચોકસાઇ માઇક્રોનાઇઝેશન",
@@ -1068,32 +1042,6 @@ const resources = {
         }
       },
 
-      showcase: {
-        label: "Dimostrazione Visiva",
-        title: "Effetto <span class=\"red\">Micronizzazione</span>",
-        lead: "Guarda come il nostro processo di riduzione delle dimensioni trasforma ingredienti grossolani in polveri finissime.",
-        coarse: "Particelle Grossolane",
-        fine: "Polvere Micronizzata",
-        materials: {
-          white: "API Cristallino Bianco",
-          tan: "Estratto Vegetale Bruno",
-          yellow: "Eccipiente Giallo",
-          brown: "Polvere di Erbe Marrone",
-          cream: "Polvere API Crema",
-          grey: "Composto Minerale Grigio"
-        }
-      },
-      particleSize: {
-        label: "Dimensioni delle Particelle Comparative",
-        title: "Tabella di <span class=\"red\">Conversione</span> Standard US Mesh",
-        lead: "Di seguito è riportata una tabella di riferimento per le conversioni delle dimensioni delle particelle.",
-        table: {
-          mesh: "US Mesh",
-          microns: "Micron (µm)",
-          inches: "Pollici",
-          visual: "Dimensione Relativa"
-        }
-      },
       serviceMicronization: {
         label: "Servizi di Micronizzazione",
         title: "Micronizzazione di Precisione",
@@ -1572,32 +1520,6 @@ const resources = {
         }
       },
 
-      showcase: {
-        label: "Démonstration Visuelle",
-        title: "Effet de <span class=\"red\">Micronisation</span>",
-        lead: "Découvrez comment notre processus de précision transforme les ingrédients bruts en poudres extrêmement fines.",
-        coarse: "Particules Grossières",
-        fine: "Poudre Micronisée",
-        materials: {
-          white: "API Cristallin Blanc",
-          tan: "Extrait Végétal Havane",
-          yellow: "Excipient Jaune",
-          brown: "Poudre d'Herbes Brune",
-          cream: "Poudre API Crème",
-          grey: "Composé Minéral Gris"
-        }
-      },
-      particleSize: {
-        label: "Taille des Particules Comparative",
-        title: "Tableau de <span class=\"red\">Conversion</span> US Mesh",
-        lead: "Vous trouverez ci-dessous un tableau de référence pour les conversions de taille de particules.",
-        table: {
-          mesh: "US Mesh",
-          microns: "Microns (µm)",
-          inches: "Pouces",
-          visual: "Taille Relative"
-        }
-      },
       serviceMicronization: {
         label: "Services de Micronisation",
         title: "Micronisation de Précision",
@@ -2076,32 +1998,6 @@ const resources = {
         }
       },
 
-      showcase: {
-        label: "视觉演示",
-        title: "微化加工<span class=\"red\">效果</span>",
-        lead: "了解我们的精密粒度减小工艺如何将粗糙的活性成分转化为超细粉末。",
-        coarse: "粗颗粒",
-        fine: "微化粉末",
-        materials: {
-          white: "白色结晶原料药",
-          tan: "棕褐色植物提取物",
-          yellow: "黄色辅料",
-          brown: "棕色草本粉末",
-          cream: "奶油色原料药",
-          grey: "灰色矿物化合物"
-        }
-      },
-      particleSize: {
-        label: "粒度比较",
-        title: "标准美国网目<span class=\"red\">换算</span>表",
-        lead: "以下是微化过程中使用的标准颗粒粒度换算参考表。",
-        table: {
-          mesh: "美国网目",
-          microns: "微米 (µm)",
-          inches: "英寸",
-          visual: "相对大小"
-        }
-      },
       serviceMicronization: {
         label: "微化加工服务",
         title: "精密微化",
