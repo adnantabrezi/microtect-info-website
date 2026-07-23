@@ -188,7 +188,7 @@ const resources = {
         }
       },
 
-      nav: {
+      nav: { 
         home: "Home",
         about: "About",
         services: "Services",
