@@ -7,7 +7,7 @@ const resources = {
       certifications: {
         cgmp: "cGMP Compliant",
         fda: "FDA Inspected",
-        iso: "ISO 9001 Certified"
+        iso: "ISO 9001..2015 Certified"
       },
       servicesGrid: {
         label: "Our Capabilities",
@@ -68,8 +68,8 @@ const resources = {
       },
       stats: {
         experience: {
-          value: "30+",
-          label: "Years Experience"
+          value: "2 Decade",
+          label: "Experience"
         },
         projects: {
           value: "1,500+",
@@ -188,7 +188,7 @@ const resources = {
         }
       },
 
-      nav: { 
+      nav: {
         home: "Home",
         about: "About",
         services: "Services",
@@ -233,12 +233,12 @@ const resources = {
       hero: {
         eyebrow: "MicroTech India · Your Trusted Independent CMO",
         title: "Your M<span class=\"exclaim\">!</span>cro partner<br />for <span class=\"red\">micronization</span> work<br />APIs, pharmaceuticals,<br />chemicals.",
-        lead: "MicroTech (INDIA) is one of the most trusted leaders of Micronisation Services for API and Bulk Drugs. Located at Ankleshwar and Panoli (Asia's largest industrial area) in Gujarat, INDIA, our state-of-the-art FDA-approved facilities span over 7000 sqft. We leverage advanced Air Jet Milling, Multi Milling, and Cryogenic technologies to deliver precise particle size reduction. Supported by dedicated ISO-certified cleanrooms and advanced analytical laboratories, our team brings over two decades of expertise to provide unparalleled quality to our clientele.",
+        lead: "MicroTech (INDIA) is one of the most trusted leaders of Micronisation Services for API and Bulk Drugs. Located at Ankleshwar and Panoli (Asia's largest industrial area) in Gujarat, INDIA, our state-of-the-art FDA-approved facilities span over 7000 sqft. We leverage advanced Air Jet Milling, Multi Milling, and Cryogenic technologies to deliver precise particle size reduction. Supported by dedicated ISO-certified cleanrooms and advanced analytical laboratories, our team brings over two decade of expertise to provide unparalleled quality to our clientele.",
         ctaContact: "Contact Us",
         ctaMesh: "View Mesh Sizes",
         fda: "FDA Approved Facility",
         sqft: "Sqft. Facility",
-        years: "Years Experience",
+        years: "Experience",
         cgmp: "Standard Practices",
         iso: "Certified Company"
       },
@@ -250,7 +250,7 @@ const resources = {
         fine: "Micronized Powder",
         materials: {
           white: "White Crystalline API",
-          tan: "Tan Plant Extract",
+          white2: "Ultra-Fine White API",
           yellow: "Yellow Excipient",
           brown: "Brown Herbal Powder",
           cream: "Cream API Powder",
@@ -340,12 +340,12 @@ const resources = {
       },
       aboutPage: {
         label: "About Microtech India",
-        title: "16 Years of <span class=\"red\">Pharmaceutical</span> Excellence",
+        title: "2 Decade of <span class=\"red\">Pharmaceutical</span> Excellence",
         lead: "A family-owned Contract Manufacturing Organization dedicated to precision micronization.",
         whoLabel: "At a Glance",
         whoTitle: "Who we <span class=\"red\">are</span>",
-        whoLead: "MICROTECH INDIA is a family-owned, independent Contract Manufacturing Organization (CMO) with 16 years of experience in milling and micronizing pharmaceutical materials. We process active pharmaceutical ingredients (APIs), excipients, and other powdered substances with high precision, fully compliant with current FDA standards. Our modern facilities and long standing experience enable us to deliver accurate, high quality, and reliable solutions to our clients.",
-        cardExp: "Years Experience",
+        whoLead: "MICROTECH INDIA is a family-owned, independent Contract Manufacturing Organization (CMO) with 2 decade of experience in milling and micronizing pharmaceutical materials. We process active pharmaceutical ingredients (APIs), excipients, and other powdered substances with high precision, fully compliant with current FDA standards. Our modern facilities and long standing experience enable us to deliver accurate, high quality, and reliable solutions to our clients.",
+        cardExp: "Experience",
         cardFDA: "Compliant Facility",
         cardGMP: "Standard Practices",
         cardCMO: "Contract Manufacturing",
@@ -357,8 +357,8 @@ const resources = {
             desc: "Average particle size any ranges microns oil and moisture free high pressure filtered air."
           },
           nitrogen: {
-            title: "Nitrogen Air Available",
-            desc: "Nitrogen air is also available for air sensitive products."
+            title: "Nitrogen Available",
+            desc: "Nitrogen is also available for air sensitive products."
           },
           ambient: {
             title: "Ambient Process",
@@ -398,7 +398,7 @@ const resources = {
           },
           air: {
             title: "Clean Air Processing",
-            desc: "Oil and Moisture free high pressure air and Nitrogen air also for sensitive products.",
+            desc: "Oil and Moisture free high pressure air and Nitrogen also for sensitive products.",
             tag: "Clean Air"
           }
         },
@@ -443,7 +443,7 @@ const resources = {
           },
           nitrogen: {
             title: "Nitrogen Milling",
-            desc: "Inert atmosphere milling using nitrogen air for oxygen-sensitive, moisture-sensitive, or thermolabile pharmaceutical compounds. Zero degradation guaranteed.",
+            desc: "Inert atmosphere milling using nitrogen for oxygen-sensitive, moisture-sensitive, or thermolabile pharmaceutical compounds. Zero degradation guaranteed.",
             features: ["Inert atmosphere", "Moisture-free", "Temperature controlled"]
           },
           qa: {
@@ -530,7 +530,7 @@ const resources = {
         panoli2: {
           label: "Panoli Unit · Plant 2",
           title: "Chemical & <span class=\"red\">Specialty</span> Processing",
-          desc: "Plant 2 is tailored for robust industrial processing, handling chemicals and specialty compounds with high throughput capacity.",
+          desc: "Plant 2 is tailored for robust industrial processing, handling chemicals and speciality chemicals with high throughput capacity.",
           feature1: "7 Heavy-duty Air Jet Mills",
           feature2: "4 Advanced Air Classifier Mills",
           feature3: "Dedicated specialty chemical processing staff"
@@ -751,7 +751,7 @@ const resources = {
         ctaMesh: "મેશ કદ જુઓ",
         fda: "FDA મંજૂર સુવિધા",
         sqft: "ચોરસ ફૂટ સુવિધા",
-        years: "વર્ષોનો અનુભવ",
+        years: "અનુભવ",
         cgmp: "માનક પદ્ધતિઓ"
       },
       showcase: {
@@ -762,7 +762,7 @@ const resources = {
         fine: "માઇક્રોનાઇઝ્ડ પાવડર",
         materials: {
           white: "સફેદ સ્ફટિકીય API",
-          tan: "ટેન વનસ્પતિ અર્ક",
+          white2: "અલ્ટ્રા-ફાઇન સફેદ API",
           yellow: "પીળો એક્સિપિયન્ટ",
           brown: "બ્રાઉન હર્બલ પાવડર",
           cream: "ક્રીમ API પાવડર",
@@ -852,12 +852,12 @@ const resources = {
       },
       aboutPage: {
         label: "માઇક્રોટેક ઇન્ડિયા વિશે",
-        title: "૧૬ વર્ષની <span class=\"red\">ફાર્માસ્યુટિકલ</span> ઉત્કૃષ્ટતા",
+        title: "૨ દાયકાની <span class=\"red\">ફાર્માસ્યુટિકલ</span> ઉત્કૃષ્ટતા",
         lead: "ચોક્કસ માઇક્રોનાઇઝેશન માટે સમર્પિત કૌટુંબિક માલિકીની કોન્ટ્રાક્ટ મેન્યુફેક્ચરિંગ ઓર્ગેનાઇઝેશન.",
         whoLabel: "એક નજરમાં",
         whoTitle: "આપણે <span class=\"red\">કોણ</span> છીએ",
-        whoLead: "માઇક્રોટેક ઇન્ડિયા એ ફાર્માસ્યુટિકલ સામગ્રીના મિલિંગ અને માઇક્રોનાઇઝિંગમાં ૧૬ વર્ષનો અનુભવ ધરાવતી કૌટુંબિક માલિકીની, સ્વતંત્ર કોન્ટ્રાક્ટ મેન્યુફેક્ચરિંગ ઓર્ગેનાઇઝેશન (CMO) છે. અમે વર્તમાન FDA ધોરણો સાથે સંપૂર્ણ સુસંગત રહીને એક્ટિવ ફાર્માસ્યુટિકલ ઘટકો (APIs), એક્સિપિયન્ટ્સ અને અન્ય પાવડર પદાર્થો પર પ્રક્રિયા કરીએ છીએ. અમારી આધુનિક સુવિધાઓ અને લાંબા ગાળાનો અનુભવ અમને અમારા ગ્રાહકોને સચોટ, ઉચ્ચ ગુણવત્તાવાળા અને વિશ્વસનીય ઉકેલો પહોંચાડવા સક્ષમ બનાવે છે.",
-        cardExp: "વર્ષોનો અનુભવ",
+        whoLead: "માઇક્રોટેક ઇન્ડિયા એ ફાર્માસ્યુટિકલ સામગ્રીના મિલિંગ અને માઇક્રોનાઇઝિંગમાં ૨ દાયકાનો અનુભવ ધરાવતી કૌટુંબિક માલિકીની, સ્વતંત્ર કોન્ટ્રાક્ટ મેન્યુફેક્ચરિંગ ઓર્ગેનાઇઝેશન (CMO) છે. અમે વર્તમાન FDA ધોરણો સાથે સંપૂર્ણ સુસંગત રહીને એક્ટિવ ફાર્માસ્યુટિકલ ઘટકો (APIs), એક્સિપિયન્ટ્સ અને અન્ય પાવડર પદાર્થો પર પ્રક્રિયા કરીએ છીએ. અમારી આધુનિક સુવિધાઓ અને લાંબા ગાળાનો અનુભવ અમને અમારા ગ્રાહકોને સચોટ, ઉચ્ચ ગુણવત્તાવાળા અને વિશ્વસનીય ઉકેલો પહોંચાડવા સક્ષમ બનાવે છે.",
+        cardExp: "દાયકાનો અનુભવ",
         cardFDA: "સુસંગત સુવિધા",
         cardGMP: "માનક પદ્ધતિઓ",
         cardCMO: "કોન્ટ્રાક્ટ મેન્યુફેક્ચરિંગ",
@@ -869,8 +869,8 @@ const resources = {
             desc: "તેલ અને ભેજ મુક્ત ઉચ્ચ દબાણવાળી ફિલ્ટર કરેલી હવા સાથે સરેરાશ કણોનું કદ કોઈપણ શ્રેણીમાં માઇક્રોન."
           },
           nitrogen: {
-            title: "નાઇટ્રોજન હવા ઉપલબ્ધ",
-            desc: "હવા પ્રત્યે સંવેદનશીલ ઉત્પાદનો માટે નાઇટ્રોજન હવા પણ ઉપલબ્ધ છે."
+            title: "નાઇટ્રોજન ઉપલબ્ધ",
+            desc: "હવા પ્રત્યે સંવેદનશીલ ઉત્પાદનો માટે નાઇટ્રોજન પણ ઉપલબ્ધ છે."
           },
           ambient: {
             title: "એમ્બિયન્ટ પ્રક્રિયા",
@@ -910,7 +910,7 @@ const resources = {
           },
           air: {
             title: "સ્વચ્છ હવા પ્રક્રિયા",
-            desc: "તેલ અને ભેજ મુક્ત ઉચ્ચ દબાણવાળી હવા અને સંવેદનશીલ ઉત્પાદનો માટે નાઇટ્રોજન હવા.",
+            desc: "તેલ અને ભેજ મુક્ત ઉચ્ચ દબાણવાળી હવા અને સંવેદનશીલ ઉત્પાદનો માટે નાઇટ્રોજન.",
             tag: "સ્વચ્છ હવા"
           }
         },
@@ -955,7 +955,7 @@ const resources = {
           },
           nitrogen: {
             title: "નાઇટ્રોજન મિલિંગ",
-            desc: "ઓક્સિજન-સંવેદનશીલ, ભેજ-સંવેદનશીલ અથવા થર્મોલેબાઇલ ફાર્માસ્યુટિકલ સંયોજનો માટે નાઇટ્રોજન હવાનો ઉપયોગ કરીને નિષ્ક્રિય વાતાવરણ મિલિંગ. શૂન્ય બગાડની ખાતરી.",
+            desc: "ઓક્સિજન-સંવેદનશીલ, ભેજ-સંવેદનશીલ અથવા થર્મોલેબાઇલ ફાર્માસ્યુટિકલ સંયોજનો માટે નાઇટ્રોજનનો ઉપયોગ કરીને નિષ્ક્રિય વાતાવરણ મિલિંગ. શૂન્ય બગાડની ખાતરી.",
             features: ["નિષ્ક્રિય વાતાવરણ", "ભેજ-મુક્ત", "તાપમાન નિયંત્રિત"]
           },
           qa: {
@@ -1042,7 +1042,7 @@ const resources = {
         panoli2: {
           label: "પાનોલી યુનિટ · પ્લાન્ટ ૨",
           title: "કેમિકલ અને <span class=\"red\">સ્પેશિયાલિટી</span> પ્રોસેસિંગ",
-          desc: "પ્લાન્ટ ૨ ઔદ્યોગિક પ્રક્રિયા માટે તૈયાર કરવામાં આવ્યો છે, જે ઉચ્ચ ક્ષમતા સાથે રસાયણો અને વિશેષ સંયોજનોનું સંચાલન કરે છે.",
+          desc: "પ્લાન્ટ ૨ ઔદ્યોગિક પ્રક્રિયા માટે તૈયાર કરવામાં આવ્યો છે, જે ઉચ્ચ ક્ષમતા સાથે રસાયણો અને સ્પેશિયાલિટી કેમિકલ્સનું સંચાલન કરે છે.",
           feature1: "૭ હેવી-ડ્યુટી એર જેટ મિલ્સ",
           feature2: "૪ એડવાન્સ્ડ એર ક્લાસિફાયર મિલ્સ",
           feature3: "સમર્પિત સ્પેશિયાલિટી કેમિકલ પ્રોસેસિંગ સ્ટાફ"
@@ -1263,7 +1263,7 @@ const resources = {
         ctaMesh: "Vedi Dimensioni Mesh",
         fda: "Struttura Approvata FDA",
         sqft: "Struttura di oltre 7000 Mqft.",
-        years: "Anni di Esperienza",
+        years: "Esperienza",
         cgmp: "Pratiche Standard cGMP"
       },
       showcase: {
@@ -1274,7 +1274,7 @@ const resources = {
         fine: "Polvere Micronizzata",
         materials: {
           white: "API Cristallino Bianco",
-          tan: "Estratto Vegetale Chiaro",
+          white2: "API Bianco Ultra-Fine",
           yellow: "Eccipiente Giallo",
           brown: "Polvere Erboristica Marrone",
           cream: "Polvere API Crema",
@@ -1364,12 +1364,12 @@ const resources = {
       },
       aboutPage: {
         label: "Informazioni su Microtech India",
-        title: "16 Anni di Eccellenza <span class=\"red\">Farmaceutica</span>",
+        title: "2 Decenni di Eccellenza <span class=\"red\">Farmaceutica</span>",
         lead: "Un'organizzazione di produzione a contratto a conduzione familiare dedicata alla micronizzazione di precisione.",
         whoLabel: "In Sintesi",
         whoTitle: "Chi <span class=\"red\">Siamo</span>",
-        whoLead: "MICROTECH INDIA è una Contract Manufacturing Organization (CMO) indipendente e a conduzione familiare con 16 anni di esperienza nella macinazione e micronizzazione di materiali farmaceutici. Lavoriamo principi attivi farmaceutici (API), eccipienti e altre sostanze in polvere con alta precisione, in piena conformità con gli standard FDA attuali. Le nostre strutture moderne e la lunga esperienza ci consentono di fornire soluzioni accurate, di alta qualità e affidabili ai nostri clienti.",
-        cardExp: "Anni di Esperienza",
+        whoLead: "MICROTECH INDIA è una Contract Manufacturing Organization (CMO) indipendente e a conduzione familiare con 2 decenni di esperienza nella macinazione e micronizzazione di materiali farmaceutici. Lavoriamo principi attivi farmaceutici (API), eccipienti e altre sostanze in polvere con alta precisione, in piena conformità con gli standard FDA attuali. Le nostre strutture moderne e la lunga esperienza ci consentono di fornire soluzioni accurate, di alta qualità e affidabili ai nostri clienti.",
+        cardExp: "Decenni di Esperienza",
         cardFDA: "Struttura Conforme FDA",
         cardGMP: "Pratiche Standard",
         cardCMO: "Produzione a Contratto",
@@ -1554,7 +1554,7 @@ const resources = {
         panoli2: {
           label: "Unità di Panoli · Impianto 2",
           title: "Lavorazione Chimica e <span class=\"red\">Specialistica</span>",
-          desc: "L'Impianto 2 è studiato per processi industriali robusti, in grado di gestire sostanze chimiche e composti speciali ad alta capacità.",
+          desc: "L'Impianto 2 è studiato per processi industriali robusti, in grado di gestire sostanze chimiche e prodotti chimici di specialità ad alta capacità.",
           feature1: "7 Mulini a Getto d'Aria per impieghi gravosi",
           feature2: "4 Mulini Classificatori ad Aria Avanzati",
           feature3: "Personale dedicato alla lavorazione chimica speciale"
@@ -1775,7 +1775,7 @@ const resources = {
         ctaMesh: "Voir les Tailles de Mesh",
         fda: "Installation Approuvée par la FDA",
         sqft: "Installation de 7000+ Sqft.",
-        years: "Années d'Expérience",
+        years: "Expérience",
         cgmp: "Pratiques Standard cGMP"
       },
       showcase: {
@@ -1786,7 +1786,7 @@ const resources = {
         fine: "Poudre Micronisée",
         materials: {
           white: "API Cristallin Blanc",
-          tan: "Extrait de Plante Fauve",
+          white2: "API Blanc Ultra-Fin",
           yellow: "Excipient Jaune",
           brown: "Poudre d'Herbe Brune",
           cream: "Poudre API Crème",
@@ -1876,12 +1876,12 @@ const resources = {
       },
       aboutPage: {
         label: "À Propos de Microtech India",
-        title: "16 Ans d'Excellence <span class=\"red\">Pharmaceutique</span>",
+        title: "2 Décennies d'Excellence <span class=\"red\">Pharmaceutique</span>",
         lead: "Une organisation de fabrication sous contrat familiale dédiée à la micronisation de précision.",
         whoLabel: "En un Coup d'Œil",
         whoTitle: "Qui nous <span class=\"red\">sommes</span>",
-        whoLead: "MICROTECH INDIA est une organisation de fabrication sous contrat (CMO) familiale et indépendante, forte de 16 ans d'expérience dans le broyage et la micronisation de matériaux pharmaceutiques. We traitons des ingrédients pharmaceutiques actifs (API), des excipients et d'autres substances en poudre avec une grande précision, en totale conformité avec les normes FDA actuelles. Nos installations modernes et notre longue expérience nous permettent de fournir des solutions précises, de haute qualité et fiables à nos clients.",
-        cardExp: "Années d'Expérience",
+        whoLead: "MICROTECH INDIA est une organisation de fabrication sous contrat (CMO) familiale et indépendante, forte de 2 décennies d'expérience dans le broyage et la micronisation de matériaux pharmaceutiques. We traitons des ingrédients pharmaceutiques actifs (API), des excipients et d'autres substances en poudre avec une grande précision, en totale conformité avec les normes FDA actuelles. Nos installations modernes et notre longue expérience nous permettent de fournir des solutions précises, de haute qualité et fiables à nos clients.",
+        cardExp: "Décennies d'Expérience",
         cardFDA: "Installation Conforme FDA",
         cardGMP: "Pratiques Standard",
         cardCMO: "Fabrication sous Contrat",
@@ -2066,7 +2066,7 @@ const resources = {
         panoli2: {
           label: "Unité de Panoli · Usine 2",
           title: "Traitement Chimique et <span class=\"red\">Spécialisé</span>",
-          desc: "L'Usine 2 est conçue pour des processus industriels robustes, traitant des produits chimiques et des composés spéciaux avec une grande capacité de débit.",
+          desc: "L'Usine 2 est conçue pour des processus industriels robustes, traitant des produits chimiques et des produits chimiques de spécialité avec une grande capacité de débit.",
           feature1: "7 Broyeurs à Jet d'Air Industriels",
           feature2: "4 Broyeurs Classificateurs à Air Avancés",
           feature3: "Personnel dédié au traitement chimique spécialisé"
@@ -2287,7 +2287,7 @@ const resources = {
         ctaMesh: "查看网目尺寸",
         fda: "FDA 批准设施",
         sqft: "7000+ 平方英尺设施",
-        years: "20+ 年行业经验",
+        years: "行业经验",
         cgmp: "cGMP 规范操作"
       },
       showcase: {
@@ -2298,7 +2298,7 @@ const resources = {
         fine: "微化超细粉末",
         materials: {
           white: "白色结晶 API 原料",
-          tan: "棕褐色植物提取物",
+          white2: "超细白色 API 原料",
           yellow: "黄色辅料",
           brown: "棕色中草药粉末",
           cream: "乳白色 API 粉末",
@@ -2388,12 +2388,12 @@ const resources = {
       },
       aboutPage: {
         label: "关于印度 Microtech",
-        title: "16 载<span class=\"red\">制药领域</span>卓越沉淀",
+        title: "20 载<span class=\"red\">制药领域</span>卓越沉淀",
         lead: "一家致力于精密超细微化加工的家族式合同制造组织 (CMO)。",
         whoLabel: "企业概览",
         whoTitle: "我们是<span class=\"red\">谁</span>",
-        whoLead: "MICROTECH INDIA 是一家家族拥有、独立的合同制造组织 (CMO)，在药物原料的研磨和超细微化方面拥有 16 年的经验。我们以极高的精准度处理活性制药成分 (API)、辅料和其他粉末物质，完全符合当前的 FDA 标准。我们现代化的设施和深厚的行业经验使我们能够为客户提供精准、优质和可靠的解决方案。",
-        cardExp: "年行业经验",
+        whoLead: "MICROTECH INDIA 是一家家族拥有、独立的合同制造组织 (CMO)，在药物原料的研磨和超细微化方面拥有 20 年的经验。我们以极高的精准度处理活性制药成分 (API)、辅料和其他粉末物质，完全符合当前的 FDA 标准。我们现代化的设施和深厚的行业经验使我们能够为客户提供精准、优质和可靠的解决方案。",
+        cardExp: "20 年行业经验",
         cardFDA: "符合 FDA 标准设施",
         cardGMP: "规范操作实践",
         cardCMO: "合同委托加工",
@@ -2578,7 +2578,7 @@ const resources = {
         panoli2: {
           label: "Panoli 设施 · 2 号工厂",
           title: "化学及<span class=\"red\">特种</span>加工",
-          desc: "2 号工厂专为高强度的工业加工量身定制，用于高吞吐量地处理化学品和特种化合物。",
+          desc: "2 号工厂专为高强度的工业加工量身定制，用于高吞吐量地处理化学品和特种化学品。",
           feature1: "7 台重型气流粉碎机",
           feature2: "4 台先进的气流分级粉碎机",
           feature3: "专用的特种化学加工操作团队"

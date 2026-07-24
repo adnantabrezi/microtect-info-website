@@ -167,21 +167,21 @@ export function ContactPage() {
                 <div className="contact-detail-value contact-detail-persons">
                   <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.4rem' }}>
                     <span>Bharat Patel — </span>
-                    <a href="tel:+919427340658">94273 40658</a>
+                    <a href="tel:+919427340658">+91 94273 40658</a>
                     <a href="https://wa.me/919427340658" target="_blank" rel="noopener noreferrer" style={{ display: 'inline-flex', color: '#25D366', borderBottom: 'none' }} title="Chat on WhatsApp">
                       <IconWhatsApp />
                     </a>
                   </div>
                   <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.4rem' }}>
                     <span>Parv Patel — </span>
-                    <a href="tel:+918866831889">88668 31889</a>
+                    <a href="tel:+918866831889">+91 88668 31889</a>
                     <a href="https://wa.me/918866831889" target="_blank" rel="noopener noreferrer" style={{ display: 'inline-flex', color: '#25D366', borderBottom: 'none' }} title="Chat on WhatsApp">
                       <IconWhatsApp />
                     </a>
                   </div>
                   <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
                     <span>Dhruvil Patel — </span>
-                    <a href="tel:+919427169961">94271 69961</a>
+                    <a href="tel:+919427169961">+91 94271 69961</a>
                     <a href="https://wa.me/919427169961" target="_blank" rel="noopener noreferrer" style={{ display: 'inline-flex', color: '#25D366', borderBottom: 'none' }} title="Chat on WhatsApp">
                       <IconWhatsApp />
                     </a>

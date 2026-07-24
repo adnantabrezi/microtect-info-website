@@ -92,56 +92,17 @@ export function Header() {
           <a href="#/services" onClick={(e) => toggleTopMenu(e, "services")}>{t("nav.services")}</a>
           <ul className="dropdown-menu">
             <li className="mobile-only-link" style={{ display: "none" }}><a href="#/services" onClick={() => setMobileOpen(false)}>{t("nav.servicesOverview")}</a></li>
-            <li className={`has-dropdown-right${expandedMenus["micronization"] ? " mobile-dropdown-open" : ""}`}>
-              <a href="#/services/micronization" onClick={(e) => toggleSubMenu(e, "micronization", ["milling", "sieving", "analysis"])}>{t("nav.micronization")}</a>
-              <ul className="dropdown-menu-right">
-                <li><a href="#/services/micronization#co-micronization" onClick={() => setMobileOpen(false)}>{t("nav.coMicronization")}</a></li>
-                <li><a href="#/services/micronization#cryo-micronization" onClick={() => setMobileOpen(false)}>{t("nav.cryoMicronization")}</a></li>
-                <li><a href="#/services/micronization#air-jet-micronization" onClick={() => setMobileOpen(false)}>{t("nav.airJetMicronization")}</a></li>
-              </ul>
+            <li>
+              <a href="#/services/micronization" onClick={() => setMobileOpen(false)}>{t("nav.micronization")}</a>
             </li>
-            
-            <li className={`has-dropdown-right${expandedMenus["milling"] ? " mobile-dropdown-open" : ""}`}>
-              <a href="#/services/milling" onClick={(e) => toggleSubMenu(e, "milling", ["micronization", "sieving", "analysis"])}>{t("nav.milling")}</a>
-              <ul className="dropdown-menu-right">
-                <li className={`has-dropdown-right${expandedMenus["multi-mill"] ? " mobile-dropdown-open" : ""}`}>
-                  <a href="#/services/milling#multi-mill" onClick={(e) => toggleSubMenu(e, "multi-mill", ["hammer-mill"])}>{t("nav.multiMill")}</a>
-                  <ul className="dropdown-menu-right">
-                    <li><a href="#/services/milling#cryogenic-purging" onClick={() => setMobileOpen(false)}>{t("nav.cryogenicPurging")}</a></li>
-                    <li><a href="#/services/milling#standard-milling" onClick={() => setMobileOpen(false)}>{t("nav.standardMilling")}</a></li>
-                    <li><a href="#/services/milling#co-milling" onClick={() => setMobileOpen(false)}>{t("nav.coMilling")}</a></li>
-                  </ul>
-                </li>
-                <li className={`has-dropdown-right${expandedMenus["hammer-mill"] ? " mobile-dropdown-open" : ""}`}>
-                  <a href="#/services/milling#hammer-mill" onClick={(e) => toggleSubMenu(e, "hammer-mill", ["multi-mill"])}>{t("nav.hammerMill")}</a>
-                  <ul className="dropdown-menu-right">
-                    <li><a href="#/services/milling#cryogenic-purging" onClick={() => setMobileOpen(false)}>{t("nav.cryogenicPurging")}</a></li>
-                    <li><a href="#/services/milling#standard-milling" onClick={() => setMobileOpen(false)}>{t("nav.standardMilling")}</a></li>
-                    <li><a href="#/services/milling#co-milling" onClick={() => setMobileOpen(false)}>{t("nav.coMilling")}</a></li>
-                  </ul>
-                </li>
-              </ul>
+            <li>
+              <a href="#/services/milling" onClick={() => setMobileOpen(false)}>{t("nav.milling")}</a>
             </li>
-
-            <li className={`has-dropdown-right${expandedMenus["sieving"] ? " mobile-dropdown-open" : ""}`}>
-              <a href="#/services/sieving" onClick={(e) => toggleSubMenu(e, "sieving", ["micronization", "milling", "analysis"])}>{t("nav.sievingClassification")}</a>
-              <ul className="dropdown-menu-right">
-                <li><a href="#/services/sieving#ultra-fine" onClick={() => setMobileOpen(false)}>{t("nav.ultraFineGrindingMill")}</a></li>
-                <li><a href="#/services/sieving#air-classifier" onClick={() => setMobileOpen(false)}>{t("nav.airClassifierMill")}</a></li>
-              </ul>
+            <li>
+              <a href="#/services/sieving" onClick={() => setMobileOpen(false)}>{t("nav.sievingClassification")}</a>
             </li>
-
-            <li className={`has-dropdown-right${expandedMenus["analysis"] ? " mobile-dropdown-open" : ""}`}>
-              <a href="#/services/analysis" onClick={(e) => toggleSubMenu(e, "analysis", ["micronization", "milling", "sieving"])}>{t("nav.analysis")}</a>
-              <ul className="dropdown-menu-right">
-                <li><a href="#/services/analysis#dry-wet-modes" onClick={() => setMobileOpen(false)}>{t("nav.dryAndWetModes")}</a></li>
-                <li className={`has-dropdown-right${expandedMenus["sieve-analysis"] ? " mobile-dropdown-open" : ""}`}>
-                  <a href="#/services/analysis#sieve-analysis" onClick={(e) => toggleSubMenu(e, "sieve-analysis", [])}>{t("nav.sieveAnalysis")}</a>
-                  <ul className="dropdown-menu-right">
-                    <li><a href="#/services/analysis#bulk-tap-density" onClick={() => setMobileOpen(false)}>{t("nav.bulkDensityTapDensity")}</a></li>
-                  </ul>
-                </li>
-              </ul>
+            <li>
+              <a href="#/services/analysis" onClick={() => setMobileOpen(false)}>{t("nav.analysis")}</a>
             </li>
           </ul>
         </div>

@@ -87,7 +87,7 @@ export function AboutPage() {
 
           <div className="about-stats-row reveal">
             <div className="about-stat-card">
-              <div className="about-stat-number"><span className="red">16+</span></div>
+              <div className="about-stat-number"><span className="red">2 Decade</span></div>
               <div className="about-stat-label">{t("aboutPage.cardExp")}</div>
             </div>
             <div className="about-stat-card">

@@ -2,8 +2,8 @@ import { useTranslation } from "react-i18next";
 import { EquipmentTabs } from "../components/EquipmentTabs";
 import { SpecsTable } from "../components/SpecsTable";
 import airJetMill from "../images/air-jet-mill-new.png";
-import micronizerMachine from "../images/micronizer-machine.png";
-import cbdMicronization from "../images/micronisation-cbd.jpg";
+import cryoMicronizationImg from "../images/cryo-micronization.png";
+import coMicronizationImg from "../images/co-micronization.png";
 
 export function ServiceMicronizationPage() {
   const { t } = useTranslation();
@@ -29,7 +29,7 @@ export function ServiceMicronizationPage() {
         "Maintains temperatures below -40°C",
         "Prevents volatile loss in active compounds"
       ],
-      image: micronizerMachine
+      image: cryoMicronizationImg
     },
     {
       id: "co-micronization",
@@ -40,7 +40,7 @@ export function ServiceMicronizationPage() {
         "Perfect homogenous mixtures",
         "Improved bioavailability profiles"
       ],
-      image: cbdMicronization
+      image: coMicronizationImg
     }
   ];
 

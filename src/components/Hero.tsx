@@ -32,16 +32,20 @@ export function Hero() {
           <div className="l">{t("hero.sqft")}</div>
         </div>
         <div className="hero-stat">
-          <div className="n"><span className="red">20+</span></div>
+          <div className="n"><span className="red">2 Decade</span></div>
           <div className="l">{t("hero.years")}</div>
         </div>
         <div className="hero-stat">
           <div className="n"><span className="red">cGMP</span></div>
           <div className="l">{t("hero.cgmp")}</div>
         </div>
-        <div className="hero-stat">
-          <div className="n"><span className="red">ISO 9001</span></div>
-          <div className="l">{t("hero.iso")}</div>
+        <div className="hero-stat" style={{ textAlign: "center", display: "flex", flexDirection: "column", alignItems: "center" }}>
+          <div className="n" style={{ textAlign: "center", lineHeight: 1.1 }}>
+            <span className="red" style={{ display: "block", textAlign: "center" }}>
+              ISO<br />9001..2015
+            </span>
+          </div>
+          <div className="l" style={{ textAlign: "center" }}>{t("hero.iso")}</div>
         </div>
       </div>
     </section>

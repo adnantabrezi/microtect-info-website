@@ -7,7 +7,7 @@ export function PowderShowcase() {
     { src: "/images/powder-cream.png", label: t("showcase.materials.cream") },
     { src: "/images/powder-white.png", label: t("showcase.materials.white") },
     { src: "/images/powder-grey.png", label: t("showcase.materials.grey") },
-    { src: "/images/powder-tan.png", label: t("showcase.materials.tan") },
+    { src: "/images/powder-white-2.png", label: t("showcase.materials.white2", "Ultra-Fine White API") },
     { src: "/images/powder-yellow.png", label: t("showcase.materials.yellow") },
     { src: "/images/powder-brown.png", label: t("showcase.materials.brown") },
   ];
