@@ -2,6 +2,8 @@ import { useTranslation } from "react-i18next";
 import { EquipmentTabs } from "../components/EquipmentTabs";
 import { SpecsTable } from "../components/SpecsTable";
 import mastersizer from "../images/Mastersizer-Mastersizer_+_Hydro_EV.png";
+import sieveStack from "../images/sieve-analysis-stack.png";
+import bulkDensityImg from "../images/bulk-tap-density.jpg";
 
 export function ServiceAnalysisPage() {
   const { t } = useTranslation();
@@ -29,7 +31,7 @@ export function ServiceAnalysisPage() {
         "Calibrated mesh screens",
         "Ideal for granules > 100µm"
       ],
-      image: mastersizer // Fallback image for now
+      image: sieveStack
     },
     {
       id: "bulk-tap-density",
@@ -41,7 +43,7 @@ export function ServiceAnalysisPage() {
         "Hausner Ratio measurement",
         "Automated tap volume tracking"
       ],
-      image: mastersizer // Fallback image for now
+      image: bulkDensityImg
     }
   ];
 

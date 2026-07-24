@@ -48,7 +48,7 @@ export function Process() {
         return [
           { icon: IconCleanRoom, title: "Clean Room Technology", desc: "State-of-the-Art Clean Room Technology including material and personal sluices." },
           { icon: IconHVAC, title: "Environmental Control", desc: "Dedicated HVAC Systems Provide Environmental Control for Storage & Processing areas." },
-          { icon: IconCleaning, title: "Cleaning Verification", desc: "Cleaning verification program." },
+          { icon: IconCleaning, title: "Cleaning Validation", desc: "Cleaning validation as per SOP." },
           { icon: IconLab, title: "Laboratory Services", desc: "Laboratory services including Particle size testing on MALVERN Instrument." },
           { icon: IconQuality, title: "Quality Management", desc: "Effective Quality Management System in compliance with cGMP Documentation system." },
           { icon: IconMicronizer, title: "Dedicated Micronizers", desc: "We have numbers of dedicated micronizers to serve you better." }

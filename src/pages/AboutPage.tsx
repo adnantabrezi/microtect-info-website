@@ -31,6 +31,11 @@ export function AboutPage() {
       title: t("aboutPage.caps.throughput.title"),
       desc: t("aboutPage.caps.throughput.desc"),
     },
+    {
+      icon: IconThroughput,
+      title: t("aboutPage.caps.capacity.title", "200 Metric Ton Monthly Capacity"),
+      desc: t("aboutPage.caps.capacity.desc", "High-scale commercial processing capacity of up to 200 metric tons per month."),
+    },
   ];
 
   const benefits = [
@@ -58,6 +63,11 @@ export function AboutPage() {
       title: t("aboutPage.benefits.air.title"),
       desc: t("aboutPage.benefits.air.desc"),
       tag: t("aboutPage.benefits.air.tag"),
+    },
+    {
+      title: t("aboutPage.benefits.validation.title", "Customer Specific Process & Cleaning Validation"),
+      desc: t("aboutPage.benefits.validation.desc", "Customized process parameters and rigorous cleaning validation protocols as per SOP tailored to your specific product requirements."),
+      tag: t("aboutPage.benefits.validation.tag", "Compliance"),
     },
   ];
 
@@ -87,7 +97,7 @@ export function AboutPage() {
 
           <div className="about-stats-row reveal">
             <div className="about-stat-card">
-              <div className="about-stat-number"><span className="red">2 Decade</span></div>
+              <div className="about-stat-number"><span className="red">2 Decades</span></div>
               <div className="about-stat-label">{t("aboutPage.cardExp")}</div>
             </div>
             <div className="about-stat-card">

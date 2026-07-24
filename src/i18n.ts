@@ -28,6 +28,10 @@ const resources = {
           title: "Analytical Services",
           desc: "State-of-the-art laser diffraction and physical characterization to verify quality."
         },
+        particleReduction: {
+          title: "Particle Size Reduction, BD & TD Facility",
+          desc: "Specialized particle size reduction coupled with Bulk Density (BD) & Tapped Density (TD) testing facility."
+        },
         learnMore: "Learn More"
       },
       scaleTimeline: {
@@ -97,12 +101,13 @@ const resources = {
         cryo: {
           label: "Temperature Controlled",
           title: "Cryo Micronization",
-          desc: "For highly heat-sensitive or thermolabile compounds, our cryo-micronization process uses liquid nitrogen cooling. This prevents heat degradation, melting, surface amorphization, and polymorphic conversion during particle size reduction."
+          desc: "For highly heat-sensitive or thermolabile compounds, our cryo-micronization process uses liquid nitrogen cooling. This prevents heat degradation, melting, surface amorphization, and polymorphic conversion during particle size reduction.",
+          feature1: "Microbial control point"
         },
         airjet: {
           label: "Ultra-Fine Reduction",
           title: "Air Jet Micronization",
-          desc: "Utilizing sonic or supersonic high-velocity compressed gas, particle-on-particle collisions (attrition) reduce the active ingredient size without the use of grinding media. This guarantees zero metal contamination and extremely narrow particle size distributions, ideal for BCS Class II and IV drugs.",
+          desc: "Utilizing sonic or supersonic high-velocity compressed gas, particle-on-particle collisions (attrition) reduce the active ingredient size without the use of grinding media. This guarantees zero metal contamination and extremely narrow particle size distributions, ideal for BCS drugs.",
           feature1: "No moving parts in milling zone",
           feature2: "Oil-free, filtered processing air"
         }
@@ -115,7 +120,7 @@ const resources = {
           label: "Variable Speed Granulation",
           title: "Multi Mill",
           desc: "Multi milling uses variable force (impact and shearing via knife edges) and screen variations to achieve optimal granulation. It is highly flexible for both wet and dry granulation, producing highly controlled, uniform particle size distributions.",
-          feature1: "Cryogenic purging available",
+          feature1: "Liquid nitrogen purging available",
           feature2: "Standard milling",
           feature3: "Co-milling integrations"
         },
@@ -123,7 +128,7 @@ const resources = {
           label: "High Impact Crushing",
           title: "Hammer Mill",
           desc: "Our hammer mills use high-velocity rotating hammers to crush and shatter hard, crystalline, or brittle materials against a screen. This process offers immense raw power, high throughput, and robust size reduction.",
-          feature1: "Cryogenic purging available",
+          feature1: "Liquid nitrogen purging available",
           feature2: "Standard milling",
           feature3: "Co-milling integrations"
         },
@@ -168,7 +173,7 @@ const resources = {
         lead: "To guarantee the highest quality and exact specifications, every batch undergoes strict analytical verification using state-of-the-art laser diffraction and physical testing methods.",
         laser: {
           label: "Laser Diffraction",
-          title: "Dry and Wet Modes",
+          title: "Malvern Mastersizer 3000 + ultra",
           desc: "Using industry-standard Malvern Mastersizer instruments, we measure absolute particle size distributions. Wet mode utilizes sonication and liquid dispersion to break down cohesive agglomerates gently, while Dry mode uses venturi dispersion (compressed air), perfectly mimicking dry powder inhaler conditions for water-soluble materials.",
           feature1: "Sub-micron level accuracy",
           feature2: "Automated dispersion units"
@@ -224,7 +229,7 @@ const resources = {
         ultraFineGrindingMill: "Ultra fine grinding mill",
         airClassifierMill: "Air classifier mill",
         analysis: "Analysis",
-        dryAndWetModes: "Dry and wet modes",
+        dryAndWetModes: "Malvern Mastersizer 3000 + ultra",
         sieveAnalysis: "Sieve analysis",
         bulkDensityTapDensity: "Bulk density and tap density",
         contactOverview: "Contact Overview",
@@ -233,7 +238,7 @@ const resources = {
       hero: {
         eyebrow: "MicroTech India · Your Trusted Independent CMO",
         title: "Your M<span class=\"exclaim\">!</span>cro partner<br />for <span class=\"red\">micronization</span> work<br />APIs, pharmaceuticals,<br />chemicals.",
-        lead: "MicroTech (INDIA) is one of the most trusted leaders of Micronisation Services for API and Bulk Drugs. Located at Ankleshwar and Panoli (Asia's largest industrial area) in Gujarat, INDIA, our state-of-the-art FDA-approved facilities span over 7000 sqft. We leverage advanced Air Jet Milling, Multi Milling, and Cryogenic technologies to deliver precise particle size reduction. Supported by dedicated ISO-certified cleanrooms and advanced analytical laboratories, our team brings over two decade of expertise to provide unparalleled quality to our clientele.",
+        lead: "MicroTech (INDIA) is one of the most trusted leaders of Micronisation Services for APIs, Bulk Drugs, Excipients, Inorganic APIs, Chemicals, Specialty Chemicals, and Cosmetics. Located at Ankleshwar and Panoli (Asia's largest industrial area) in Gujarat, INDIA, our state-of-the-art FDA-approved facilities span over 7000 sqft. We leverage advanced Air Jet Milling, Multi Milling, and Cryogenic technologies to deliver precise particle size reduction. Supported by dedicated ISO-certified cleanrooms and advanced analytical laboratories, our team brings over two decades of expertise to provide unparalleled quality to our clientele.",
         ctaContact: "Contact Us",
         ctaMesh: "View Mesh Sizes",
         fda: "FDA Approved Facility",
@@ -328,10 +333,10 @@ const resources = {
       contactSec: {
         label: "Partner with Us",
         title: "Discuss Your <span class=\"red\">Project</span>",
-        lead: "Whether you need a small 10g trial or high-volume commercial production, our engineering team is here to assist you.",
-        cta: "Contact Our Engineers",
+        lead: "Whether you need a small trial or high-volume commercial production, our technical team is here to assist you.",
+        cta: "Contact Our Technical Team",
         quick: "Quick Contact",
-        response: "We respond to all technical inquiries within 24 hours.",
+        response: "We respond to all valuable inquiries within 24 hours.",
         persons: "Contact Persons"
       },
       footer: {
@@ -344,7 +349,7 @@ const resources = {
         lead: "A family-owned Contract Manufacturing Organization dedicated to precision micronization.",
         whoLabel: "At a Glance",
         whoTitle: "Who we <span class=\"red\">are</span>",
-        whoLead: "MICROTECH INDIA is a family-owned, independent Contract Manufacturing Organization (CMO) with 2 decade of experience in milling and micronizing pharmaceutical materials. We process active pharmaceutical ingredients (APIs), excipients, and other powdered substances with high precision, fully compliant with current FDA standards. Our modern facilities and long standing experience enable us to deliver accurate, high quality, and reliable solutions to our clients.",
+        whoLead: "MICROTECH INDIA is a family-owned, independent Contract Manufacturing Organization (CMO) with over two decades of experience in milling and micronization. We process Active Pharmaceutical Ingredients (APIs), Bulk Drugs, Excipients, Specialty Chemicals, Inorganic Salts, Herbal Products, Cosmetics, and Battery Powders with extreme precision, fully compliant with current FDA standards. Our modern facilities and long-standing experience enable us to deliver accurate, high-quality, and reliable solutions to our clients.",
         cardExp: "Experience",
         cardFDA: "Compliant Facility",
         cardGMP: "Standard Practices",
@@ -353,8 +358,8 @@ const resources = {
         capTitle: "Our <span class=\"red\">capabilities</span>",
         caps: {
           particle: {
-            title: "Any Particle Ranges",
-            desc: "Average particle size any ranges microns oil and moisture free high pressure filtered air."
+            title: "Particle Size Range",
+            desc: "Particle size range up to D100 to 5 microns using oil and moisture-free high pressure filtered air."
           },
           nitrogen: {
             title: "Nitrogen Available",
@@ -370,7 +375,11 @@ const resources = {
           },
           throughput: {
             title: "Reproducible & High Throughput",
-            desc: "Reproducible & High throughput process."
+            desc: "Reproducible and high-throughput process with monthly processing capacity of up to 200 metric tons."
+          },
+          capacity: {
+            title: "200 Metric Ton Monthly Capacity",
+            desc: "High-scale commercial processing capacity of up to 200 metric tons per month."
           }
         },
         whyLabel: "Benefits",
@@ -400,11 +409,16 @@ const resources = {
             title: "Clean Air Processing",
             desc: "Oil and Moisture free high pressure air and Nitrogen also for sensitive products.",
             tag: "Clean Air"
+          },
+          validation: {
+            title: "Customer Specific Process & Cleaning Validation",
+            desc: "Customized process parameters and rigorous cleaning validation protocols as per SOP tailored to your specific product requirements.",
+            tag: "Compliance"
           }
         },
         companyLabel: "Our Company",
         companyTitle: "Fast Growing <span class=\"red\">Pharma</span> Company",
-        companyLead: "We offer consistent, reliable and cost-effective contract micronization services for your SMALL QUANTITY (10 GRAMS) TO LARGE VOLUME ROUTINE PRODUCTIONS. We will help you to reduce \"TIME TO MARKET\" for your R&D projects.",
+        companyLead: "We offer consistent, reliable and cost-effective contract micronization services for your SMALL QUANTITY (0.20 GRAMS) TO LARGE VOLUME ROUTINE PRODUCTIONS (50 METRIC TONS). We will help you to reduce \"TIME TO MARKET\" for your R&D projects.",
         highlights: {
           batch: "Small to large batch processing",
           timeline: "Accelerated R&D timelines",
@@ -438,7 +452,7 @@ const resources = {
           },
           rnd: {
             title: "R&D Support",
-            desc: "From small quantity trials (as low as 10 grams) to full-scale production runs, we support your R&D journey and help reduce your time-to-market.",
+            desc: "From small quantity trials (as low as 0.20 grams) to full-scale production runs (up to 50 metric tons), we support your R&D journey and help reduce your time-to-market.",
             features: ["Small batch trials", "Scale-up support", "Fast turnaround"]
           },
           nitrogen: {
@@ -448,8 +462,8 @@ const resources = {
           },
           qa: {
             title: "Quality Assurance",
-            desc: "End-to-end quality management compliant with cGMP documentation standards. Every batch undergoes rigorous quality checks with cleaning verification protocols.",
-            features: ["cGMP compliance", "Cleaning verification", "Quality documentation"]
+            desc: "End-to-end quality management compliant with cGMP documentation standards. Every batch undergoes rigorous quality checks with cleaning validation as per SOP.",
+            features: ["cGMP compliance", "Cleaning validation as per SOP", "Quality documentation"]
           }
         },
         processLabel: "Our Process",
@@ -469,7 +483,7 @@ const resources = {
           },
           step4: {
             title: "QC & Delivery",
-            desc: "Rigorous quality checks with MALVERN PSD analysis, cleaning verification, and secure packaging for delivery."
+            desc: "Rigorous quality checks with MALVERN PSD analysis, cleaning validation as per SOP, and secure packaging for delivery."
           }
         },
         ready: "Ready to <span class=\"red\">get started?</span>",
@@ -506,7 +520,7 @@ const resources = {
           persons: "Contact Persons",
           office: "Office & Works",
           responseTime: "Response Time",
-          responseLead: "We respond to all technical inquiries within 24 hours."
+          responseLead: "We respond to all valuable inquiries within 24 hours."
         }
       },
       facilitiesPage: {
@@ -518,7 +532,7 @@ const resources = {
           title: "Dedicated <span class=\"red\">Micronization</span> Hub",
           desc: "Our Ankleshwar facility is a highly specialized plant focused on precision micronization with a dedicated and experienced team of professionals.",
           feature1: "4 Dedicated Air Jet Mills",
-          feature2: "Dedicated operational staff and engineering team"
+          feature2: "Dedicated operational staff and technical team"
         },
         panoli1: {
           label: "Panoli Unit · Plant 1",

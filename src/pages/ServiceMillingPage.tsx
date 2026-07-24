@@ -36,9 +36,9 @@ export function ServiceMillingPage() {
 
   const specsRows = [
     { parameter: "Input Feed Size", value: "< 50mm" },
-    { parameter: "Target Final Particle Size (D90)", value: "50µm up to 2mm" },
-    { parameter: "Processing Capacity", value: "10kg to 2000kg / batch" },
-    { parameter: "Cooling Options", value: "Liquid Nitrogen (Cryogenic), Chilled Water" },
+    { parameter: "Target Final Particle Size (D90)", value: "10 - 20 Mesh" },
+    { parameter: "Processing Capacity", value: "0.20g to 50 Metric Tons" },
+    { parameter: "Cooling Options", value: "Liquid Nitrogen Purging (Cryogenic)" },
     { parameter: "Documentation", value: "Full cGMP Batch Records" }
   ];
 

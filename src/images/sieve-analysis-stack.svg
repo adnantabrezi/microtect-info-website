@@ -1,0 +1,131 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="100%" height="100%">
+  <defs>
+    <!-- Metallic Steel Gradients -->
+    <linearGradient id="steelGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#8a94a0"/>
+      <stop offset="20%" stop-color="#cfd6df"/>
+      <stop offset="45%" stop-color="#ffffff"/>
+      <stop offset="65%" stop-color="#a3acb8"/>
+      <stop offset="85%" stop-color="#6c7582"/>
+      <stop offset="100%" stop-color="#49505a"/>
+    </linearGradient>
+
+    <linearGradient id="brassGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#b8860b"/>
+      <stop offset="25%" stop-color="#ffd700"/>
+      <stop offset="50%" stop-color="#fff8dc"/>
+      <stop offset="75%" stop-color="#daa520"/>
+      <stop offset="100%" stop-color="#8b6508"/>
+    </linearGradient>
+
+    <linearGradient id="innerShadow" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="rgba(0,0,0,0.4)"/>
+      <stop offset="100%" stop-color="rgba(0,0,0,0)"/>
+    </linearGradient>
+
+    <!-- Mesh Patterns -->
+    <pattern id="meshCoarse" width="16" height="16" patternUnits="userSpaceOnUse">
+      <path d="M 16 0 L 0 0 0 16" fill="none" stroke="#4a5568" stroke-width="1.2"/>
+    </pattern>
+
+    <pattern id="meshMedium" width="8" height="8" patternUnits="userSpaceOnUse">
+      <path d="M 8 0 L 0 0 0 8" fill="none" stroke="#5a6578" stroke-width="0.9"/>
+    </pattern>
+
+    <pattern id="meshFine" width="4" height="4" patternUnits="userSpaceOnUse">
+      <path d="M 4 0 L 0 0 0 4" fill="none" stroke="#6a7588" stroke-width="0.6"/>
+    </pattern>
+
+    <pattern id="meshUltraFine" width="2" height="2" patternUnits="userSpaceOnUse">
+      <path d="M 2 0 L 0 0 0 2" fill="none" stroke="#7a8598" stroke-width="0.4"/>
+    </pattern>
+
+    <filter id="dropShadow" x="-10%" y="-10%" width="130%" height="130%">
+      <feDropShadow dx="0" dy="12" stdDeviation="16" flood-color="#0f172a" flood-opacity="0.15"/>
+    </filter>
+  </defs>
+
+  <!-- Clean Background -->
+  <rect width="100%" height="100%" fill="#f8fafc"/>
+  
+  <!-- Subtle Lab Radial Soft Glow -->
+  <radialGradient id="labBgGlow" cx="50%" cy="50%" r="50%">
+    <stop offset="0%" stop-color="#ffffff"/>
+    <stop offset="100%" stop-color="#edf2f7"/>
+  </radialGradient>
+  <rect width="100%" height="100%" fill="url(#labBgGlow)"/>
+
+  <g filter="url(#dropShadow)" transform="translate(150, 40)">
+    
+    <!-- Title / Banner Card -->
+    <rect x="-20" y="10" width="540" height="40" rx="8" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+    <text x="250" y="35" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-weight="700" font-size="14" fill="#1e293b" letter-spacing="1">
+      STANDARD PHARMACEUTICAL TEST SIEVE STACK (ISO 3310-1)
+    </text>
+
+    <!-- Base Receiver Pan (Bottom Layer 5) -->
+    <g transform="translate(50, 410)">
+      <ellipse cx="200" cy="50" rx="180" ry="25" fill="#334155"/>
+      <path d="M 20 20 L 20 50 A 180 25 0 0 0 380 50 L 380 20 Z" fill="url(#steelGrad)"/>
+      <ellipse cx="200" cy="20" rx="180" ry="25" fill="#475569" stroke="#94a3b8" stroke-width="2"/>
+      <text x="200" y="42" text-anchor="middle" font-family="sans-serif" font-weight="600" font-size="12" fill="#ffffff" letter-spacing="0.5">BOTTOM RECEIVER PAN</text>
+    </g>
+
+    <!-- Sieve Layer 4: No. 200 Mesh (75 µm) -->
+    <g transform="translate(50, 320)">
+      <ellipse cx="200" cy="50" rx="180" ry="25" fill="#475569"/>
+      <ellipse cx="200" cy="20" rx="176" ry="23" fill="url(#meshUltraFine)"/>
+      <ellipse cx="200" cy="20" rx="176" ry="23" fill="url(#innerShadow)"/>
+      <path d="M 20 20 L 20 60 A 180 25 0 0 0 380 60 L 380 20 Z" fill="url(#steelGrad)"/>
+      <ellipse cx="200" cy="20" rx="180" ry="25" fill="none" stroke="#cbd5e1" stroke-width="3"/>
+      <!-- Sieve Label Badge -->
+      <rect x="140" y="32" width="120" height="20" rx="4" fill="#1e293b" opacity="0.9"/>
+      <text x="200" y="46" text-anchor="middle" font-family="sans-serif" font-weight="700" font-size="11" fill="#f8fafc">No. 200 (75 µm)</text>
+    </g>
+
+    <!-- Sieve Layer 3: No. 100 Mesh (150 µm) -->
+    <g transform="translate(50, 230)">
+      <ellipse cx="200" cy="50" rx="180" ry="25" fill="#475569"/>
+      <ellipse cx="200" cy="20" rx="176" ry="23" fill="url(#meshFine)"/>
+      <ellipse cx="200" cy="20" rx="176" ry="23" fill="url(#innerShadow)"/>
+      <path d="M 20 20 L 20 60 A 180 25 0 0 0 380 60 L 380 20 Z" fill="url(#steelGrad)"/>
+      <ellipse cx="200" cy="20" rx="180" ry="25" fill="none" stroke="#cbd5e1" stroke-width="3"/>
+      <!-- Sieve Label Badge -->
+      <rect x="140" y="32" width="120" height="20" rx="4" fill="#1e293b" opacity="0.9"/>
+      <text x="200" y="46" text-anchor="middle" font-family="sans-serif" font-weight="700" font-size="11" fill="#f8fafc">No. 100 (150 µm)</text>
+    </g>
+
+    <!-- Sieve Layer 2: No. 60 Mesh (250 µm) -->
+    <g transform="translate(50, 140)">
+      <ellipse cx="200" cy="50" rx="180" ry="25" fill="#475569"/>
+      <ellipse cx="200" cy="20" rx="176" ry="23" fill="url(#meshMedium)"/>
+      <ellipse cx="200" cy="20" rx="176" ry="23" fill="url(#innerShadow)"/>
+      <path d="M 20 20 L 20 60 A 180 25 0 0 0 380 60 L 380 20 Z" fill="url(#steelGrad)"/>
+      <ellipse cx="200" cy="20" rx="180" ry="25" fill="none" stroke="#cbd5e1" stroke-width="3"/>
+      <!-- Sieve Label Badge -->
+      <rect x="140" y="32" width="120" height="20" rx="4" fill="#1e293b" opacity="0.9"/>
+      <text x="200" y="46" text-anchor="middle" font-family="sans-serif" font-weight="700" font-size="11" fill="#f8fafc">No. 60 (250 µm)</text>
+    </g>
+
+    <!-- Sieve Layer 1: Top Coarse Mesh No. 20 Mesh (840 µm) -->
+    <g transform="translate(50, 50)">
+      <ellipse cx="200" cy="50" rx="180" ry="25" fill="#475569"/>
+      <ellipse cx="200" cy="20" rx="176" ry="23" fill="url(#meshCoarse)"/>
+      <ellipse cx="200" cy="20" rx="176" ry="23" fill="url(#innerShadow)"/>
+      <path d="M 20 20 L 20 60 A 180 25 0 0 0 380 60 L 380 20 Z" fill="url(#brassGrad)"/>
+      <ellipse cx="200" cy="20" rx="180" ry="25" fill="none" stroke="#fef08a" stroke-width="3"/>
+      <!-- Sieve Label Badge -->
+      <rect x="140" y="32" width="120" height="20" rx="4" fill="#78350f" opacity="0.9"/>
+      <text x="200" y="46" text-anchor="middle" font-family="sans-serif" font-weight="700" font-size="11" fill="#fef3c7">TOP: No. 20 (840 µm)</text>
+    </g>
+
+    <!-- Top Metallic Cover Lid -->
+    <g transform="translate(50, 10)">
+      <path d="M 20 25 L 20 35 A 180 20 0 0 0 380 35 L 380 25 Z" fill="url(#steelGrad)"/>
+      <ellipse cx="200" cy="25" rx="180" ry="20" fill="#94a3b8" stroke="#ffffff" stroke-width="2"/>
+      <!-- Handle Knob -->
+      <rect x="180" y="10" width="40" height="15" rx="4" fill="url(#steelGrad)"/>
+    </g>
+
+  </g>
+</svg>

@@ -26,6 +26,7 @@ export function ServiceMicronizationPage() {
       title: t("serviceMicronization.cryo.title", "Cryo Micronization"),
       desc: t("serviceMicronization.cryo.desc", "For highly heat-sensitive or thermolabile compounds, our cryo-micronization process uses liquid nitrogen cooling. This prevents heat degradation, melting, or morphological changes during particle size reduction."),
       features: [
+        "Microbial control point",
         "Maintains temperatures below -40°C",
         "Prevents volatile loss in active compounds"
       ],
@@ -46,8 +47,8 @@ export function ServiceMicronizationPage() {
 
   const specsRows = [
     { parameter: "Input Feed Size", value: "< 1mm - 2mm" },
-    { parameter: "Target Final Particle Size (D90)", value: "< 5µm up to 10µm" },
-    { parameter: "Processing Capacity", value: "50g to 500kg / batch" },
+    { parameter: "Target Final Particle Size", value: "Up to D100 to 5 microns" },
+    { parameter: "Processing Capacity", value: "0.20g to 50 Metric Tons" },
     { parameter: "Contamination Control", value: "Class 100,000 Cleanroom Environment" },
     { parameter: "Contact Parts", value: "SS 316L (Mirror Polished)" }
   ];

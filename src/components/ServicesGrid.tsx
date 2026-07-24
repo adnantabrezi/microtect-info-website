@@ -1,5 +1,5 @@
 import { useTranslation } from "react-i18next";
-import { IconMicronization, IconGrinding, IconCleanAir, IconAnalysis } from "./Icons";
+import { IconMicronization, IconGrinding, IconCleanAir, IconAnalysis, IconParticleSize } from "./Icons";
 
 export function ServicesGrid() {
   const { t } = useTranslation();
@@ -31,6 +31,13 @@ export function ServicesGrid() {
       icon: <IconAnalysis />,
       title: t("servicesGrid.analysis.title"),
       desc: t("servicesGrid.analysis.desc"),
+      link: "#/services/analysis"
+    },
+    {
+      id: "particle-reduction",
+      icon: <IconParticleSize />,
+      title: t("servicesGrid.particleReduction.title", "Particle Size Reduction, BD & TD Facility"),
+      desc: t("servicesGrid.particleReduction.desc", "Specialized particle size reduction coupled with Bulk Density (BD) & Tapped Density (TD) testing facility."),
       link: "#/services/analysis"
     }
   ];
