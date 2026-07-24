@@ -238,11 +238,11 @@ const resources = {
       hero: {
         eyebrow: "MicroTech India · Your Trusted Independent CMO",
         title: "Your M<span class=\"exclaim\">!</span>cro partner<br />for <span class=\"red\">micronization</span> work<br />APIs, pharmaceuticals,<br />chemicals.",
-        lead: "MicroTech (INDIA) is one of the most trusted leaders of Micronisation Services for APIs, Bulk Drugs, Excipients, Inorganic APIs, Chemicals, Specialty Chemicals, and Cosmetics. Located at Ankleshwar and Panoli (Asia's largest industrial area) in Gujarat, INDIA, our state-of-the-art FDA-approved facilities span over 7000 sqft. We leverage advanced Air Jet Milling, Multi Milling, and Cryogenic technologies to deliver precise particle size reduction. Supported by dedicated ISO-certified cleanrooms and advanced analytical laboratories, our team brings over two decades of expertise to provide unparalleled quality to our clientele.",
+        lead: "MicroTech (INDIA) is one of the most trusted leaders of Micronisation Services for APIs, Bulk Drugs, Excipients, Inorganic APIs, Chemicals, Specialty Chemicals, and Cosmetics. Located at Ankleshwar and Panoli (Asia's largest industrial area) in Gujarat, INDIA, our state-of-the-art FDA-approved facilities span over 57,000 sqft. We leverage advanced Air Jet Milling, Multi Milling, and Cryogenic technologies to deliver precise particle size reduction. Supported by dedicated ISO-certified cleanrooms and advanced analytical laboratories, our team brings over two decades of expertise to provide unparalleled quality to our clientele.",
         ctaContact: "Contact Us",
         ctaMesh: "View Mesh Sizes",
         fda: "FDA Approved Facility",
-        sqft: "Sqft. Facility",
+        sqft: "Sq. Ft. Facility",
         years: "Experience",
         cgmp: "Standard Practices",
         iso: "Certified Company"
