@@ -26,20 +26,20 @@ export function ServiceMillingPage() {
       title: t("serviceMilling.hammer.title", "Hammer Mill"),
       desc: t("serviceMilling.hammer.desc", "Our hammer mills use high-speed rotating hammers to crush and shatter hard, crystalline, or fibrous materials. This process offers high throughput and robust size reduction."),
       features: [
-        "High impact crushing force",
-        "Excellent for robust, fibrous materials",
-        "Customizable screen sizes"
+        t("serviceMilling.hammer.feature1", "High impact crushing force"),
+        t("serviceMilling.hammer.feature2", "Excellent for robust, fibrous materials"),
+        t("serviceMilling.hammer.feature3", "Customizable screen sizes")
       ],
       image: tanPowder
     }
   ];
 
   const specsRows = [
-    { parameter: "Input Feed Size", value: "< 50mm" },
-    { parameter: "Target Final Particle Size (D90)", value: "10 - 20 Mesh" },
-    { parameter: "Processing Capacity", value: "0.20g to 50 Metric Tons" },
-    { parameter: "Cooling Options", value: "Liquid Nitrogen Purging (Cryogenic)" },
-    { parameter: "Documentation", value: "Full cGMP Batch Records" }
+    { parameter: t("specs.params.feedSize", "Input Feed Size"), value: t("specs.values.feedSizeMilling", "< 50mm") },
+    { parameter: t("specs.params.finalSizeD90", "Target Final Particle Size (D90)"), value: t("specs.values.mesh1020", "10 - 20 Mesh") },
+    { parameter: t("specs.params.capacity", "Processing Capacity"), value: t("specs.values.capacityTons", "0.20g to 50 Metric Tons") },
+    { parameter: t("specs.params.cooling", "Cooling Options"), value: t("specs.values.liquidNitrogen", "Liquid Nitrogen Purging (Cryogenic)") },
+    { parameter: t("specs.params.documentation", "Documentation"), value: t("specs.values.cgmpRecords", "Full cGMP Batch Records") }
   ];
 
   return (
@@ -58,20 +58,20 @@ export function ServiceMillingPage() {
 
       <section className="block" id="technologies" style={{ backgroundColor: "var(--bg-alt)" }}>
         <div className="container">
-          <div className="section-label reveal">Milling Systems</div>
-          <h2 className="section-h2 reveal">Advanced Milling Technologies</h2>
+          <div className="section-label reveal">{t("serviceMilling.techLabel", "Milling Systems")}</div>
+          <h2 className="section-h2 reveal">{t("serviceMilling.techTitle", "Advanced Milling Technologies")}</h2>
           <EquipmentTabs tabs={tabs} />
         </div>
       </section>
 
       <section className="block" id="specifications">
         <div className="container">
-          <div className="section-label reveal">Technical Data</div>
-          <h2 className="section-h2 reveal">Milling Specifications</h2>
+          <div className="section-label reveal">{t("serviceMilling.specsLabel", "Technical Data")}</div>
+          <h2 className="section-h2 reveal">{t("serviceMilling.specsTitle", "Milling Specifications")}</h2>
           <p className="section-lead reveal" style={{ marginBottom: "2rem" }}>
-            We provide robust and scalable milling services capable of processing large volumes without sacrificing precision.
+            {t("serviceMilling.specsLead", "We provide robust and scalable milling services capable of processing large volumes without sacrificing precision.")}
           </p>
-          <SpecsTable title="Milling Capabilities" rows={specsRows} />
+          <SpecsTable title={t("serviceMilling.specsTableTitle", "Milling Capabilities")} rows={specsRows} />
         </div>
       </section>
     </main>

@@ -77,7 +77,7 @@ export function ParticlesBackground() {
       >
         <defs>
           <radialGradient id="bgGlow" cx="100%" cy="0%" r="50%">
-            <stop offset="0%" stopColor="rgba(224, 32, 32, 0.035)" />
+            <stop offset="0%" stopColor="rgba(224, 32, 32, 0.075)" />
             <stop offset="50%" stopColor="rgba(30, 41, 59, 0.015)" />
             <stop offset="100%" stopColor="rgba(255, 255, 255, 0)" />
           </radialGradient>

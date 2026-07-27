@@ -14,9 +14,9 @@ export function ServiceSievingPage() {
       title: t("serviceSieving.ultrafine.title", "Ultra Fine Grinding Mill"),
       desc: t("serviceSieving.ultrafine.desc", "Coupled with internal sieving mechanisms, our ultra-fine grinding mills achieve extremely tight particle size distributions while processing tough or resilient materials."),
       features: [
-        "Internal sieving technology",
-        "High precision particle cuts",
-        "Continuous closed-loop processing"
+        t("serviceSieving.ultrafine.feature1", "Internal sieving technology"),
+        t("serviceSieving.ultrafine.feature2", "High precision particle cuts"),
+        t("serviceSieving.ultrafine.feature3", "Continuous closed-loop processing")
       ],
       image: creamPowder
     },
@@ -34,11 +34,11 @@ export function ServiceSievingPage() {
   ];
 
   const specsRows = [
-    { parameter: "Sieve Mesh Range", value: "20 Mesh (841µm) to 400 Mesh (37µm)" },
-    { parameter: "Classification Precision", value: "98% accuracy on top-cut size" },
-    { parameter: "Processing Volume", value: "Pilot scale to 5000kg/day" },
-    { parameter: "Anti-Blinding Tech", value: "Ultrasonic deblinding, mechanical tappers" },
-    { parameter: "Compliance", value: "FDA Compliant, GMP environment" }
+    { parameter: t("specs.params.sieveRange", "Sieve Mesh Range"), value: t("specs.values.meshRangeSieving", "20 Mesh (841µm) to 400 Mesh (37µm)") },
+    { parameter: t("specs.params.precision", "Classification Precision"), value: t("specs.values.accuracy98", "98% accuracy on top-cut size") },
+    { parameter: t("specs.params.volume", "Processing Volume"), value: t("specs.values.pilotVolume", "Pilot scale to 5000kg/day") },
+    { parameter: t("specs.params.antiBlinding", "Anti-Blinding Tech"), value: t("specs.values.deblindingTech", "Ultrasonic deblinding, mechanical tappers") },
+    { parameter: t("specs.params.compliance", "Compliance"), value: t("specs.values.fdaGmp", "FDA Compliant, GMP environment") }
   ];
 
   return (
@@ -57,20 +57,20 @@ export function ServiceSievingPage() {
 
       <section className="block" id="technologies" style={{ backgroundColor: "var(--bg-alt)" }}>
         <div className="container">
-          <div className="section-label reveal">Separation Systems</div>
-          <h2 className="section-h2 reveal">Sieving & Classification Equipment</h2>
+          <div className="section-label reveal">{t("serviceSieving.techLabel", "Separation Systems")}</div>
+          <h2 className="section-h2 reveal">{t("serviceSieving.techTitle", "Sieving & Classification Equipment")}</h2>
           <EquipmentTabs tabs={tabs} />
         </div>
       </section>
 
       <section className="block" id="specifications">
         <div className="container">
-          <div className="section-label reveal">Technical Data</div>
-          <h2 className="section-h2 reveal">Classification Specs</h2>
+          <div className="section-label reveal">{t("serviceSieving.specsLabel", "Technical Data")}</div>
+          <h2 className="section-h2 reveal">{t("serviceSieving.specsTitle", "Classification Specs")}</h2>
           <p className="section-lead reveal" style={{ marginBottom: "2rem" }}>
-            We guarantee exact sizing profiles to match your material flow and solubility requirements.
+            {t("serviceSieving.specsLead", "We guarantee exact sizing profiles to match your material flow and solubility requirements.")}
           </p>
-          <SpecsTable title="Sieving Capabilities" rows={specsRows} />
+          <SpecsTable title={t("serviceSieving.specsTableTitle", "Sieving Capabilities")} rows={specsRows} />
         </div>
       </section>
     </main>

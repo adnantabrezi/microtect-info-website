@@ -17,7 +17,7 @@ export function ServiceAnalysisPage() {
       features: [
         t("serviceAnalysis.laser.feature1", "Sub-micron level accuracy"),
         t("serviceAnalysis.laser.feature2", "Automated dispersion units"),
-        "Real-time D10, D50, D90 reporting"
+        t("serviceAnalysis.laser.feature3", "Real-time D10, D50, D90 reporting")
       ],
       image: mastersizer
     },
@@ -27,9 +27,9 @@ export function ServiceAnalysisPage() {
       title: t("serviceAnalysis.tech.sieve.title", "Sieve Analysis"),
       desc: t("serviceAnalysis.tech.sieve.desc", "Traditional and reliable physical screening to determine the granular particle size distribution of coarser materials."),
       features: [
-        "Vibratory shaker analysis",
-        "Calibrated mesh screens",
-        "Ideal for granules > 100µm"
+        t("serviceAnalysis.tech.sieve.feature1", "Vibratory shaker analysis"),
+        t("serviceAnalysis.tech.sieve.feature2", "Calibrated mesh screens"),
+        t("serviceAnalysis.tech.sieve.feature3", "Ideal for granules > 100µm")
       ],
       image: sieveStack
     },
@@ -39,20 +39,20 @@ export function ServiceAnalysisPage() {
       title: t("serviceAnalysis.tech.density.title", "Bulk & Tap Density"),
       desc: t("serviceAnalysis.tech.density.desc", "Critical measurements for powder flowability, compressibility, and packaging requirements, ensuring optimal downstream processing for oral solid dosages."),
       features: [
-        "Carr's Index calculation",
-        "Hausner Ratio measurement",
-        "Automated tap volume tracking"
+        t("serviceAnalysis.tech.density.feature1", "Carr's Index calculation"),
+        t("serviceAnalysis.tech.density.feature2", "Hausner Ratio measurement"),
+        t("serviceAnalysis.tech.density.feature3", "Automated tap volume tracking")
       ],
       image: bulkDensityImg
     }
   ];
 
   const specsRows = [
-    { parameter: "Measurement Range (Laser)", value: "0.1µm to 3000µm" },
-    { parameter: "Dispersion Modes", value: "Aero (Dry) & Hydro (Wet)" },
-    { parameter: "Compliance Level", value: "21 CFR Part 11 Compliant Software" },
-    { parameter: "Analysis Time", value: "Fast turnaround (<24hrs for QA release)" },
-    { parameter: "Reporting Format", value: "Detailed Certificates of Analysis (CoA)" }
+    { parameter: t("specs.params.rangeLaser", "Measurement Range (Laser)"), value: t("specs.values.laserRange", "0.1µm to 3000µm") },
+    { parameter: t("specs.params.modes", "Dispersion Modes"), value: t("specs.values.aeroHydro", "Aero (Dry) & Hydro (Wet)") },
+    { parameter: t("specs.params.complianceLevel", "Compliance Level"), value: t("specs.values.cfrPart11", "21 CFR Part 11 Compliant Software") },
+    { parameter: t("specs.params.time", "Analysis Time"), value: t("specs.values.fastQA", "Fast turnaround (<24hrs for QA release)") },
+    { parameter: t("specs.params.format", "Reporting Format"), value: t("specs.values.detailedCoA", "Detailed Certificates of Analysis (CoA)") }
   ];
 
   return (
@@ -71,20 +71,20 @@ export function ServiceAnalysisPage() {
 
       <section className="block" id="technologies" style={{ backgroundColor: "var(--bg-alt)" }}>
         <div className="container">
-          <div className="section-label reveal">Laboratory Testing</div>
-          <h2 className="section-h2 reveal">Analytical Instruments</h2>
+          <div className="section-label reveal">{t("serviceAnalysis.techLabel", "Laboratory Testing")}</div>
+          <h2 className="section-h2 reveal">{t("serviceAnalysis.techTitle", "Analytical Instruments")}</h2>
           <EquipmentTabs tabs={tabs} />
         </div>
       </section>
 
       <section className="block" id="specifications">
         <div className="container">
-          <div className="section-label reveal">Quality Assurance</div>
-          <h2 className="section-h2 reveal">Testing Capabilities</h2>
+          <div className="section-label reveal">{t("serviceAnalysis.specsLabel", "Quality Assurance")}</div>
+          <h2 className="section-h2 reveal">{t("serviceAnalysis.specsTitle", "Testing Capabilities")}</h2>
           <p className="section-lead reveal" style={{ marginBottom: "2rem" }}>
-            Our internal lab guarantees that product leaving our facility precisely matches your required particle size profile.
+            {t("serviceAnalysis.specsLead", "Our internal lab guarantees that product leaving our facility precisely matches your required particle size profile.")}
           </p>
-          <SpecsTable title="QA / QC Specifications" rows={specsRows} />
+          <SpecsTable title={t("serviceAnalysis.specsTableTitle", "QA / QC Specifications")} rows={specsRows} />
         </div>
       </section>
     </main>

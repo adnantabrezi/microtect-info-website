@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import "./index.css";
 
+import { useTranslation } from "react-i18next";
 import { useRoute } from "./components/Router";
 import { Header } from "./components/Header";
 import { Footer } from "./components/Footer";
@@ -38,6 +39,11 @@ function PageContent({ route }: { route: string }) {
 
 export function App() {
   const route = useRoute();
+  const { i18n } = useTranslation();
+
+  useEffect(() => {
+    document.documentElement.lang = i18n.language || "en";
+  }, [i18n.language]);
 
   useEffect(() => {
     // Simple reveal on scroll — matching sample.html behavior

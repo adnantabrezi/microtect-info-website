@@ -26,9 +26,9 @@ export function ServiceMicronizationPage() {
       title: t("serviceMicronization.cryo.title", "Cryo Micronization"),
       desc: t("serviceMicronization.cryo.desc", "For highly heat-sensitive or thermolabile compounds, our cryo-micronization process uses liquid nitrogen cooling. This prevents heat degradation, melting, or morphological changes during particle size reduction."),
       features: [
-        "Microbial control point",
-        "Maintains temperatures below -40°C",
-        "Prevents volatile loss in active compounds"
+        t("serviceMicronization.cryo.feature1", "Microbial control point"),
+        t("serviceMicronization.cryo.feature2", "Maintains temperatures below -40°C"),
+        t("serviceMicronization.cryo.feature3", "Prevents volatile loss in active compounds")
       ],
       image: cryoMicronizationImg
     },
@@ -38,19 +38,19 @@ export function ServiceMicronizationPage() {
       title: t("serviceMicronization.co.title", "Co-Micronization"),
       desc: t("serviceMicronization.co.desc", "Co-micronization involves the simultaneous milling of multiple active ingredients or excipients. This ensures a perfectly homogeneous blend down to the micro-scale, eliminating segregation during subsequent manufacturing steps."),
       features: [
-        "Perfect homogenous mixtures",
-        "Improved bioavailability profiles"
+        t("serviceMicronization.co.feature1", "Perfect homogenous mixtures"),
+        t("serviceMicronization.co.feature2", "Improved bioavailability profiles")
       ],
       image: coMicronizationImg
     }
   ];
 
   const specsRows = [
-    { parameter: "Input Feed Size", value: "< 1mm - 2mm" },
-    { parameter: "Target Final Particle Size", value: "Up to D100 to 5 microns" },
-    { parameter: "Processing Capacity", value: "0.20g to 50 Metric Tons" },
-    { parameter: "Contamination Control", value: "Class 100,000 Cleanroom Environment" },
-    { parameter: "Contact Parts", value: "SS 316L (Mirror Polished)" }
+    { parameter: t("specs.params.feedSize", "Input Feed Size"), value: t("specs.values.feedSizeMicro", "< 1mm - 2mm") },
+    { parameter: t("specs.params.finalSize", "Target Final Particle Size"), value: t("specs.values.finalSizeMicro", "Up to D100 to 5 microns") },
+    { parameter: t("specs.params.capacity", "Processing Capacity"), value: t("specs.values.capacityTons", "0.20g to 50 Metric Tons") },
+    { parameter: t("specs.params.contamination", "Contamination Control"), value: t("specs.values.cleanroom", "Class 100,000 Cleanroom Environment") },
+    { parameter: t("specs.params.contactParts", "Contact Parts"), value: t("specs.values.ss316l", "SS 316L (Mirror Polished)") }
   ];
 
   return (
@@ -69,20 +69,20 @@ export function ServiceMicronizationPage() {
 
       <section className="block" id="technologies" style={{ backgroundColor: "var(--bg-alt)" }}>
         <div className="container">
-          <div className="section-label reveal">Our Technologies</div>
-          <h2 className="section-h2 reveal">Micronization Methods</h2>
+          <div className="section-label reveal">{t("serviceMicronization.techLabel", "Our Technologies")}</div>
+          <h2 className="section-h2 reveal">{t("serviceMicronization.techTitle", "Micronization Methods")}</h2>
           <EquipmentTabs tabs={tabs} />
         </div>
       </section>
 
       <section className="block" id="specifications">
         <div className="container">
-          <div className="section-label reveal">Technical Data</div>
-          <h2 className="section-h2 reveal">Process Specifications</h2>
+          <div className="section-label reveal">{t("serviceMicronization.specsLabel", "Technical Data")}</div>
+          <h2 className="section-h2 reveal">{t("serviceMicronization.specsTitle", "Process Specifications")}</h2>
           <p className="section-lead reveal" style={{ marginBottom: "2rem" }}>
-            We guarantee tightly controlled particle size distributions using state-of-the-art analytical equipment.
+            {t("serviceMicronization.specsLead", "We guarantee tightly controlled particle size distributions using state-of-the-art analytical equipment.")}
           </p>
-          <SpecsTable title="Micronization Capabilities" rows={specsRows} />
+          <SpecsTable title={t("serviceMicronization.specsTableTitle", "Micronization Capabilities")} rows={specsRows} />
         </div>
       </section>
     </main>

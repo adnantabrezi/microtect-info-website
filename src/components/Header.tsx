@@ -107,12 +107,8 @@ export function Header() {
           </ul>
         </div>
 
-        <div className={`nav-item has-dropdown${expandedMenus["contact"] ? " mobile-dropdown-open" : ""}`}>
-          <a href="#/contact" onClick={(e) => toggleTopMenu(e, "contact")}>{t("nav.contact")}</a>
-          <ul className="dropdown-menu">
-            <li className="mobile-only-link" style={{ display: "none" }}><a href="#/contact" onClick={() => setMobileOpen(false)}>{t("nav.contactOverview")}</a></li>
-            <li><a href="#contact-page-content" onClick={(e) => handleNavAndScroll(e, "contact", "contact-page-content")}>{t("nav.contactDetails")}</a></li>
-          </ul>
+        <div className="nav-item">
+          <a href="#/contact" onClick={() => setMobileOpen(false)}>{t("nav.contact")}</a>
         </div>
         
         {/* Language selector standard dropdown */}
