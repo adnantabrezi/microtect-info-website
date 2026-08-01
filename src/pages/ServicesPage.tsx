@@ -1,6 +1,8 @@
 import { useTranslation } from "react-i18next";
+import { Link } from "../components/Router";
 import { IconMicronization, IconAPI, IconAnalysis, IconRnD, IconNitrogenMilling, IconQA } from "../components/Icons";
 import { ProcessFlow } from "../components/ProcessFlow";
+import researchImg from "../images/research.jpeg";
 
 export function ServicesPage() {
   const { t } = useTranslation();
@@ -116,9 +118,9 @@ export function ServicesPage() {
                 {t("servicesPage.readyLead")}
               </p>
               <div className="hero-actions" style={{ marginTop: "2rem", justifyContent: 'flex-start' }}>
-                <a href="#/contact" className="btn-primary">
+                <Link to="/contact" className="btn-primary">
                   {t("nav.contactUs")} <span className="arrow">→</span>
-                </a>
+                </Link>
                  <a href="mailto:info@microtechindia.com" className="btn-secondary">
                   {t("servicesPage.emailUs")}
                 </a>
@@ -126,7 +128,7 @@ export function ServicesPage() {
             </div>
             <div className="about-company-image reveal">
               <img
-                src="/images/research.jpeg"
+                src={researchImg}
                 alt="Pharmaceutical research and development"
               />
             </div>

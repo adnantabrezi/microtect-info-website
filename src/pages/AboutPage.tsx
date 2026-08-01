@@ -1,8 +1,15 @@
+import { useSEO } from "../components/useSEO";
+import { Link } from "../components/Router";
 import { useTranslation } from "react-i18next";
 import { IconParticleSize, IconNitrogen, IconTechnology, IconGrinding, IconThroughput } from "../components/Icons";
 import airJetMillImg from "../images/air-jet-mill-new.png";
+import { CountUp } from "../components/CountUp";
 
 export function AboutPage() {
+  useSEO(
+    "About Microtech India — FDA Approved Contract Micronization",
+    "Learn about Microtech India, a leading provider of FDA-approved contract micronization, milling, and sieving services for pharmaceutical APIs and excipients."
+  );
   const { t } = useTranslation();
 
   const capabilities = [
@@ -182,9 +189,9 @@ export function AboutPage() {
                   <span className="red">—</span> {t("aboutPage.highlights.trace")}
                 </div>
               </div>
-              <a href="#/contact" className="btn-primary reveal" style={{ marginTop: "2rem" }}>
+              <Link to="/contact" className="btn-primary reveal" style={{ marginTop: "2rem" }}>
                 {t("aboutPage.partner")} <span className="arrow">→</span>
-              </a>
+              </Link>
             </div>
             <div className="about-company-image reveal">
               <img

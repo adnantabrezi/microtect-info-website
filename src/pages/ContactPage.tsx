@@ -1,8 +1,13 @@
+import { useSEO } from "../components/useSEO";
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { IconMail, IconPhone, IconMapPin, IconClock, IconWhatsApp } from "../components/Icons";
 
 export function ContactPage() {
+  useSEO(
+    "Contact Microtech India — Contract Manufacturing & Micronization",
+    "Contact Microtech India for your contract micronization, milling, and particle size reduction needs. Get a quote or inquire about our FDA-approved services."
+  );
   const { t } = useTranslation();
   const [formData, setFormData] = useState({
     name: "",

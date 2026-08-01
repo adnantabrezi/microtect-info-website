@@ -1,9 +1,14 @@
+import { useSEO } from "../components/useSEO";
 import { useTranslation } from "react-i18next";
 import ankleshwarImg from "../images/ankleshwar_unit.png";
 import panoliPlant1Img from "../images/panoli_plant1.png";
 import panoliPlant2Img from "../images/panoli_plant2.png";
 
 export function FacilitiesPage() {
+  useSEO(
+    "Facilities — Microtech India | State-of-the-Art Micronization",
+    "Explore Microtech India\'s cGMP compliant and FDA approved contract manufacturing facilities equipped with advanced air jet mills and analytical instruments."
+  );
   const { t } = useTranslation();
 
   return (

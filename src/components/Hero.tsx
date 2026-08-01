@@ -1,4 +1,6 @@
+import { Link } from "./Router";
 import { useTranslation } from "react-i18next";
+import { CountUp } from "./CountUp";
 
 export function Hero() {
   const { t } = useTranslation();
@@ -11,9 +13,9 @@ export function Hero() {
         {t("hero.lead")}
       </p>
       <div className="hero-actions reveal">
-        <a href="#/contact" className="btn-primary">
+        <Link to="/contact" className="btn-primary">
           {t("hero.ctaContact")} <span className="arrow">→</span>
-        </a>
+        </Link>
         <button 
           onClick={() => document.getElementById('particle-size')?.scrollIntoView({ behavior: 'smooth' })} 
           className="btn-secondary"
@@ -28,7 +30,7 @@ export function Hero() {
           <div className="l">{t("hero.fda")}</div>
         </div>
         <div className="hero-stat sqft-tooltip-container">
-          <div className="n"><span className="red">57,000</span></div>
+          <div className="n"><span className="red"><CountUp end={57000} /></span></div>
           <div className="l">{t("hero.sqft")}</div>
           <div className="sqft-tree-dropdown">
             <svg className="sqft-tree-lines" width="300" height="40" viewBox="0 0 300 40" fill="none">
@@ -40,11 +42,11 @@ export function Hero() {
             </svg>
             <div className="sqft-tree-nodes">
               <div className="tree-node left">
-                <div className="n"><span className="red">45,000</span></div>
+                <div className="n"><span className="red"><CountUp end={45000} /></span></div>
                 <div className="l">Panoli Unit</div>
               </div>
               <div className="tree-node right">
-                <div className="n"><span className="red">12,000</span></div>
+                <div className="n"><span className="red"><CountUp end={12000} /></span></div>
                 <div className="l">Ankleshwar (FDA Area)</div>
               </div>
             </div>

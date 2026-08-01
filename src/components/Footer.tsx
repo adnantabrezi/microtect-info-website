@@ -1,4 +1,6 @@
 import { useTranslation } from "react-i18next";
+import logoWhiteSvg from "../logo-white.svg";
+import { Link } from "./Router";
 
 export function Footer() {
   const { t } = useTranslation();
@@ -7,13 +9,13 @@ export function Footer() {
     <footer>
       <div className="fcontainer">
         <div className="f-logo">
-          <img src="/logo-white.svg" className="logo-svg" alt="Microtech India logo" />
+          <img src={logoWhiteSvg} className="logo-svg" alt="Microtech India logo" />
         </div>
         <div className="f-nav">
-          <a href="#/">{t("nav.home")}</a>
-          <a href="#/about">{t("nav.about")}</a>
-          <a href="#/services">{t("nav.services")}</a>
-          <a href="#/contact">{t("nav.contact")}</a>
+          <Link to="/">{t("nav.home")}</Link>
+          <Link to="/about">{t("nav.about")}</Link>
+          <Link to="/services">{t("nav.services")}</Link>
+          <Link to="/contact">{t("nav.contact")}</Link>
         </div>
         <div className="f-text">
           © 2025 Microtech India · <span className="red">FDA Compliant · cGMP Standards</span>

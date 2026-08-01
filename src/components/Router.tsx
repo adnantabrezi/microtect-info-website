@@ -1,30 +1,63 @@
 import { useState, useEffect } from "react";
 
 export function useRoute(): string {
-  const getHash = () => {
-    const hash = window.location.hash.replace(/^#\/?/, "").split("?")[0];
-    return hash || "home";
+  const getPath = () => {
+    // Return path without leading slash, fallback to "home" if empty
+    const path = window.location.pathname.replace(/^\/+/, "");
+    return path || "home";
   };
 
-  const [route, setRoute] = useState(getHash);
+  const [route, setRoute] = useState(getPath);
 
   useEffect(() => {
-    const onHashChange = () => {
-      if (window.location.hash && !window.location.hash.startsWith("#/")) {
-        return; // It's an in-page anchor, let the browser handle scrolling
-      }
-      const next = getHash();
+    const onLocationChange = () => {
+      const next = getPath();
       setRoute(next);
       window.scrollTo({ top: 0, behavior: "instant" });
     };
-    window.addEventListener("hashchange", onHashChange);
-    return () => window.removeEventListener("hashchange", onHashChange);
+
+    // Listen to popstate (back/forward buttons)
+    window.addEventListener("popstate", onLocationChange);
+
+    // Custom event for internal navigation
+    window.addEventListener("pushstate", onLocationChange);
+    
+    return () => {
+      window.removeEventListener("popstate", onLocationChange);
+      window.removeEventListener("pushstate", onLocationChange);
+    };
   }, []);
 
   return route;
 }
 
-/** Navigate programmatically */
+/** Navigate programmatically using History API */
 export function navigate(path: string) {
-  window.location.hash = `#/${path}`;
+  // Add leading slash if missing
+  const url = path.startsWith("/") ? path : `/${path}`;
+  window.history.pushState({}, "", url);
+  
+  // Dispatch custom event to notify components listening to the route
+  const navEvent = new PopStateEvent("pushstate");
+  window.dispatchEvent(navEvent);
+}
+
+/** Link component for history API routing */
+export function Link({ to, children, className, onClick, ...props }: React.AnchorHTMLAttributes<HTMLAnchorElement> & { to: string }) {
+  const url = to.startsWith("/") ? to : `/${to}`;
+  
+  const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    // Open in new tab if ctrl/cmd is held
+    if (e.ctrlKey || e.metaKey || e.shiftKey) return;
+    
+    e.preventDefault();
+    navigate(to);
+    if (onClick) onClick(e);
+  };
+
+  return (
+    <a href={url} onClick={handleClick} className={className} {...props}>
+      {children}
+    </a>
+  );
 }

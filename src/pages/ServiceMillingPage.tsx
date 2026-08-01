@@ -1,3 +1,4 @@
+import { useSEO } from "../components/useSEO";
 import { useTranslation } from "react-i18next";
 import { EquipmentTabs } from "../components/EquipmentTabs";
 import { SpecsTable } from "../components/SpecsTable";
@@ -5,6 +6,10 @@ import brownPowder from "../images/powder-brown.png";
 import tanPowder from "../images/powder-tan.png";
 
 export function ServiceMillingPage() {
+  useSEO(
+    "Contract Milling & Grinding Services — Microtech India",
+    "Contract milling and grinding services for pharmaceuticals and excipients, featuring multi-mill and pin-mill technology for precise particle control."
+  );
   const { t } = useTranslation();
 
   const tabs = [
@@ -36,7 +41,7 @@ export function ServiceMillingPage() {
 
   const specsRows = [
     { parameter: t("specs.params.feedSize", "Input Feed Size"), value: t("specs.values.feedSizeMilling", "< 50mm") },
-    { parameter: t("specs.params.finalSizeD90", "Target Final Particle Size (D90)"), value: t("specs.values.mesh1020", "10 - 20 Mesh") },
+    { parameter: t("specs.params.finalSizeD90", "Target Final Particle Size (D90)"), value: t("specs.values.mesh1020", "Upto 80 mesh") },
     { parameter: t("specs.params.capacity", "Processing Capacity"), value: t("specs.values.capacityTons", "0.20g to 50 Metric Tons") },
     { parameter: t("specs.params.cooling", "Cooling Options"), value: t("specs.values.liquidNitrogen", "Liquid Nitrogen Purging (Cryogenic)") },
     { parameter: t("specs.params.documentation", "Documentation"), value: t("specs.values.cgmpRecords", "Full cGMP Batch Records") }

@@ -1,3 +1,4 @@
+import { useSEO } from "../components/useSEO";
 import { useTranslation } from "react-i18next";
 import { EquipmentTabs } from "../components/EquipmentTabs";
 import { SpecsTable } from "../components/SpecsTable";
@@ -6,6 +7,10 @@ import cryoMicronizationImg from "../images/cryo-micronization.png";
 import coMicronizationImg from "../images/co-micronization.png";
 
 export function ServiceMicronizationPage() {
+  useSEO(
+    "Contract Micronization Services — Microtech India",
+    "FDA-approved contract micronization services utilizing advanced air jet milling technology for ultra-fine particle size reduction without heat generation."
+  );
   const { t } = useTranslation();
 
   const tabs = [

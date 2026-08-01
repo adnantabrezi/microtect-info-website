@@ -9,6 +9,7 @@ const entrypoints = [...new Bun.Glob("src/**/*.html").scanSync()];
 const result = await Bun.build({
   entrypoints,
   outdir,
+  publicPath: "/",
   minify: true,
   target: "browser",
   sourcemap: "linked",
@@ -27,4 +28,10 @@ await cp("src/images", path.join(outdir, "images"), { recursive: true, force: tr
 await cp("src/logo.svg", path.join(outdir, "logo.svg"), { force: true }).catch(() => {});
 await cp("src/logo-white.svg", path.join(outdir, "logo-white.svg"), { force: true }).catch(() => {});
 await cp("src/bg-particles.svg", path.join(outdir, "bg-particles.svg"), { force: true }).catch(() => {});
+await cp("src/robots.txt", path.join(outdir, "robots.txt"), { force: true }).catch(() => {});
+await cp("src/sitemap.xml", path.join(outdir, "sitemap.xml"), { force: true }).catch(() => {});
+await cp("src/.htaccess", path.join(outdir, ".htaccess"), { force: true }).catch(() => {});
+await cp("src/llms.txt", path.join(outdir, "llms.txt"), { force: true }).catch(() => {});
+
+
 

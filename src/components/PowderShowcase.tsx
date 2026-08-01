@@ -1,15 +1,21 @@
 import { useTranslation } from "react-i18next";
+import creamPowder from "../images/powder-cream.png";
+import whitePowder from "../images/powder-white.png";
+import greyPowder from "../images/powder-grey.png";
+import white2Powder from "../images/powder-white-2.png";
+import yellowPowder from "../images/powder-yellow.png";
+import brownPowder from "../images/powder-brown.png";
 
 export function PowderShowcase() {
   const { t } = useTranslation();
 
   const powders = [
-    { src: "/images/powder-cream.png", label: t("showcase.materials.cream") },
-    { src: "/images/powder-white.png", label: t("showcase.materials.white") },
-    { src: "/images/powder-grey.png", label: t("showcase.materials.grey") },
-    { src: "/images/powder-white-2.png", label: t("showcase.materials.white2", "Ultra-Fine White API") },
-    { src: "/images/powder-yellow.png", label: t("showcase.materials.yellow") },
-    { src: "/images/powder-brown.png", label: t("showcase.materials.brown") },
+    { src: creamPowder, label: t("showcase.materials.cream") },
+    { src: whitePowder, label: t("showcase.materials.white") },
+    { src: greyPowder, label: t("showcase.materials.grey") },
+    { src: white2Powder, label: t("showcase.materials.white2", "Ultra-Fine White API") },
+    { src: yellowPowder, label: t("showcase.materials.yellow") },
+    { src: brownPowder, label: t("showcase.materials.brown") },
   ];
 
   return (

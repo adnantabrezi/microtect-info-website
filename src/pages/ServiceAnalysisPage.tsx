@@ -1,3 +1,4 @@
+import { useSEO } from "../components/useSEO";
 import { useTranslation } from "react-i18next";
 import { EquipmentTabs } from "../components/EquipmentTabs";
 import { SpecsTable } from "../components/SpecsTable";
@@ -6,6 +7,10 @@ import sieveStack from "../images/sieve-analysis-stack.png";
 import bulkDensityImg from "../images/bulk-tap-density.jpg";
 
 export function ServiceAnalysisPage() {
+  useSEO(
+    "Particle Size Analysis Services — Microtech India",
+    "Advanced particle size analysis and testing services using state-of-the-art Malvern Mastersizer instruments for strict quality control."
+  );
   const { t } = useTranslation();
 
   const tabs = [

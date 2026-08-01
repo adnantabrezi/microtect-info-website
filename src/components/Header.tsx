@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import i18n from "../i18n";
+import logoSvg from "../logo.svg";
+import { Link } from "./Router";
 
 export function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -52,63 +54,43 @@ export function Header() {
 
   return (
     <nav>
-      <a href="#/" className="nav-logo">
-        <img src="/logo.svg" className="logo-svg" alt="Microtech India logo" />
-      </a>
+      <Link to="/" className="nav-logo">
+        <img src={logoSvg} className="logo-svg" alt="Microtech India logo" />
+      </Link>
       <div className={`nav-links${mobileOpen ? " nav-links--open" : ""}`}>
-        <div className={`nav-item has-dropdown${expandedMenus["home"] ? " mobile-dropdown-open" : ""}`}>
-          <a href="#/" onClick={(e) => toggleTopMenu(e, "home")}>{t("nav.home")}</a>
-          <ul className="dropdown-menu">
-            <li className="mobile-only-link" style={{ display: "none" }}><a href="#/" onClick={() => setMobileOpen(false)}>{t("nav.homeOverview")}</a></li>
-            <li><a href="#powders" onClick={(e) => handleNavAndScroll(e, "", "powders")}>{t("nav.powders")}</a></li>
-            <li><a href="#particle-size" onClick={(e) => handleNavAndScroll(e, "", "particle-size")}>{t("nav.particleSize")}</a></li>
-            <li><a href="#technology" onClick={(e) => handleNavAndScroll(e, "", "technology")}>{t("nav.technology")}</a></li>
-            <li><a href="#benefits" onClick={(e) => handleNavAndScroll(e, "", "benefits")}>{t("nav.benefits")}</a></li>
-            <li><a href="#process" onClick={(e) => handleNavAndScroll(e, "", "process")}>{t("nav.process")}</a></li>
-          </ul>
+        <div className="nav-item">
+          <Link to="/" onClick={() => setMobileOpen(false)}>{t("nav.home")}</Link>
         </div>
         
-        <div className={`nav-item has-dropdown${expandedMenus["about"] ? " mobile-dropdown-open" : ""}`}>
-          <a href="#/about" onClick={(e) => toggleTopMenu(e, "about")}>{t("nav.about")}</a>
-          <ul className="dropdown-menu">
-            <li className="mobile-only-link" style={{ display: "none" }}><a href="#/about" onClick={() => setMobileOpen(false)}>{t("nav.aboutOverview")}</a></li>
-            <li><a href="#at-a-glance" onClick={(e) => handleNavAndScroll(e, "about", "at-a-glance")}>{t("nav.atAGlance")}</a></li>
-            <li><a href="#about-features" onClick={(e) => handleNavAndScroll(e, "about", "about-features")}>{t("nav.features")}</a></li>
-            <li><a href="#about-benefits" onClick={(e) => handleNavAndScroll(e, "about", "about-benefits")}>{t("nav.benefits")}</a></li>
-            <li><a href="#our-company" onClick={(e) => handleNavAndScroll(e, "about", "our-company")}>{t("nav.ourCompany")}</a></li>
-          </ul>
+        <div className="nav-item">
+          <Link to="/about" onClick={() => setMobileOpen(false)}>{t("nav.about")}</Link>
         </div>
-        <div className={`nav-item has-dropdown${expandedMenus["facilities"] ? " mobile-dropdown-open" : ""}`}>
-          <a href="#/facilities" onClick={(e) => toggleTopMenu(e, "facilities")}>{t("nav.facilities")}</a>
-          <ul className="dropdown-menu">
-            <li className="mobile-only-link" style={{ display: "none" }}><a href="#/facilities" onClick={() => setMobileOpen(false)}>{t("nav.facilitiesOverview")}</a></li>
-            <li><a href="#ankleshwar-unit" onClick={(e) => handleNavAndScroll(e, "facilities", "ankleshwar-unit")}>{t("nav.ankleshwarUnit")}</a></li>
-            <li><a href="#panoli-plant-1" onClick={(e) => handleNavAndScroll(e, "facilities", "panoli-plant-1")}>{t("nav.panoliPlant1")}</a></li>
-            <li><a href="#panoli-plant-2" onClick={(e) => handleNavAndScroll(e, "facilities", "panoli-plant-2")}>{t("nav.panoliPlant2")}</a></li>
-          </ul>
+
+        <div className="nav-item">
+          <Link to="/facilities" onClick={() => setMobileOpen(false)}>{t("nav.facilities")}</Link>
         </div>
         
         <div className={`nav-item has-dropdown${expandedMenus["services"] ? " mobile-dropdown-open" : ""}`}>
-          <a href="#/services" onClick={(e) => toggleTopMenu(e, "services")}>{t("nav.services")}</a>
+          <Link to="/services" onClick={(e) => toggleTopMenu(e, "services")}>{t("nav.services")}</Link>
           <ul className="dropdown-menu">
-            <li className="mobile-only-link" style={{ display: "none" }}><a href="#/services" onClick={() => setMobileOpen(false)}>{t("nav.servicesOverview")}</a></li>
+            <li className="mobile-only-link" style={{ display: "none" }}><Link to="/services" onClick={() => setMobileOpen(false)}>{t("nav.servicesOverview")}</Link></li>
             <li>
-              <a href="#/services/micronization" onClick={() => setMobileOpen(false)}>{t("nav.micronization")}</a>
+              <Link to="/services/micronization" onClick={() => setMobileOpen(false)}>{t("nav.micronization")}</Link>
             </li>
             <li>
-              <a href="#/services/milling" onClick={() => setMobileOpen(false)}>{t("nav.milling")}</a>
+              <Link to="/services/milling" onClick={() => setMobileOpen(false)}>{t("nav.milling")}</Link>
             </li>
             <li>
-              <a href="#/services/sieving" onClick={() => setMobileOpen(false)}>{t("nav.sievingClassification")}</a>
+              <Link to="/services/sieving" onClick={() => setMobileOpen(false)}>{t("nav.sievingClassification")}</Link>
             </li>
             <li>
-              <a href="#/services/analysis" onClick={() => setMobileOpen(false)}>{t("nav.analysis")}</a>
+              <Link to="/services/analysis" onClick={() => setMobileOpen(false)}>{t("nav.analysis")}</Link>
             </li>
           </ul>
         </div>
 
         <div className="nav-item">
-          <a href="#/contact" onClick={() => setMobileOpen(false)}>{t("nav.contact")}</a>
+          <Link to="/contact" onClick={() => setMobileOpen(false)}>{t("nav.contact")}</Link>
         </div>
         
         {/* Language selector standard dropdown */}
@@ -127,7 +109,7 @@ export function Header() {
       </div>
 
       <div style={{ display: "flex", alignItems: "center", gap: "1rem" }}>
-        <a href="#/contact" className="nav-cta">{t("nav.contactUs")}</a>
+        <Link to="/contact" className="nav-cta">{t("nav.contactUs")}</Link>
       </div>
 
       <button

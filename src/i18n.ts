@@ -598,7 +598,7 @@ const resources = {
           "label": "Panoli Unit · Plant 1",
           "title": "Pharmaceutical <span class=\"red\">Excellence</span>",
           "desc": "Plant 1 in Panoli is our primary pharmaceutical manufacturing hub, designed specifically for FDA-compliant API processing.",
-          "feature1": "10 Dedicated Air Jet Mills for Pharma",
+          "feature1": "14 Dedicated Air Jet Mills for Pharma",
           "feature2": "Dedicated pharmaceutical operational staff"
         },
         "panoli2": {
@@ -638,7 +638,7 @@ const resources = {
           "cleanroom": "Class 100,000 Cleanroom Environment",
           "ss316l": "SS 316L (Mirror Polished)",
           "feedSizeMilling": "< 50mm",
-          "mesh1020": "10 - 20 Mesh",
+          "mesh1020": "Upto 80 Mesh",
           "liquidNitrogen": "Liquid Nitrogen Purging (Cryogenic)",
           "cgmpRecords": "Full cGMP Batch Records",
           "meshRangeSieving": "20 Mesh (841µm) to 400 Mesh (37µm)",
@@ -1228,7 +1228,7 @@ const resources = {
           "label": "પાનોલી યુનિટ · પ્લાન્ટ ૧",
           "title": "ફાર્માસ્યુટિકલ <span class=\"red\">ઉત્કૃષ્ટતા</span>",
           "desc": "પાનોલીમાં આવેલ પ્લાન્ટ ૧ અમારું પ્રાથમિક ફાર્માસ્યુટિકલ મેન્યુફેક્ચરિંગ હબ છે, જે ખાસ કરીને FDA-સુસંગત API પ્રોસેસિંગ માટે રચાયેલ છે.",
-          "feature1": "ફાર્મા માટે ૧૦ સમર્પિત એર જેટ મિલ્સ",
+          "feature1": "ફાર્મા માટે ૧૪ સમર્પિત એર જેટ મિલ્સ",
           "feature2": "સમર્પિત ફાર્માસ્યુટિકલ ઓપરેશનલ સ્ટાફ"
         },
         "panoli2": {
@@ -1881,7 +1881,7 @@ const resources = {
           "label": "Unità di Panoli · Impianto 1",
           "title": "<span class=\"red\">Eccellenza</span> Farmaceutica",
           "desc": "L'Impianto 1 a Panoli è il nostro principale polo di produzione farmaceutica, progettato specificamente per l'elaborazione API conforme alla FDA.",
-          "feature1": "10 Mulini a Getto d'Aria Dedicati per il settore farmaceutico",
+          "feature1": "14 Mulini a Getto d'Aria Dedicati per il settore farmaceutico",
           "feature2": "Personale operativo farmaceutico dedicato"
         },
         "panoli2": {
@@ -1921,7 +1921,7 @@ const resources = {
           "cleanroom": "Ambiente Camera Bianca Classe 100.000",
           "ss316l": "SS 316L (Lucidato a Specchio)",
           "feedSizeMilling": "< 50mm",
-          "mesh1020": "10 - 20 Mesh",
+          "mesh1020": "Upto 80 Mesh",
           "liquidNitrogen": "Spurgo con Azoto Liquido (Criogenico)",
           "cgmpRecords": "Record di Lotto cGMP Completi",
           "meshRangeSieving": "Da 20 Mesh (841µm) a 400 Mesh (37µm)",
@@ -2534,7 +2534,7 @@ const resources = {
           "label": "Unité de Panoli · Usine 1",
           "title": "<span class=\"red\">Excellence</span> Pharmaceutique",
           "desc": "L'Usine 1 de Panoli est notre principal centre de fabrication pharmaceutique, conçue spécifiquement pour le traitement des API conforme à la FDA.",
-          "feature1": "10 Broyeurs à Jet d'Air Dédiés pour la pharmacie",
+          "feature1": "14 Broyeurs à Jet d'Air Dédiés pour la pharmacie",
           "feature2": "Personnel opérationnel pharmaceutique dédié"
         },
         "panoli2": {
@@ -2574,7 +2574,7 @@ const resources = {
           "cleanroom": "Environnement Salle Blanche Classe 100 000",
           "ss316l": "SS 316L (Polissage Miroir)",
           "feedSizeMilling": "< 50mm",
-          "mesh1020": "10 - 20 Mesh",
+          "mesh1020": "Upto 80 Mesh",
           "liquidNitrogen": "Purge à l'Azote Liquide (Cryogénique)",
           "cgmpRecords": "Dossiers de Lot cGMP Complets",
           "meshRangeSieving": "De 20 Mesh (841µm) à 400 Mesh (37µm)",
@@ -3187,7 +3187,7 @@ const resources = {
           "label": "Panoli 设施 · 1 号工厂",
           "title": "制药<span class=\"red\">卓越</span>制造",
           "desc": "Panoli 的 1 号工厂是我们主要的制药制造中心，专门为符合 FDA 标准的 API 加工而设计。",
-          "feature1": "10 台制药专用的气流粉碎机",
+          "feature1": "14 台制药专用的气流粉碎机",
           "feature2": "专用的制药操作人员团队"
         },
         "panoli2": {

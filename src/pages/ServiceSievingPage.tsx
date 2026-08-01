@@ -1,3 +1,4 @@
+import { useSEO } from "../components/useSEO";
 import { useTranslation } from "react-i18next";
 import { EquipmentTabs } from "../components/EquipmentTabs";
 import { SpecsTable } from "../components/SpecsTable";
@@ -5,6 +6,10 @@ import creamPowder from "../images/powder-cream.png";
 import greyPowder from "../images/powder-grey.png";
 
 export function ServiceSievingPage() {
+  useSEO(
+    "Contract Sieving & Classification Services — Microtech India",
+    "Professional contract sieving and particle classification services to ensure uniform particle size distribution for APIs and excipients."
+  );
   const { t } = useTranslation();
 
   const tabs = [
